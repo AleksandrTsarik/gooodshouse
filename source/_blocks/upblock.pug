@@ -1,0 +1,141 @@
+#login.upblock.js-upblock
+	.upblock__wrapper
+		.upblock__close.js-upblock-close
+		.upblock__title Авторизация
+		.upblock__body.js-val-container
+			.upblock__body-wrapper
+				+formField({type:'input', mode:'email', placeholder:'E-mail'})
+				+formField({type:'password', mode:'password', placeholder:'Пароль'})
+			.upblock__body-wrapper
+				span.upblock__body-link(onclick="Upblock.showId('recovery')") Забыли пароль?
+
+			.upblock__body-button.js-btn-submit Войти
+
+			.upblock__body-wrapper
+				.b-social-auth
+					.b-social-auth__title Вход через социальную сеть
+					.b-social-auth__row
+						.b-social-auth__item.b-social-auth__item--vk
+						.b-social-auth__item.b-social-auth__item--fb
+
+			.upblock__body-wrapper
+				span.upblock__body-link.upblock__body-link--reg(onclick="Upblock.showId('registration')") Зарегистрироваться
+
+#registration.upblock.js-upblock
+	.upblock__wrapper
+		.upblock__close.js-upblock-close
+		.upblock__title Регистрация
+		.upblock__body.js-val-container
+			.upblock__body-wrapper
+				+formField({type:'input', mode:'name required', placeholder:'Имя*'})
+				+formField({type:'input', mode:'email required', placeholder:'E-mail*', error:'Неверный формат'})
+			.upblock__body-wrapper
+				+formField({type:'password', mode:'password required', placeholder:'Пароль*'})
+				+formField({type:'password', mode:'password-repeat required', placeholder:'Подтвердите пароль*'})
+			.upblock__body-wrapper
+				.upblock__body-label Нажимая на&nbsp;кнопку &laquo;Регистрация&raquo;, Вы&nbsp;принимаете условия <a href="#">Соглашения об&nbsp;использовании сайта</a>
+			.upblock__body-button.js-btn-submit Регистрация
+
+#recovery.upblock.js-upblock
+	.upblock__wrapper
+		.upblock__close.js-upblock-close
+		.upblock__title Восстановление пароля
+		.upblock__body.js-val-container
+			.upblock__body-wrapper
+				+formField({type:'input', mode:'email', placeholder:'E-mail'})
+			.upblock__body-wrapper
+				.upblock__body-label.upblock__body-label--comment На&nbsp;ваш E-Mail придёт ссылка для сброса пароля
+			.upblock__body-button Получить ссылку
+
+//-#thankyou.upblock.js-upblock
+	.upblock__wrapper
+		.upblock__close.js-upblock-close
+		.upblock__title Спасибо за покупку!
+		.upblock__body
+			.upblock__body-wrapper
+				.upblock__body-title Заказ &#8470;&nbsp;75560 успешно создан
+				.upblock__body-desc Наш менеджер позвонит вам в&nbsp;ближайшее время для подтверждения заказа.
+			.upblock__body-wrapper
+				.upblock__body-controls
+					a.upblock__body-button.upblock__body-button--group(href="#") Продолжить покупки
+					a.upblock__body-button.upblock__body-button--group.upblock__body-button--gray(href="#") Вернуться на&nbsp;главную
+			.upblock__body-wrapper
+				.upblock__body-label.upblock__body-label--simple Оплата заказа: Наличными при&nbsp;получении
+
+#reserve.upblock.js-upblock
+	.upblock__wrapper
+		.upblock__close.js-upblock-close
+		.upblock__title Отложить
+		.upblock__body.js-val-container
+			.upblock__body-wrapper
+				.upblock__body-desc Этот товар отложат специально для вас в&nbsp;магазине. Вам останется только прийти, оплатить и&nbsp;забрать.
+			.upblock__body-wrapper
+				+formField({type:'select', mode:'select js-nav-select', options:[
+					{value:60, option:'ТРЦ &laquo;РИО Севастопольский&raquo; goodshouse'},
+					{value:16, option:'ТРЦ «Райкин Плаза»'},
+				], default:{value:60, option:'ТРЦ &laquo;РИО Севастопольский&raquo; goodshouse'}})
+
+				.upblock__body-container
+					.upblock__block(data-id="60").js-nav-item.is-active
+						.upblock__body-row
+							.upblock__body-column Количество:
+							.upblock__body-column
+								+formField({type:'select', mode:'select b-form-field--small', options:[
+									{value:1, option:'1'},
+									{value:2, option:'2'},
+									{value:3, option:'3'},
+									{value:4, option:'4'},
+									{value:5, option:'5'},
+								], default:{value:1, option:'1'}})
+						.upblock__list
+							.upblock__list-item.upblock__list-item--address г. Москва, Большая Черемушкинская улица, 1
+							.upblock__list-item.upblock__list-item--time 10:00&nbsp;&mdash; 22:00
+							.upblock__list-item.upblock__list-item--phone +7 (495) 783-85-22&nbsp;доб.&nbsp;2063
+
+					.upblock__block(data-id="16").js-nav-item
+						.upblock__body-row
+							.upblock__body-column Количество:
+							.upblock__body-column
+								+formField({type:'select', mode:'select b-form-field--small', options:[
+									{value:1, option:'1'},
+								], default:{value:1, option:'1'}})
+						.upblock__list
+							.upblock__list-item.upblock__list-item--address г. Москва, Шереметьевская ул., д. 6, стр.1, 0 этаж.
+							.upblock__list-item.upblock__list-item--time 10:00&nbsp;&mdash; 22:00
+							.upblock__list-item.upblock__list-item--phone +7 (495) 783-85-22&nbsp;доб.&nbsp;2063
+
+				.upblock__row.upblock__row--short
+					.upblock__column
+						+formField({type:'input', mode:'name', placeholder:'Имя'})
+					.upblock__column
+						+formField({type:'input', mode:'name', placeholder:'Фамилия'})
+				.upblock__row.upblock__row--short
+					.upblock__column
+						+formField({type:'input', mode:'email', placeholder:'E-mail'})
+					.upblock__column
+						+formField({type:'input', mode:'phone js-phone-mask', placeholder:'Телефон'})
+
+			.upblock__body-button Забрать из&nbsp;магазина
+
+#reviews.upblock.js-upblock
+	.upblock__wrapper
+		.upblock__close.js-upblock-close
+		.upblock__title Написать отзыв
+		.upblock__body.js-val-container
+			.upblock__body-wrapper
+				+formField({type:'input', mode:'name', placeholder:'Имя'})
+				+formField({type:'input', mode:'email', placeholder:'E-mail'})
+			.upblock__body-wrapper
+				.upblock__body-row
+					.upblock__body-column Ваша оценка
+					.upblock__body-column
+						+stars({rating:1, name:'reviewsRating'})
+			.upblock__body-wrapper
+				+formField({type:'textarea', mode:'review', placeholder:'Отзыв'})
+
+			.upblock__body-button Оставить отзыв
+
+#gallery.upblock.js-upblock
+	.upblock__wrapper.upblock__wrapper--fullscreen
+		.upblock__close.js-upblock-close
+		.b-slider__wrapper.b-slider__wrapper--upblock.js-product-gallery

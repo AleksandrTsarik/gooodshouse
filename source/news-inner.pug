@@ -1,0 +1,25 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Скидка 25% на бренды Zwilling и Staub!'
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'/html/main.html'},
+			{title:'новости', href:'/html/news.html'},
+			{title:'Скидка 25% на бренды Zwilling и Staub!', href:''}
+		]})
+		.content-wrapper
+			.b-news-inner
+				.b-news-inner__title Скидка 25% на бренды Zwilling и Staub!
+				.b-news-inner__img
+					img(src="/f/img/content/promo-5.jpg", alt="")
+				.b-news-inner__text
+					p
+						span.fw-bold Smart Solutions – 
+						| новинка в ассортименте интернет-магазина cookhouse.ru. Бренд российского происхождения прекрасно впишется в любой интерьер кухни. Лаконичный дизайн, натуральные материалы и доступная цена – основа бренда Smart Solutions.
+					p Новый бренд посуды и аксессуаров для кухни, которые созданы для того, чтобы стать незаменимыми помощниками в решении повседневных домашних задач. Лаконичный дизайн, натуральные материалы, доступная цена и функциональность - ключевые характеристики товаров Smart Solutions.
+				.b-news-inner__link
+					a(href='/html/news.html')
+						img(src="/f/img/ico-arrow-link.svg", alt="")
+						| вернуться к списку

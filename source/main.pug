@@ -1,0 +1,71 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Главная страница';
+
+block content
+	.page-container
+		include _blocks/carousel
+		include _blocks/product-list
+
+		section.section
+			.content-wrapper
+				a(href="#").section__title-link
+					h2.section__title Акции и скидки
+				.main-actions
+					-
+						var actions = [
+							{
+								title: 'Новая коллекция Kitchen Craft',
+								img: '/f/img/carousel/img.jpg',
+							},
+							{
+								title: 'Новая коллекция Kitchen Craft',
+								img: '/f/img/carousel/img.jpg',
+							},
+						]
+					.main-actions__list
+						each action in actions
+							.main-actions__item
+								+promoLink(action)
+					.main-actions__main
+						+promoLink({
+							title: 'Новая коллекция Kitchen Craft',
+							img: '/f/img/carousel/img.jpg',
+							text: 'Мы&nbsp;хотим сделать весь процесс приготовления еды от&nbsp;закупки до&nbsp;подачи легким, простым, понятным и&nbsp;вдохновляющим.',
+						})
+
+		section.section
+			.content-wrapper
+				a(href="#").section__title-link
+					h2.section__title Goods рецепты
+				.main-recipies
+					-
+						var recipies = [
+							{
+								title: 'Завтрак',
+								img: '/f/img/carousel/img.jpg',
+								square: true
+							},
+							{
+								title: 'Обед',
+								img: '/f/img/carousel/img.jpg',
+								square: true
+							},
+							{
+								title: 'Ужин',
+								img: '/f/img/carousel/img.jpg',
+								square: true
+							}
+						]
+					each recipe in recipies
+						.main-recipies__item
+							+promoLink(recipe)
+
+		include _blocks/club-invite
+
+
+
+
+
+

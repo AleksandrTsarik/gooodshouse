@@ -1,0 +1,226 @@
+.b-profile
+	&__wrapper
+		padding 13px 0 152px
+		@media $tablet
+			padding 0 0 80px
+	&__row
+		display flex
+		@media $tablet
+			flex-direction column
+	&__column
+		width 25.5%
+		@media $tablet
+			width 100%
+		&:nth-child(2)
+			flex-grow 1
+	&__block
+		display none
+		&.is-show
+			display block
+	&__title
+		padding 5px 0 27px
+		font-size 18px
+		line-height 1.23
+		letter-spacing -0.015em
+		@media $tablet
+			display none
+	&__step
+		max-width 403px
+		padding-bottom 9px
+	&__step-title
+		font-family $MontserratR
+		font-size 14px
+		line-height 1.2
+		letter-spacing -0.015em
+		padding 13px 0 0
+		margin-bottom -4px
+	&__button
+		margin-top 14px
+		background $gray
+	&-step
+		&__lk
+			// .b-form-field__wrapper.is-locked, .b-form-field__input, .is-done
+			// 	background: white
+			max-width: 300px
+			padding-bottom 0
+			.b-form-field__wrapper
+				border: none
+				border-bottom: 1px solid rgba(94, 47, 38, 0.2)
+				border-radius: 0
+				padding-left 0
+				padding-top 15px
+				margin: 0
+				.b-form-field__input
+					position: relative
+				.ui-datepicker-trigger
+					position: absolute
+					right: 0
+					top 30px
+					cursor: pointer
+
+			.btn
+				width: 100%
+				background: $hoverFont
+				color: $white
+				border: none
+				transition: 0.3s
+				height: auto
+				line-height: 1em
+				font-size: 18px
+				padding: 16px 0
+				&:hover
+					background: lighten($hoverFont, 15%)
+
+.b-profile-menu
+	@media $phone
+		max-width calc(100% + 30px)
+		margin 0 -15px
+		overflow hidden
+		overflow-x scroll
+	&__wrapper
+		@media $tablet
+			display flex
+			margin-bottom 20px
+			border-bottom 1px solid $backFont
+		@media $phone
+			padding 0 15px
+			min-width 720px
+	&__item
+		position relative
+		font-size 16px
+		line-height 1.2
+		padding 8px 0px 7px
+		cursor pointer
+		@media $tablet
+			margin-right 20px
+			&:last-child
+				margin-right 0
+		&:hover
+			color $hoverFont
+			@media $tablet
+				color $baseFont
+		&.is-active
+			color $hoverFont
+			@media $tablet
+				&:after
+					content ''
+					position absolute
+					left 0
+					right 0
+					bottom -1px
+					height 1px
+					background $orange
+		a
+			color inherit
+
+.b-profile-card
+	&__wrapper
+		position relative
+		padding 5px 0
+		max-width: 300px
+		@media $phone
+			padding 240px 0 5px
+		@media screen and (max-width: 349px)
+			padding-top 69vw
+		// &:before
+		// 	content ''
+		// 	position absolute
+		// 	right 0
+		// 	top 9px
+		// 	width 319px
+		// 	height 203px
+		// 	background url('../img/loyalty-card.png') no-repeat left top
+		// 	@media $desktop
+		// 		right auto
+		// 		left 551px
+		// 	@media $phone
+		// 		width calc(100vw - 30px)
+		// 		height calc(64vw - 18px)
+		// 		max-width 319px
+		// 		max-height 203px
+		// 		background-size contain
+		// 		left 0
+	&__desc
+		max-width 533px
+		font-size 14px
+		line-height 1.6
+		letter-spacing -0.015em
+		padding-bottom 30px
+		a
+			color $orange
+			text-decoration underline
+			&:hover
+				color $hoverFont
+				text-decoration none
+	&__table
+		display table
+		border 1px solid $backBackground
+		border-radius 3px
+	&__row
+		display table-row
+	&__row:last-child &__column
+		border-bottom none
+	&__column
+		display table-cell
+		font-family $MuseoM
+		font-size 14px
+		line-height 1.2
+		letter-spacing -0.015em
+		border-bottom 1px solid $backBackground
+		padding 16px 10px 16px 20px
+		&:nth-child(2)
+			padding 16px 20px 16px 0
+			color $orange
+	&__info
+		max-width: 300px
+		font-size: 26px
+		color: rgba($baseFont, 0.4)
+		border-bottom: 1px solid rgba(94, 47, 38, 0.2)
+		padding-bottom 20px
+		margin-bottom 20px
+		&--numb
+			font-weight 700
+			font-size: 30px
+			padding-right 5px
+			color $baseFont
+	&-info
+		&__row
+			font-size: 16px
+			&--munb
+				font-size: 18px
+				padding-left 5px
+				color: $baseFont
+				font-weight 700
+		&__text
+			font-size: 16px
+			color: $baseFont
+		&__link
+			font-size: 16px
+			color: $baseFont
+			padding-top 1em
+			a
+				color: $linkFont
+				text-decoration: underline
+
+.ui-datepicker-calendar
+	background: $white
+	border: solid 1px $gray
+	thead
+		display: inline-table
+		width: 100%
+	tbody
+		display: inline-table
+		width: 100%
+.ui-datepicker-header
+	background: $white
+.ui-datepicker table
+	margin 0
+	display: block
+.ui-widget-header
+	border: solid 1px $gray
+	border-radius: 0
+.ui-datepicker
+	min-width 300px
+
+
+

@@ -1,0 +1,157 @@
+.b-loyalty
+	background url('../img/loyalty-banner.jpg') no-repeat center top
+	background-size 1248px auto
+	padding-top 390px
+	@media $tablet
+		background-size auto 36.3vw
+		padding-top 31.3vw
+	@media $phone
+		background-size 150% auto
+	&__wrapper
+		max-width 1036px
+		width 76.7vw
+		margin 0 auto
+		padding 54px 8%
+		background $white
+		@media $tablet
+			max-width 90%
+			width 86.7vw
+		@media $phone
+			width 90%
+			padding 25px 5% 0
+	&__title
+		font-family $MuseocyrM
+		font-size 35px
+		line-height 1.28
+		padding 20px 0 47px
+		text-align center
+		text-transform uppercase
+		@media $phone
+			font-size 28px
+			padding 20px 0 25px
+	&__subtitle
+		padding-bottom 40px
+		text-align center
+		@media $phone
+			padding-bottom 20px
+	&__desc
+		line-height 1.4
+		padding-bottom 15px
+	&__block
+		padding 60px 0 20px
+		@media $tablet
+			padding 40px 0 10px
+	&__table
+		padding 40px 0
+	&__table-caption
+		font-family $MuseocyrM
+		font-size 16px
+		font-weight bold
+		padding-bottom 5px
+	&__table-legend
+		padding-top 15px
+		line-height 1.2
+		font-weight bold
+		span
+			font-weight normal
+	&__table-row
+		display flex
+		&--header
+			height 30px
+		&--graph
+			position relative
+			overflow hidden
+			&:before
+				content ''
+				position absolute
+				left -20%
+				right -20%
+				top 40%
+				height 100%
+				background $orange
+				transform rotate(-4deg)
+	&__table-row--graph &__table-column
+		padding-top 60px
+	&__table-column
+		position relative
+		font-family $MuseocyrM
+		font-size 28px
+		color $white
+		width calc(33.3333% - 12px)
+		margin 0 6px
+		@media $phone
+			font-family $MuseocyrR
+			font-size 18px
+	&__table-row--graph &__table-column
+		/*background $white*/
+		text-align center
+		&:before
+			content ''
+			position absolute
+			right -12px
+			top 0
+			bottom 0
+			width 12px
+			background $white
+		&:after
+			content ''
+			position absolute
+			right -7px
+			top 0
+			bottom 0
+			width 2px
+			background $gray
+		&:last-child:after
+			display none
+	&__table-row--header &__table-column:after
+		content attr(data-count)
+		position absolute
+		right 0
+		top 0
+		font-size 20px
+		transform translateX(50%)
+		color $baseFont
+		@media $phone
+			padding-top 4px
+			font-size 16px
+			font-weight bold
+
+
+
+.b-benifit
+	display flex
+	justify-content center
+	flex-wrap wrap
+	&__item
+		width 31.3333%
+		text-align center
+		margin 0 1%
+		padding 120px 0 30px
+		@media $tablet
+			width 48%
+		@media $phone
+			width 100%
+			margin 0
+		&--p1
+			background url('../img/icons/benifit-icon-1.png') no-repeat center top
+		&--p2
+			background url('../img/icons/benifit-icon-2.png') no-repeat center top
+		&--p3
+			background url('../img/icons/benifit-icon-3.png') no-repeat center top
+		&--p4
+			background url('../img/icons/benifit-icon-4.png') no-repeat center top
+		&--p5
+			background url('../img/icons/benifit-icon-5.png') no-repeat center top
+		&--p6
+			background url('../img/icons/benifit-icon-6.png') no-repeat center top
+		&--p7
+			background url('../img/icons/benifit-icon-7.png') no-repeat center top
+	&__label
+		padding-top 20px
+		font-size 12px
+		opacity 0.8
+
+
+
+
+

@@ -1,0 +1,213 @@
+.b-shops
+	&__wrapper
+		padding 10px 0 0
+		margin: 0 -15px
+	&__row
+		padding	11px 0 65px
+		display flex
+		justify-content space-between
+		@media $phone
+			padding 0px 0 50px
+	&__column
+		flex: 0 0 40%
+		max-width: 40%
+		padding: 0 7.5px 0 15px		
+		@media $phone
+			flex: 0 0 100%
+			max-width: 100%
+		&:last-child
+			flex: 0 0 60%
+			padding: 0 15px 0 7.5px
+			max-width: 60%
+			@media $phone
+				display none
+	&__list
+		height: 538px
+		max-height 538px
+		overflow-y scroll
+		padding-right 40px
+		margin-right -40px
+		@media $phone
+			height auto
+			max-height none
+	&__item
+		padding 20px 20px
+		border-top 1px solid #dad0c7
+		border: 1px solid #ECECEC
+		cursor pointer
+		transition: 0.3s
+		margin-bottom 20px
+		&:last-child
+			margin-bottom 0
+		@media $phone
+			padding 20px 10px
+		@media screen and (max-width: 575px)
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			text-align: center
+		&:hover, &.is-active
+			border: solid 1px $linkFont
+			
+			@media $phone
+				background $white
+		&:hover, &.is-active .b-shops__title
+			color: $linkFont
+	&__map
+		height 100% !important
+
+	&__title
+		font-family $MuseocyrM
+		font-weight bold
+		font-size 16px
+		line-height 1.1
+		padding-bottom 5px
+		color: $baseFont
+		position: relative
+		display: inline-block
+		text-decoration: underline
+	&__place
+		color: $baseFont
+		font-weight bold
+		margin-bottom 15px
+	&__info
+		display none
+		@media $phone
+			padding-top 15px
+			display block
+	&__desc
+		position: static
+		//white-space: nowrap
+		&--styl
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			font-size: 16px
+			color: $selectDark
+			@media $phone
+				flex-direction: column
+		&--phone
+			position: relative
+			padding-left 20px
+			white-space: nowrap
+			&:before
+				content: ''
+				background-image: url('../img/icon-phone.svg')
+				background-position: 50% 50%
+				background-repeat: no-repeat
+				position: absolute
+				background-size: 100%
+				left: 0
+				top: 5px
+				width: 15px
+				height: 15px
+		&--email
+			position relative
+			padding-left 20px
+			white-space: nowrap
+			&:before
+				content: ''
+				background-image: url('../img/icon-email.svg')
+				background-position: 50% 50%
+				background-repeat: no-repeat
+				position: absolute
+				background-size: 100%
+				left: 0
+				top: 5px
+				width: 12px
+				height: 12px
+.b-shop
+	&__location
+		display: none
+		&__title
+			font-size: 28px
+			padding-bottom 40px
+		&-wrap
+			padding-bottom 85px
+			padding-top 15px
+	&__item
+		padding: 15px 0
+	&__seats
+		display: flex
+		align-items: center
+		font-size: 16px
+		margin-bottom 15px
+		img
+			margin-right 0.5em
+	&__item__title
+		font-family $MuseocyrM
+		font-weight bold
+		font-size 18px
+		color: $baseFont
+		position: relative
+		padding-bottom 10px
+	
+
+	&__title
+		font-size: 18px
+		font-weight 700
+		padding-bottom 10px
+	&__text
+		font-weight 300
+		font-size: 18px
+.b-shop__form
+	width: 64%
+	@media $phone
+		width: 100%
+	&__title
+		font-size: 28px
+		margin-bottom 46px
+.b-shop__input-box
+	display: flex
+	justify-content: space-between
+	margin: 0 -10px
+	@media screen and (max-width: 575px)
+		flex-wrap: wrap
+.b-shop__input
+	padding: 0 10px
+	flex: 0 0 50%
+	max-width: 50%
+	@media screen and (max-width: 575px)
+		flex: 0 0 100%
+		max-width: 100%
+		margin: 5px 0
+	
+	input
+		border: solid 1px $backFont
+		border-radius: 2px
+		width: 100%
+		letter-spacing: -0.015em
+		font-size: 16px
+		padding: 15px 18px
+.b-shop__texterea
+	margin: 20px 0
+	textarea
+		width: 100%
+		height: 121px
+		resize: none
+		border: solid 1px $backFont
+		padding: 15px 18px
+.b-shop__form__conditions
+	font-size: 14px
+	letter-spacing: -0.015em
+.b-shop__form__link
+	a	
+		border-bottom: solid 1px $linkFont
+	
+.b-shop__form__btn
+	margin-top 32px
+	button
+		color $white
+		padding 16px 0
+		width 48%
+		font-size: 16px
+		letter-spacing: -0.015em
+		background $hoverFont
+		border-radius: 2px
+		text-align: center
+		transition: 0.3s
+		@media screen and (max-width: 575px)
+			width: 100%
+		&:hover
+			opacity 0.85

@@ -1,0 +1,71 @@
+.b-info-page
+   display: flex
+   justify-content: space-between
+   @media $tablet
+      flex-wrap: wrap
+.b-info-page__list
+   flex: 0 0 25%
+   max-width: 25%
+   @media $tablet
+      flex: 0 0 100%
+      max-width: 100%
+.b-info-page__item
+   font-size: 18px
+   margin-bottom 10px
+   a
+      color: $baseFont
+   &.active
+      a
+         color: $linkFont
+.b-info-content
+   flex: 0 0 75%
+   max-width: 75%
+   @media $tablet
+      flex: 0 0 100%
+      max-width: 100%
+
+.b-info
+   color: $baseFontLight
+   &__title
+      padding-bottom 55px
+      font-size: 32px
+      color: $baseFontLight
+      @media $tablet
+         padding: 25px 0
+      @media $phone
+         font-size: 28px
+         padding: 15px 0
+      @media $phoneS
+         font-size: 25px
+   &__subtitle
+      font-size: 28px
+      padding: 25px 0 35px 0
+      font-weight: normal
+      @media $phone
+         font-size: 22px
+         padding: 15px 0 25px 0
+      @media $phoneS
+         font-size: 20px
+
+.b-info-content__list
+   font-size: 18px
+   list-style-type decimal
+   list-style-position: inside
+   @media $phone
+      font-size: 16px
+   @media $phoneS
+      font-size: 14px
+   li
+      padding-bottom 25px
+      @media $phoneS
+         padding-bottom 15px
+.b-info-content__sublist
+   font-size: 18px
+   list-style-type disc
+   list-style-position: inside
+   margin-left 15px
+   margin-top 25px
+   @media $phone
+      font-size: 16px
+   @media $phoneS
+      font-size: 14px

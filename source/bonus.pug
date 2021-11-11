@@ -1,0 +1,114 @@
+
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Bonus';
+
+block content
+
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Бонусная программа привелегий', href:''}
+		]})
+
+		.content-wrapper
+			h1.page-container__title.bonus__tile.bonus__tile--fs Бонусная программа привелегий
+			.b-bonus__logo
+					img(src="/f/img/bonus/main_logo.png", alt="alt")
+
+			.b-bonus__info-text
+				| Новая бонусная программа ГК "Ideas 4 Retail" объеденяет в себе единый бонусный счет для всех брендов компании. Теперь клиенты могут копить и тратить бонусы в магазинах сети
+				a(href="#") Hamleys,
+				a(href="#") Винни,
+				a(href="#") Cook House,
+				|и
+				a(href="#") Goods House.
+
+			.b-bonus__list-company.b-bonus-list
+					each item in ['/f/img/bonus/icon-hm.svg','/f/img/bonus/icon-vinni.svg','/f/img/bonus/icon-goodhouse.svg','/f/img/bonus/icon-cookhouse.svg']
+						.b-bonus-list__item 
+								img(src=""+item, alt="alt")
+			.b-bonus__economy.b-bonus-economy
+					.b-bonus-economy__title.bonus__tile Экономить с бонусной программой легко:
+					.b-bonus-economy__list
+						.b-bonus-economy__item
+								.b-bonus-economy__item-img
+									img(src="/f/img/bonus/icon-bonus.svg", alt="alt")
+								.b-bonus-economy__item-text
+									|	1 бонус=1 рубль
+						.b-bonus-economy__item
+								.b-bonus-economy__item-img
+									img(src="/f/img/bonus/icon-percent.svg", alt="alt")
+								.b-bonus-economy__item-text
+									|	до 100% оплата <br>
+									span покупок бонусами
+						.b-bonus-economy__item
+								.b-bonus-economy__item-img
+									img(src="/f/img/bonus/icon-phone.svg", alt="alt")
+								.b-bonus-economy__item-text
+									|	номер телефона <br>
+									span нужен только телефон
+
+			.b-bonus-programm
+					.b-bonus-programm__title.bonus__tile Как работает программа:
+					.b-bonus-programm__list
+						.b-bonus-programm__text
+								span.b-bonus-programm__text--bold Регистрация:
+								| совершите любую покупку в любом из магазинов сети Hamleys, Винни, Cook House и Goods House и оформите виртуальную карту по номеру телефона.
+						.b-bonus-programm__text
+								span.b-bonus-programm__text--bold Накопления:
+								| с каждой вашей покупки будут начислено 5% в виде бонусов, просто назовите свой номер телефона на кассе или в интернет магазине.
+						.b-bonus-programm__text
+								span.b-bonus-programm__text--bold Оплата:
+								| оплачивайте до 100% от вашей покуки бонусами.
+						.b-bonus-programm__text
+								span.b-bonus-programm__text--bold Привелегии:
+								| всем участникам программы мы дарим подарки на день рождения, а также бонусы и скидки от наших партнеров.
+					.b-bonus-programm__link
+						a(href="#")
+								img(src="/f/img/bonus/icon-reg.svg", alt="")
+								| правила бонусной программы
+
+			.b-bonus-app
+					.b-bonus-app__title.bonus__tile Приложение Ideas 4 you!
+					.b-bonus-app__text
+						| Хотите держать под контролем свой бонусный счет и получать сюрпризы и подарки? Тогда скачайте приложение Ideas 4 you! Только в приложении всегда актуальные скидки и предложения, а также розыгрыши подарков.
+
+					.b-bonus-app__link
+						a(href="#")
+								img(src="/f/img/bonus/icon-arrow.svg", alt="")
+								| скачать приложение
+			.b-bonus-participants
+					.b-bonus-participants__title.bonus__tile.bonus__tile--fs СПИСОК МАГАЗИНОВ УЧАСТНИКОВ
+					.b-bonus-participants__list.b-bonus-list
+						-
+								var company = [
+									{
+											img: '/f/img/bonus//company/icon-hm.svg',
+											name: 'Hamleys'
+									},
+									{
+											img: '/f/img/bonus//company/icon-v.svg',
+											name: 'Винни'
+									},
+									{
+											img: '/f/img/bonus//company/icon-g.svg',
+											name: 'Goods House'
+									},
+									{
+											img: '/f/img/bonus//company/icon-c.svg',
+											name: 'Cook House'
+									},
+								]
+						each item in company
+								.b-bonus-list__item.b-bonus-participants__item
+									a(href="#")
+											img(src=""+item.img, alt="").b-bonus-participants__item-img
+											.b-bonus-participants__item-text !{item.name}
+			.b-bonus-add
+					.b-bonus-add__title Вступайте в программу привелегий! Это просто!
+					.b-bonus-add__button
+						button(type="submit") вступить
+
+

@@ -1,0 +1,49 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Бренды';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Бренды', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Бренды
+
+		include _blocks/brands
+
+		.b-brands-search
+			.content-wrapper
+				.b-brands-search__top
+					.b-brands-search__column
+						.b-field.b-field--search
+							.b-field__wrapper
+								input.b-field__input(type="text" placeholder="Поиск")
+						.b-brands-search__column-index
+							each item in ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','А-Я']
+								a.b-brands-search__column-item(href="#"+item)!= item
+				.b-brands-search__wrapper
+					each item in ['0-9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','А-Я']
+						.b-brands-search__block
+							a(id=""+item)
+								.b-brands-search__title!= item
+								.b-brands-search__list
+									a.b-brands-search__item(href="#") ADPAL
+									a.b-brands-search__item(href="#") Akcam
+									a.b-brands-search__item(href="#") Ambientair
+									a.b-brands-search__item(href="#") Andrea Fontebasso
+									a.b-brands-search__item(href="#") Anna Lafarg
+									a.b-brands-search__item(href="#") ANNA LAFARG EMILY
+									a.b-brands-search__item(href="#") ANNA LAFARG LF CERAMICS
+									a.b-brands-search__item(href="#") Anna Manelis
+									a.b-brands-search__item(href="#") Appetite
+									a.b-brands-search__item(href="#") Appolia
+									a.b-brands-search__item(href="#") Arau Baby
+									a.b-brands-search__item(href="#") Aroma Republic
+									a.b-brands-search__item(href="#") Astonish
+									a.b-brands-search__item(href="#") Atenas
+									a.b-brands-search__item(href="#") Atlantis
+									a.b-brands-search__item(href="#") Augustin Welz
+									a.b-brands-search__item(href="#") Aurum Crystal

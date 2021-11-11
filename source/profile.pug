@@ -1,0 +1,66 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Личный кабинет';
+	-auth = true;
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'личный кабинет', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Личный кабинет
+			.b-profile
+				.b-profile__wrapper
+					.b-profile__row.js-profile
+						.b-profile__column
+							.b-profile-menu
+								.b-profile-menu__wrapper
+									.b-profile-menu__item.js-profile-menu.is-active  Мои заказы
+									.b-profile-menu__item.js-profile-menu Мои данные
+									.b-profile-menu__item.js-profile-menu Изменить пароль
+									.b-profile-menu__item.js-profile-menu Программа лояльности
+									.b-profile-menu__item.js-profile-menu Мои подписки
+						.b-profile__column
+							.b-profile__block.js-profile-block.is-show
+								.b-profile__title Мои заказы
+								include _blocks/orders
+							.b-profile__block.js-profile-block.js-val-container
+								.b-profile__step.b-profile-step__lk
+									+formField({type:'input', mode:'name required', placeholder:'Имя*', value:"Константин"})
+									+formField({type:'input', mode:'name', placeholder:'Фамилия'})
+								.b-profile__step.b-profile-step__lk
+									+formField({type:'input', mode:'email required', placeholder:'E-mail*', value:'email@yandex.ru', locked:'1'})
+									+formField({type:'input', mode:'phone js-phone-mask', placeholder:'Телефон'})
+								.b-profile__step.b-profile-step__lk
+									//-.b-profile__step-title Дата рождения
+									+formField({type:'datepicker', mode:'date',placeholder:'Дата рождения'})
+								.b-profile__step.b-profile-step__lk
+									.btn.btn--large.btn--disabled.b-profile__button Сохранить
+							.b-profile__block.js-profile-block.js-val-container
+								.b-profile__step.b-profile-step__lk
+									+formField({type:'password', mode:'password required', placeholder:'Новый пароль'})
+									+formField({type:'password', mode:'password-repeat required', placeholder:'Подтвердите новый пароль'})
+								.b-profile__step.b-profile-step__lk
+									.btn.btn--large.btn--disabled.b-profile__button Сохранить
+							.b-profile__block.js-profile-block
+								.b-profile-card
+									.b-profile-card__wrapper
+										.b-profile-card__info.b-profile-card-info
+											span.b-profile-card__info--numb 500
+											| бонусных рублей
+											.b-profile-card-info__row
+												| Количество неактивных баллов
+												span.b-profile-card-info__row--munb 0
+										.b-profile-card-info__text
+											| Начисленными бонусами можно воспользоваться на 15-й день после покупки, до этих пор они находятся в неактивном состоянии.
+										.b-profile-card-info__link
+											| С полными правилами программы лояльности можно 
+											a(href="#")  ознакомится тут.
+							.b-profile__block.js-profile-block
+								.b-profile__title Мои подписки
+								.b-profile__step
+									+formField({type:'checkbox',mode:'checkbox',label:'Рассылка новостей Goodshouse',checked:1})
+

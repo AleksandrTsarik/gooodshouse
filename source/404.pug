@@ -1,0 +1,19 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = '404';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'Главная', href:'#'},
+			{title:'Ошибка 404', href:''}
+		]})
+		.b-error-page
+			.b-error-page__wrapper
+				.b-error-page__title 404
+				.b-error-page__desc К&nbsp;сожалению, страницы, которую вы&nbsp;ищите, нет на&nbsp;сайте.<br/>Вы&nbsp;можете перейти в&nbsp;<a href="/">каталог</a>, или один из&nbsp;разделов сайта, а&nbsp;так&nbsp;же<br/>воспользоваться поиском.
+				.b-error-page__search
+					.b-field.b-field--search
+						.b-field__wrapper
+							input.b-field__input(type="text" placeholder="Поиск")

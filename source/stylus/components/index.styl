@@ -1,0 +1,274 @@
+.b-journal
+	&__wrapper
+		padding 36px 0 0
+		@media $phone
+			padding 32px 0 6px
+		& a ^[0]__title
+			color $baseFont
+			display inline-block
+			&:hover
+				color $orange
+	&__title
+		padding-bottom 28px
+	&__list
+		display flex
+		justify-content space-between
+		@media $phone
+			margin 0 -15px
+			max-width calc(100% + 30px)
+			overflow hidden
+			overflow-x scroll
+	&__article
+		width 32.3%
+		@media $phone
+			padding-left 15px
+			min-width 261px
+			&:last-child
+				min-width 276px
+				padding-right 15px
+
+.b-journal__article
+	&:nth-child(2) .b-article__image
+		order 2
+		@media $phone
+			order 1
+	&:nth-child(2) .b-article__info
+		padding 0 15px 38px 40px
+		order 1
+		@media $phone
+			padding 22px 15px 22px 0
+			order 2
+	&:nth-child(2) .b-article__arrow
+		transform rotate(90deg)
+		right auto
+		left 3px
+		top 5px
+
+	&:nth-child(3) .b-article__info
+		padding 36px 15px 0 40px
+		@media $phone
+			padding 22px 15px 22px 0
+	&:nth-child(3) .b-article__arrow
+		right auto
+		left -1px
+		top 36px
+
+.b-journal-tab
+	@media $phone
+		margin 0 -15px
+	&__wrapper
+		background url('../img/content/article-4.jpg') no-repeat center top
+		margin-top 21px
+		padding-top 305px
+		@media $desktop
+			padding-top 23vw
+		@media $phone
+			margin-top 39px
+			padding-top 175px
+			background-size 768px auto
+			background-position center -20px
+	&__info
+		background url('../img/logox2.svg') no-repeat center 55px $white
+		max-width 65.7%
+		margin 0 auto
+		padding 40px
+		@media $phone
+			background-size 108px auto
+			background-position center 25px
+			max-width 90%
+			padding 10px
+	&__title
+		font-family $MuseocyrM //$ClarendonR
+		font-size 35px
+		line-height 1.06
+		text-align center
+		color $baseFont
+		padding-top 202px
+		@media $phone
+			font-size 28px
+			line-height 1.2
+			padding-top 154px
+	&__desc
+		font-size 16px
+		line-height 1.5
+		text-align center
+		color $baseFont
+		padding-top 24px
+		max-width 360px
+		margin 0 auto
+		@media $phone
+			padding-top 15px
+	&__controls
+		text-align center
+		padding-top 32px
+		@media $phone
+			padding-top 14px
+	&__more
+		font-size 16px
+		line-height 1.5
+		&:hover
+			text-decoration underline
+
+.b-promo
+	&__wrapper
+		padding 54px 0 97px
+		border-bottom 1px solid $backFont
+		font-size 0
+		line-height 1
+		@media $phone
+			padding 54px 0 0
+			margin 0 -15px
+			border-bottom none
+	&__image
+		width 100%
+	&__layout
+		padding 40px
+		@media $phone
+			padding 150px 15px 15px /*173*/
+		&--rcr
+			background none no-repeat center center
+			display flex
+			align-items center
+			justify-content center
+			height 300px
+			@media $phone
+				display block
+				background-size auto 220px
+				background-position center top
+				height auto
+	&__layout--rcr &__info
+		background url('../img/content/promo-logo-1.png') no-repeat 21px center rgba(255, 255, 255, 0.9)
+		border-radius 3px
+		padding 18px 30px 18px 130px
+		font-family $MuseocyrR //$ClarendonR
+		font-size 34px
+		line-height 1.3
+		color $baseFont
+		@media $phone
+			background-color $white
+			background-position center 32px
+			padding 135px 15px 57px
+			text-align center
+			font-size 28px
+			line-height 1.4
+			border-bottom 1px solid $backFont
+
+.b-about
+	&__wrapper
+		padding 59px 0 78px
+		@media $phone
+			padding 33px 0 58px
+			border-bottom none
+	&__logo
+		background-size 300px auto
+		margin 0 auto
+		width 300px
+		height 42px
+		@media $phone
+			background-size 250px auto
+			width 250px
+			height 35px
+	&__desc
+		font-size 16px
+		line-height 1.5
+		text-align center
+		color $baseFont
+		max-width 610px
+		margin 0 auto
+		padding-top 37px
+		@media $phone
+			padding-top 28px
+.b-brands
+	.b-brands__wrapper
+		border-bottom: none
+.b-brands-search
+	&__wrapper
+		padding-bottom 80px
+		column-count: 4
+		padding-top 60px
+		@media $tablet
+			column-count: 3
+		@media $phone
+			padding-bottom 30px
+			column-count: 2
+		@media screen and (max-width: 500px)
+			column-count: 1
+	&__block
+		margin-bottom 35px
+	&__top
+		display flex
+		padding 15px 0
+		background: $selectLight
+		padding: 20px
+		margin-bottom 10px
+		@media $phone
+			flex-direction column
+	&__top .b-field--search
+		@media $phone
+			width 100%
+	&__column
+		display flex
+		align-items center
+		justify-content: space-between
+		flex: 0 0 100%
+		max-width: 100%
+		@media $desktop
+			flex-wrap: wrap
+		@media $phone
+			margin-top 10px
+			flex-wrap wrap
+		.b-field--search
+			flex: 0 0 50%
+			max-width: 50%
+			@media $desktop
+				flex: 0 0 100%
+				max-width: 100%
+
+	&__column-item
+		font-family $MuseocyrM
+		font-size 16px
+		margin 0 3px
+		color $baseFont
+	&__column-index
+		flex: 0 0 50%
+		max-width: 50%
+		display: flex
+		justify-content: space-between
+		padding-left 20px
+		a
+			display: block
+			@media $phone
+				text-align: center
+				margin-bottom: 15px
+		@media $desktop
+			padding-left 0
+			margin-top 15px
+			flex: 0 0 100%
+			max-width: 100%
+		@media $phone
+			font-size 15px
+			line-height 20px
+			column-count: 4
+			display: block
+		&:hover
+			color $orange
+	&__title
+		font-family $MuseocyrM
+		font-size 16px
+	&__list
+		display flex
+		flex-wrap wrap
+		flex-direction: column
+	&__item
+		font-size 16px
+		line-height 23px
+		color $baseFont
+		padding 5px 15px 5px 0
+		@media $phone
+			line-height inherit
+			padding 3px 5px 3px 0
+		&:hover
+			color $orange
+	.b-field__wrapper
+		background: $white
+		border: 0

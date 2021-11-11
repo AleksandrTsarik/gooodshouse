@@ -1,0 +1,45 @@
+-
+	var gProducts = [{
+			image:'/f/img/content/promo-2.jpg',
+			title:'Премьера бренда Smart Solution!'
+		},{
+			image:'/f/img/content/promo-3.jpg',
+			title:'Коллекция посуды бренда Repast Lifestyle!'
+		},{
+			image:'/f/img/content/promo-4.jpg',
+			title:'Киберпятница скидка 20%!'
+		},{
+			image:'/f/img/content/promo-2.jpg',
+			title:'Премьера бренда Smart Solution!'
+		},{
+			image:'/f/img/content/promo-3.jpg',
+			title:'Коллекция посуды бренда Repast Lifestyle!'
+		},{
+			image:'/f/img/content/promo-4.jpg',
+			title:'Киберпятница скидка 20%!'
+		},{
+			image:'/f/img/content/promo-2.jpg',
+			title:'Премьера бренда Smart Solution!'
+		},{
+			image:'/f/img/content/promo-3.jpg',
+			title:'Коллекция посуды бренда Repast Lifestyle!'
+		},{
+			image:'/f/img/content/promo-4.jpg',
+			title:'Киберпятница скидка 20%!'
+		},{
+			image:'/f/img/content/promo-2.jpg',
+			title:'Премьера бренда Smart Solution!'
+		},{
+			image:'/f/img/content/promo-3.jpg',
+			title:'Коллекция посуды бренда Repast Lifestyle!'
+		},{
+			image:'/f/img/content/promo-4.jpg',
+			title:'Киберпятница скидка 20%!'
+		},
+		]
+-;
+section.b-promo-list
+	a(href="#")
+		each item in gProducts
+			.b-promo-list__item
+				+promoCard(item)

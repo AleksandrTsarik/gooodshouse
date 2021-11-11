@@ -1,0 +1,152 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Оформление заказа';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'oформление заказа', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title.page-container__title-order Оформление заказа 
+		.b-order
+			.content-wrapper
+				.b-order__wrapper
+					.b-order__row
+						.b-order__column
+							.b-order-step
+								.b-order-step__wrapper.b-order-step-strip
+									.b-order-step__error
+										.b-order-step__error-img
+											img(src="/f/img/ico-error.svg ", alt="")
+										.b-order-step__error-text
+											| Ошибка: не выбран магазин
+							.b-order-step
+								.b-order-step__wrapper
+									.b-order-step__title 1. Товары в заказе
+									.b-order-step__controls.b-order-step-controls
+										.b-order-step-controls__checkbox
+											label.b-order-step-controls__label
+												input.b-order-step-controls__input.js-order-control-input(type="checkbox", name="")
+												| Выбрать все
+												span.b-order-step-controls__check
+											.b-order-step-controls__link
+												a(href="#") Удалить выбранные 
+									.b-order-step__goods
+										//-.is-blocked
+										include _blocks/order-list
+									.b-order-step__controls
+										.btn.btn--large.b-order-step__button Подтвердить заказ
+										.b-order-step__legend Нажимая на&nbsp;кнопку &laquo;Подтвердить заказ&raquo;, Вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями&nbsp;оферты</a> и&nbsp;политикой конфендециальности
+							.b-order-step
+								.b-order-step__wrapper
+									.b-order-step__title 2. Регион доставки
+										.b-order-delivery
+											form(action="")
+												label.b-order-delivery__label(for="")
+													input.b-order-delivery__input(type="text" placholder="Регион доставки")  
+													span.b-order-delivery__ico
+														.b-basket-item__clear.js-clear-input
+							.b-order-step
+								.b-order-step__wrapper.js-delivery
+									.b-order-step__title 3. Способ доставки
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											+formField({type:'radio', mode:'radio',class:'js-delivery-type',name:'delivery',options:[ 'Самовывоз','Курьером']})
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											.b-order-step__block(data-type="1").is-show.js-delivery-option
+											.b-order-step__block(data-type="2").js-delivery-option
+												.b-order-step__block-title Доставка курьером по&nbsp;России
+												.b-order-step__row
+													.b-order-step__column.b-order-step__datepiker.b-order-step--st
+														+formField({type:'datepicker', mode:'date',placeholder:''})
+													.b-order-step__column.b-order-step--st
+														.b-catalog-sort__box.b-order-step__time-choice
+															+field({type:'select', mode:'sort', name: '', options:[
+																{value:'', option:'с 10:00 по 14:00'},
+																{value:'', option:' с 14:00 по 18:00'},
+																{value:'', option:' с 18:00 по 22:00'},
+															]})
+
+
+							.b-order-step
+								.b-order-step__wrapper
+									.b-order-step__title 4. Способ оплаты
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column--x2
+											+formField({type:'radio', mode:'radio',name:'payment',options:['Онлайн предоплата по&nbsp;банковской карте']})
+
+							.b-order-step.js-val-container
+								.b-order-step__wrapper
+									.b-order-step__title 5. Данные покупателя
+									.b-order-step__row
+										.b-order-step__column
+											+formField({type:'input', mode:'name required', placeholder:'Имя*'})
+										.b-order-step__column
+											+formField({type:'input', mode:'name required', placeholder:'Фамилия*'})
+									.b-order-step__row
+										.b-order-step__column
+											+formField({type:'input', mode:'email required', placeholder:'E-mail*', error:'Неверный формат'})
+										.b-order-step__column
+											+formField({type:'input', mode:'phone js-phone-mask', placeholder:'Телефон'})
+									.b-order-step__row
+										.b-order-step__column.b-order-step__column-textarea
+											+formField({type:'textarea', mode:'', placeholder:'коментарии к заказу'})
+									.b-order-step__row
+										.b-order-step__btn
+											button(type="submit") Оформить заказ
+
+						.b-order__column
+							.b-order-result
+								.b-order-result__wrapper
+									.b-order-result__table
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__subtitle Стоимость товаров
+											.b-order-result__column
+												.b-order-result__subtitle-desc.js-basket-sum
+													span.b-price_rub o
+													| 10 680
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__subtitle Скидка:
+											.b-order-result__column
+												.b-order-result__subtitle-desc.js-basket-discount
+													span.b-price_rub o
+													| 500
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__subtitle Доставка:
+											.b-order-result__column
+												.b-order-result__subtitle-desc.js-basket-discount
+													span.b-price_rub o
+													| 500
+										.b-order-result__row
+											.b-order-result__column
+												.b-order-result__title Итого:
+											.b-order-result__column
+												.b-order-result__title.js-basket-sum
+													span.b-price_rub o
+													| 11 180
+										.b-order-result__row
+											.b-order-result__column
+												form
+													.b-order-result__form
+														label.b-order-radio__label
+															input.b-order-radio__input(type="radio", name="choice-order")
+															| Промокод
+															span.b-order-radio__check
+																span.b-order-radio__check-inner
+														label.b-order-radio__label
+															input.b-order-radio__input(type="radio", name="choice-order")
+															| Бонусы
+															span.b-order-radio__check
+																span.b-order-radio__check-inner
+									.btn.btn--large.b-order-result__button Оформить заказ
+									.b-order-result__label Нажимая на&nbsp;кнопку &laquo;Подтвердить заказ&raquo;, Вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a> и&nbsp;политикой конфендециальности
+
+
+

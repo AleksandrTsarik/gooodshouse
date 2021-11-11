@@ -1,0 +1,586 @@
+.header
+	position fixed
+	top 0
+	width: 100%
+	z-index: 5
+	&__top
+		position fixed
+		top 0
+		left 0
+		right 0
+		z-index 12
+		background $backBackground
+		height 40px
+	&__bottom
+		padding 47px 0 6px
+		background $baseBackground
+		transition: padding 0.2s linear
+		@media $tablet
+			padding: 0
+		.header__logo
+			@media $tablet
+				display: none
+	&__top-wrapper
+		display flex
+	&__row
+		display flex
+		justify-content space-between
+		align-items center
+		height 88px
+		position relative
+		transition: height 0.2s linear
+		@media $tablet
+			height auto
+	&__logo
+		flex none
+		transition: height 0.2s linear
+		@media $tablet
+			height: 30px
+			flex-grow: 1
+	&__menu
+		display: flex
+		@media $tablet
+			position fixed
+			top 40px
+			left -265px
+			// display none
+			box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+			background $backBackground
+			border-top 1px solid $backFont
+			width: 265px
+			height: calc(100vh - 40px)
+			overflow-y scroll
+			transition: left 0.2s linear
+	&__menu-shadow
+		display: none
+		@media $tablet
+			position fixed
+			top 40px
+			right: 0
+			width: calc(100vw - 265px)
+			height: calc(100vh - 40px)
+			cursor: pointer
+	&__menu-phone
+		display: none
+		@media $tablet
+			display: block
+			color $baseFont
+			font-weight: 600
+			padding: 10px 20px
+			border-bottom 1px solid $backFont
+		@media $phone
+			padding: 10px 15px
+			font-size: 12px
+	&__menu-links
+		display: none
+		@media $tablet
+			display: block
+			//border-top 1px solid $backFont
+			padding-bottom: 30px
+			padding-top 10px
+	&__menu-links-item
+		@media $tablet
+			display: block
+			padding: 5px 20px
+			font-size: 12px
+			color $baseFont
+		@media $phone
+			padding: 10px 15px
+			font-size: 12px
+	&__search
+		position: absolute
+		z-index: 1
+		background: $baseBackground
+		top 0
+		left 0
+		width: 100%
+		max-height: 0
+		overflow: hidden
+		transition: max-height 0.4s linear
+		@media $tablet
+			position: fixed
+			top 40px
+	&__menu-wrapper
+		.header__menu-list
+			display flex
+			justify-content flex-end
+			flex-wrap: wrap
+			max-width 1328px
+			margin 0 auto
+			@media $tablet
+				flex-direction: column
+	&-menu__item
+		
+		.header__menu-item--blue
+			color: $blue
+			font-size: 14px
+			&:hover
+				color: $blue
+			@media $tablet
+				font-weight 600
+		@media $tablet
+			font-weight 600
+			position: relative
+			border-bottom: solid 1px $backFont
+			// &:last-child
+			// 	border-bottom none
+		&-link
+			position: relative
+			display inline-block
+			vertical-align top
+			font-family $MuseoM
+			text-transform uppercase
+			font-size 13px
+			line-height 1.8
+			color $baseFont
+			padding 5px 0 5px 63px
+			transition color 0.2s
+			white-space: nowrap
+			@media $desktop 
+				padding 5px 0 5px 30px
+			@media $tablet
+				//display: block
+				padding: 10px 20px
+				position: static
+			@media $phone
+				padding: 10px 15px
+				font-size: 11px
+			&.is-active
+				color $hoverFont
+				@media $tablet
+					position: relative
+				&:before
+					@media $tablet
+						content ''
+						position: absolute
+						pointer-events: none
+						top -1px
+						left 0
+						width: 100%
+						height: calc(100% + 2px)
+						border-bottom 1px solid $backFont
+						border-top 1px solid $backFont
+				&:hover
+					color $hoverFont
+			&:hover
+				color $hoverFont
+				@media $tablet
+					color inherit
+.header-menu__item.is-open .header-menu__drop
+	display: flex
+.header-menu__item
+	&:hover .header-menu__drop
+		display: flex
+	.catalog-block--open
+		display: none
+		font-size: 20px
+		top: 20px
+		right: 13px
+		font-weight 500
+		@media $tablet
+			display: block
+.header-menu__sub-item.is-open .header-menu__subsub
+	display: block
+.header-menu__sub-item.is-open .header-menu__sub-link
+	color: $blue
+.header-menu__drop
+	position: absolute
+	position: fixed
+	top: 141px
+	left: 0
+	right: 0	
+	z-index: 999
+	display: flex
+	flex-wrap: wrap
+	background: $white
+	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25)
+	padding: 30px 0
+	width: 100%
+	border-top: 2px solid $backBackground
+	display: none
+	@media $tablet
+		position: absolute
+		top: 100%
+		background: $backBackground
+		box-shadow: none
+		padding: 0
+.header__menu		
+	.header__menu-list
+		.header-menu__drop
+			@media $tablet
+				display: none
+.header__menu .is-open .header-menu__drop 
+	display: flex
+	position: static	
+.header-menu
+	&__overlay
+		opacity 0
+		position: absolute
+		left: 0
+		top: calc(0px - 40px)
+		width: 100%
+		height: 40px
+		@media $tablet
+			display: none
+	&__sub-item
+		font-size: 14px
+		//margin-bottom 20px
+		color: $baseFont
+		flex:  0 0 25%
+		max-width: 25%
+		white-space: nowrap
+		position: relative
+		@media $tablet
+			flex:  0 0 100%
+			max-width: 100%
+			white-space: normal
+			margin-bottom 20px
+		&.is-open
+			.header-menu__sub-link--open::after
+				content: '-'	
+		&:last-child
+			@media $tablet
+				margin-bottom 15px
+		@media $tablet
+			flex:  0 0 auto
+			max-width: auto
+			padding-left 10px
+			//line-height: 36px
+	&__sub-link
+		color: $baseFont
+		font-weight 700
+		position: relative
+		margin-right: 25px
+		&--open
+			display: none
+			position: absolute
+			top: 7px
+			top: 3px
+			right: -6px
+			margin-top: -7px
+			font-size: 20px
+			font-weight 500
+			@media $tablet
+				display: block			
+			&::after
+				content: '+'
+				display: inline-block
+				position: absolute
+				top: 0px
+				right: 0
+				cursor: pointer
+	&__subsub
+		display: flex
+		flex-direction: column
+		padding-top 5px
+		line-height: 26px
+		@media $tablet
+			padding-left 15px
+			display: none
+	&__subsub-link
+		color: $baseFont
+		transition: 0.3s
+		font-weight 500
+		&:hover
+			color: $linkFont
+.js-header.is-fixed .header-menu__overlay
+	height: 10px
+	top: -10px
+	@media $tablet
+		display: none
+.js-header.is-fixed .header-menu__drop
+	top: 80px
+.header-menu__sub
+	display: flex
+	width: 100%
+	max-width: 1328px
+	padding: 0 40px
+	margin: 0 auto
+	flex-wrap: wrap
+	@media $tablet
+		flex-direction: column
+		padding: 0 20px 0
+	&-alphabet
+		color: $linkFon
+		font-size: 16px
+		font-weight 700
+		padding: 3px 10px 3px 0
+	&-brands
+		display: block
+		color: $baseFont
+		line-height: 28px
+		transition: 0.2s
+		&:hover
+			color: $linkFont
+.header-menu__link-next
+	margin-bottom 15px
+	transition: 0.1s
+	&:hover
+		font-weight 600
+	@media $tablet
+		display: none
+.header-menu__brends-box
+	column-count: 4
+	display: block
+	margin-top 13px
+.b-header-tabs
+	display flex
+	@media $phone
+		display none
+	&__item
+		width 40px
+		height 40px
+		border-left 1px solid $backFont
+		cursor pointer
+		background none no-repeat center center
+		transition background 0.2s
+		&:hover
+			background-color $white
+		&--goodshouse
+			background-image url('../img/icon-goodshouse.svg')
+		&--hamleys
+			background-image url('../img/icon-hamleys.svg')
+		&--cookhouse
+			background-image url('../img/icon-cookhouse.svg')
+		&.is-active,&.is-active:hover
+			background-color $white
+			cursor default
+		&:last-child
+			border-right 1px solid $backFont
+
+.b-header-menu
+	width: 100%
+	&__desktop
+		display flex
+		align-items center
+		@media $tablet
+			display: none
+	&__mobile
+		display: none
+		@media $tablet
+			display: flex
+			height: 40px
+			align-items: center
+			position relative
+	&__links
+		display flex
+		justify-content: center
+		align-items center
+		padding-right 10px
+		flex-grow: 1
+		@media $tablet
+			display none
+	&__item
+		font-family $MuseoM
+		font-size 12px
+		line-height 1.17
+		height 40px
+		padding 0 17px
+		color $baseFont
+		text-align center
+		transition color 0.2s
+		display flex
+		align-items center
+		justify-content center
+		text-transform: uppercase
+		&:hover
+			background $white
+		& a
+			color $baseFont
+			&:hover
+				color $linkFont
+	&__phone
+		font-family $MuseocyrM
+		font-size 16px
+		line-height 1
+		color $baseFont
+		font-weight: 600
+		flex-grow: 1
+		@media $tablet
+			padding-left 40px
+	&__mobile-btn
+		position relative
+		width 19px
+		height 19px
+		margin-right: 5px
+		align-items center
+		cursor pointer
+		display none
+		@media $tablet
+			display flex
+		span
+			position relative
+			display block
+			width 19px
+			height 2px
+			background $baseFont
+			transition background 0.2s, transform 0.2s
+			&:after, &:before
+				content ''
+				position absolute
+				left 0
+				right 0
+				top -6px
+				height 2px
+				background $baseFont
+				transition transform 0.2s
+			&:before
+				top auto
+				bottom -7px
+
+.header.is-fixed
+	.header
+		&__logo
+			height: 0
+			@media $tablet
+				height: 30px
+		&__row
+			height 40px
+			@media $tablet
+				height auto
+		&__bottom
+			padding: 40px 0 0
+			box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+			@media $tablet
+				padding: 0
+				box-shadow: none
+		&__search
+			box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+		&__top
+			@media $tablet
+				box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+.header.is-search-opened
+	.header
+		&__search
+			max-height: 100vh
+		&__top
+			box-shadow: none
+.header.is-open
+	.b-header-menu__mobile-btn span
+		background transparent
+		&:after
+			transform rotate(45deg)
+			top 0
+		&:before
+			transform rotate(-45deg)
+			bottom 0
+	.header
+		&__menu
+			left 0px
+			.header__menu-wrapper
+				display block
+		&__menu-shadow
+			display: block
+		&__top
+			box-shadow: none
+.header__menu ///!!!!!!!!!!!!!!!!!!!----
+	@media $tablet
+		display: flex
+		flex-direction: column
+
+.b-user-action
+	display flex
+	margin-right -9px
+	@media $phone
+		margin-right -4px
+	&__item
+		position relative
+		width 40px
+		height 40px
+		cursor pointer
+		background none no-repeat center center
+		transition background 0.2s
+		&:hover
+			background-color $white
+			@media $phone
+				background-color transparent
+		&--basket
+			background-image url('../img/icon-basket.svg')
+		&--profile
+			background-image url('../img/icon-profile.svg')
+		&--search
+			background-image url('../img/icon-search.svg')
+			@media $tablet
+				margin-right: 16px
+		&--favorite
+			background-image  url('../img/icon-favorite-hover.svg')
+			@media $phone
+				display none
+	&__item-counter
+		position absolute
+		right 5px
+		bottom 6px
+		width 15px
+		height 15px
+		background $blue
+		border-radius 50%
+		font-family $MuseoM
+		font-size 10px
+		line-height 15px
+		text-align center
+		color $white
+		@media $phone
+			bottom 8px
+
+.search
+	@media $tablet
+		box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+	&__wrapper
+		padding: 21px 17px 21px 36px;
+		@media $tablet
+			padding: 20px;
+			box-shadow 0px 4px 10px rgba(0, 0, 0, 0.15)
+		@media $phone
+			padding: 15px;
+	&__top
+		display: flex
+		.b-field--search
+			flex-grow 1
+	&__close
+		margin-left: 17px
+		@media $phone
+			display: none
+	&__results
+		margin-top: 14px
+		display: flex
+	&__results-list
+		padding: 0 20px 0 40px
+		width: 22.8%;
+		flex none
+		@media $tablet
+			width: 35%;
+		@media $phone
+			width: 100%
+			padding: 0 0 0 40px
+			max-height: calc(100vh - 180px)
+			overflow-y: scroll
+	&__results-item
+		display: block
+		color $baseFont
+		font-size: 14px
+		margin-bottom: 7px
+		&:last-child
+			margin-bottom: 0
+		&:hover
+			color $linkFont
+	&__results-coincidence
+		font-weight: 600
+	&__results-products
+		@media $tablet
+			overflow-x: scroll
+		@media $phone
+			display: none
+	&__results-products-list
+		display: flex
+		margin-top: 10px
+		padding-right: 137px
+		@media $tablet
+			padding-right: 0
+	&__results-products-item
+		width: 25%
+		padding-left: 17px
+		@media $tablet
+			padding-left: 10px
+			width: 180px
+			min-width: 180px
+

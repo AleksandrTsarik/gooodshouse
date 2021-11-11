@@ -1,0 +1,69 @@
+-
+	var basketList = [{
+			image:'/f/img/content/pic-8.png',
+			subtitle:'BERNARDOTTE',
+			title:'Доска разделочная торцевая TeakHaus Butcher Block с&nbsp;желобом для сока 61&times;46&nbsp;см',
+			article:'0003190/NW',
+			count:'1',
+			oldprice:'2 800',
+			price:'2 240',
+			oldPriceItem: '2800',
+			priceItem:'2240',
+			favorite:'1',
+			promo:'sale',
+			promoTitle:'-20%'
+		},{
+			image:'/f/img/content/pic-9.png',
+			subtitle:'BERNARDOTTE',
+			title:'Доска сервировочная круглая TeakHaus Specialty 83&nbsp;см',
+			article:'CKH-TH901',
+			count:'1',
+			price:'2 490',
+			priceItem:'2490',
+		},{
+			image:'/f/img/content/pic-10.png',
+			subtitle:'BERNARDOTTE',
+			title:'Противень разьемный с&nbsp;антипригарным покрытием Termico 24&nbsp;см',
+			article:'CKH-220487',
+			count:'1',
+			oldprice:'120 800',
+			price:'60 400',
+			oldPriceItem: '120800',
+			priceItem:'60400',
+			promo:'sale',
+			promoTitle:'-50%'
+		}
+	]
+-;
+.b-basket-list
+	.b-basket-list__empty.js-basket-empty Корзина пуста
+	each item in basketList
+		.b-basket-item.js-basket
+			.b-basket-item__row
+				.b-basket-item__column
+					.b-basket-item__image
+						img(src="" + item.image alt="")
+						if item.promo
+							.b-basket-item__promo(class="b-basket-item__promo--" + item.promo)!= item.promoTitle
+						.b-basket-item__favorite(class="" + (item.favorite?'is-active':''))
+				.b-basket-item__column
+					.b-basket-item__subtitle!= item.subtitle
+					.b-basket-item__title!= item.title
+					.b-basket-item__article Артикул #{item.article}
+				.b-basket-item__column
+					.b-basket-item__counter.js-counter(data-price = '' + item.priceItem data-oldprice = '' + 
+					(item.oldPriceItem?item.oldPriceItem:item.priceItem))
+						span.b-basket-item__counter-minus.js-counter-minus.is-disabled
+						input.b-basket-item__counter-input.js-counter-count(type="text" value="" + item.count)
+						span.b-basket-item__counter-plus.js-counter-plus
+				.b-basket-item__column
+					if item.oldprice
+						.b-basket-item__oldprice.js-basket-oldprice!= item.oldprice
+							span.b-price_rub o
+					.b-basket-item__price.js-basket-price!= item.price
+						span.b-price_rub o
+				.b-basket-item__column
+					.b-basket-item__clear.js-basket-remove
+
+
+

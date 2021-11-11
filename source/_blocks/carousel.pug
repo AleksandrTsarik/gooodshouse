@@ -1,0 +1,25 @@
+section.b-carousel
+	.b-carousel__wrapper.js-main-carousel
+		-
+			var slides = [
+				{
+					img: '/f/img/carousel/img.jpg',
+					title: 'Kitchen Craft',
+					text: 'Британская компания Kitchen Craft была создана почти 170 лет назад как небольшой семейный бизнес,  а сейчас ее продукцию знают во всем мире. Производитель поставляет более 4000 наименований кухонной и домашней утвари по всей Великобритании и в 80 других стран, а в каждой английской семье есть как минимум один предмет этой фирмы.'
+				},
+				{
+					img: '/f/img/carousel/img.jpg',
+					title: 'Kitchen Craft',
+					text: 'Британская компания Kitchen Craft была создана почти 170 лет назад как небольшой семейный бизнес,  а сейчас ее продукцию знают во всем мире. Производитель поставляет более 4000 наименований кухонной и домашней утвари по всей Великобритании и в 80 других стран, а в каждой английской семье есть как минимум один предмет этой фирмы.'
+				},
+			]
+		each item in slides
+			.b-carousel__slide
+				.b-carousel__slide-back
+					.b-carousel__img(style='background-image: url('+item.img+')')
+				.b-carousel__slide-wrapper
+					.content-wrapper.content-wrapper--vh
+						.b-carousel__layout
+							.b-carousel__title !{item.title}
+							.b-carousel__desc !{item.text}
+							a.btn.b-carousel__button(href="#") Подробнее

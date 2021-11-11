@@ -1,0 +1,112 @@
+-
+	var orderList = [{
+			image:'/f/img/content/pic8-m.png',
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			article:'0003190/NW',
+			count:'1',
+			oldprice:'2 800',
+			price:'2 240',
+			oldPriceItem: '2800',
+			priceItem:'2240',
+			favorite:'1',
+			promo:'sale',
+			promoTitle:'-20%',
+			inShop: 'в наличии: в 5 магазинах',
+			delivery: 'доставка курьером'
+		},{
+			image:'/f/img/content/pic-12.png',
+			subtitle:'BERNARDOTTE',
+			title:'Доска сервировочная круглая TeakHaus Specialty 83 см',
+			article:'CKH-TH901',
+			count:'1',
+			price:'2 490',
+			priceItem:'2490',
+			inShop: 'в наличии: в 5 магазинах',
+			disabled: true,
+		},{
+			image:'/f/img/content/pic8-m.png',
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			article:'0003190/NW',
+			count:'1',
+			oldprice:'2 800',
+			price:'2 240',
+			oldPriceItem: '2800',
+			priceItem:'2240',
+			favorite:'1',
+			promo:'sale',
+			promoTitle:'-20%',
+			delivery: 'доставка курьером'
+		},{
+			image:'/f/img/content/pic8-m.png',
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			article:'0003190/NW',
+			count:'1',
+			oldprice:'2 800',
+			price:'2 240',
+			oldPriceItem: '2800',
+			priceItem:'2240',
+			favorite:'1',
+			promo:'sale',
+			promoTitle:'-20%',
+			delivery: 'доставка курьером',
+		}
+	]
+-;
+.b-order-list
+	each item in orderList
+		.b-order-item(class=item.disabled?'b-order-item--disabled':'')
+			.b-order-item__row
+				.b-order-item__column
+					
+					if item.disabled
+						.b-order-item__image
+							img(src="" + item.image alt="")
+					else
+						label.b-order-item__label
+							input.b-order-item__input.js-order-input(type="checkbox", name="checkbox")
+							span.b-order-item__check
+							.b-order-item__image
+								img(src="" + item.image alt="")
+					//- if item.promo
+					//- 	.b-basket-item__promo(class="b-basket-item__promo--" + item.promo)!= item.promoTitle
+					.b-basket-item__favorite(class="" + (item.favorite?'is-active':''))
+					//- .b-order__cross.b-order__cross--mobile.js-remove
+				.b-order-item__column
+					.b-order-item__subtitle!= item.subtitle
+					.b-order-item__title!= item.title
+					.b-order-item__article #{item.article}
+				.b-order-item__column
+					if item.disabled
+						.b-order-item--disabled
+							.b-order-item__counter
+								button(disabled).b-order-item__counter-btn -
+								label.b-order-item__counter-label
+									input.b-order-item__counter-input(type="tel" value="" + item.count disabled)
+								button(disabled).b-order-item__counter-btn +
+					else 
+						.b-order-item__counter
+							button(disabled).b-order-item__counter-btn -
+							label.b-order-item__counter-label
+								input.b-order-item__counter-input(type="tel" value="" + item.count)
+							button.b-order-item__counter-btn +
+				.b-order-item__column
+					.b-order-item__price--pos
+						.b-order-item__price-block
+							.b-order-item__price.js-basket-price!= item.price
+								span.b-price_rub o
+							if item.oldprice
+								.b-order-item__oldprice.js-basket-oldprice!= item.oldprice
+									span.b-price_rub o
+						if item.inShop
+							.b-order-item__shop !{item.inShop}
+						if item.delivery
+							.b-order-item__delivery !{item.delivery}
+				.b-order-item__column
+					if item.disabled
+					else 
+						span.b-order__cross.js-remove
+
+

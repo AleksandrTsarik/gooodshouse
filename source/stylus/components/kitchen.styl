@@ -1,0 +1,205 @@
+.b-kitchen
+	&__wrapper
+		padding 0
+	&__block
+		max-width 826px
+		margin 0 auto
+		padding 48px 0 0
+		@media $phone
+			padding 36px 0 0
+	&__image
+		font-size 0
+		line-height 1
+		img
+			max-width 100%
+	&__title
+		text-transform uppercase
+		padding-bottom 24px
+		@media $phone
+			padding-bottom 16px
+	&__subtitle
+		font-family $MuseocyrM
+		font-size 22px
+		line-height 1.2
+		padding-bottom 17px
+		@media $phone
+			padding-bottom 15px
+	&__desc
+		font-size 16px
+		padding-bottom 33px
+		@media $phone
+			font-size 14px
+		p
+			padding-bottom 16px
+			&:last-child
+				padding-bottom 0
+	&__caption
+		font-family $MuseocyrM
+		font-size 18px
+		line-height 22px
+		padding 0 0 20px
+	&__list
+		padding 0 0 22px
+	&__list-item
+		position relative
+		font-size 16px
+		padding 3px 0 9px 17px
+		&:after
+			content ''
+			position absolute
+			left 0
+			top 13px
+			width 6px
+			height 6px
+			border-radius 50%
+			background $linkFont
+	&__legend
+		font-style italic
+		font-size 16px
+		padding-bottom 31px
+		@media $phone
+			font-size 14px
+	&__steps
+		padding 5px 0 0
+		border-bottom 1px solid $backFont
+	&__step
+		border-top 1px solid $backFont
+	&__step-title
+		position relative
+		font-family $MuseocyrM
+		padding 24px 26px 20px 0
+		font-size 16px
+		line-height 1.2
+		cursor pointer
+		&:after
+			content ''
+			position absolute
+			right 2px
+			top calc(50% - 1px)
+			width 19px
+			height 1px
+			background #B9B0A8
+		&:before
+			content ''
+			position absolute
+			right 11px
+			top calc(50% - 10px)
+			width 1px
+			height 19px
+			background #B9B0A8
+	&__step-block
+		display none
+		padding 6px 0 0
+	&__step-image
+		font-size 0
+		line-height 1
+		padding-bottom 38px
+		img
+			max-width 100%
+	&__step-desc
+		font-size 16px
+		padding-bottom 23px
+		p
+			padding-bottom 24px
+			&:last-child
+				padding-bottom 0
+	&__step-hidden
+		display none
+	&__step-more
+		font-size 14px
+		color $linkFont
+		border-bottom 1px dashed $linkFont
+		cursor pointer
+
+
+	&__step.is-open &__step-block
+		display block
+	&__step.is-open &__step-title:after,
+	&__step.is-open &__step-title:before
+		transform rotate(45deg)
+
+.b-recipe
+	padding-bottom 40px
+	&__wrapper
+		padding 0
+		background #F5F0EC
+	&__image
+		//height 480px
+		font-size 0
+		line-height 1
+		img
+			max-width 100%
+	&__list
+		display flex
+		padding 0 30px
+		@media $phone
+			flex-direction column
+	&__item
+		padding 5px 70px 0 70px
+		height 118px
+		display flex
+		flex-direction column
+		justify-content center
+		@media $phone
+			padding-right 0
+		&--timer
+			background url('../img/icon-timer.svg') no-repeat left center
+		&--person
+			background url('../img/icon-person.svg') no-repeat 3px center
+	&__desc
+		font-size 16px
+		line-height 1.5
+	&__title
+		font-family $MuseocyrM
+		font-size 24px
+		line-height 1.2
+
+.b-recipes
+	&__wrapper
+		padding 50px 0 90px
+		@media $tablet
+			padding 50px 0
+	&__title
+		font-family $MuseocyrM
+		font-size 24px
+		line-height 1.2
+		max-width 826px
+		margin 0 auto
+		padding-bottom 37px
+	&__block
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		@media $phone
+			margin 0 -5px
+	&__item
+		width 32.3333%
+		padding-bottom 32px
+		@media $tablet
+			width 49%
+		@media $phone
+			width calc(50% - 10px)
+			//min-width 200px
+			margin 0 5px
+		@media $phoneS
+			width calc(100% - 10px)
+	&__item-image
+		font-size 0
+		line-height 1
+		margin-bottom 20px
+		border-radius 6px
+		overflow hidden
+		@media $tablet
+			margin-bottom 15px
+		img
+			max-width 100%
+			width 100%
+	&__item-title
+		font-size 18px
+		line-height 1.35
+		@media $tablet
+			font-size 16px
+		@media $phone
+			font-size 14px
+
+

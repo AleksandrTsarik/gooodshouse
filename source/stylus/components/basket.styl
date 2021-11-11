@@ -1,0 +1,186 @@
+.b-basket
+	.page-catalog__offer
+		margin-top 0
+	.btn
+		background: $linkFont
+		color: $white
+		font-size: 18px
+		line-height: 0
+		height: 0
+		padding: 24px 0
+		transition: 0.2s
+		text-transform: lowercase
+		&:hover
+			background: lighten($linkFont, 18%)
+
+	&__wrapper
+		padding 10px 0 120px
+		@media $tablet
+			padding-bottom 0
+	&__row
+		display flex
+		justify-content space-between
+		@media $tablet
+			flex-direction column
+	&__column
+		width 66%
+		@media $desktop
+			width 59%
+		@media $tablet
+			width 100%
+		&:nth-child(2)
+			width 32.5%
+			@media $desktop
+				width 37%
+			@media $tablet
+				width 100%
+	&__controls
+		display flex
+		align-items center
+		margin-top 54px
+		@media $tablet
+			display none
+	&__button
+		width 310px
+		margin-right 55px
+	&__back
+		text-decoration underline
+		color $linkFont
+		&:hover
+			text-decoration none
+			color $hoverFont
+
+.b-basket-result
+	@media $tablet
+		padding-top 60px
+	@media $phoneS
+		margin: 0 -15px
+
+	&__wrapper
+		background $sub
+		padding 37px 32px
+		@media $tablet
+			display flex
+			// align-items flex-end
+			flex-direction column
+		@media $phone
+			display block
+			padding 20px 15px
+	&__table
+		display table
+		width 100%
+		padding-bottom 12px
+	&__row
+		display table-row
+	&__column
+		display table-cell
+		padding-bottom 22px
+		&:nth-child(1)
+			width 80%
+			@media $tablet
+				width (84.6% + 32px)
+	&__subtitle, &__subtitle-desc
+		font-family $MuseoM
+		font-size 16px
+		line-height 1.31
+		letter-spacing -0.015em
+	&__subtitle-desc
+		color $linkFont
+		white-space nowrap
+		padding-right 5px
+	&__title
+		font-family $MuseoR
+		font-weight bold
+		font-size 18px
+		line-height 1
+		letter-spacing -0.015em
+		padding-right 5px
+
+		@media $phone
+			font-size 18px
+		span
+			font-size 16px
+			font-weight normal
+			display block
+			padding-top 4px
+	&__title-desc
+		font-family $MuseoR
+		font-weight bold
+		font-size 18px
+		line-height 1
+		letter-spacing -0.015em
+		white-space nowrap
+		padding-right 5px
+		@media $phone
+			font-size 18px
+	&__promo-zone
+		padding-bottom 35px
+		@media $tablet
+			width 100%
+	&__button
+		width: 100%
+		@media $tablet
+			max-width: 300px
+		@media $phone
+			min-width 0
+	&__discount
+		font-size: 16px
+		margin-top 35px
+		a
+			margin-right 0.3em
+			text-transform: lowercase
+.b-promo-field
+	margin 12px 0
+	&__wrapper
+		position relative
+		border 1px solid $subBorder
+		padding 0 42px 0 12px
+	&__input
+		width 100%
+		line-height 42px
+		height 42px
+		font-size 13px
+		letter-spacing -0.015em
+		&::placeholder
+			color $subColor
+	&__button
+		position absolute
+		right 0
+		top 0
+		width 42px
+		height 42px
+		cursor pointer
+		&:before
+			content ''
+			position absolute
+			left 13px
+			top 20px
+			width 18px
+			height 2px
+			background $hoverFont
+		&:after
+			content ''
+			position absolute
+			left 26px
+			top 18px
+			width 6px
+			height 6px
+			border-right 2px solid $hoverFont
+			border-bottom 2px solid $hoverFont
+			transform rotate(-45deg)
+	&__label
+		font-size 13px
+		line-height 1.5
+		letter-spacing -0.015em
+		margin-top 12px
+
+.b-basket-list
+	&__empty
+		display none
+		font-size 16px
+		padding 5px
+		&.is-show
+			display block
+
+
+

@@ -1,0 +1,70 @@
+-
+	var OrdersList = [{
+		id:'0002124',
+		date:'25.12.2020',
+		user: 'Фёдоров Максим',
+		status: 'processed',
+		statusTitle: 'в&nbsp;обработке',
+		price: '12 320'
+	},{
+		id:'0002311',
+		date:'15.11.2020',
+		user: 'Фёдоров Максим',
+		status: 'canceled',
+		statusTitle: 'отменён',
+		price: '9 090'
+	},{
+		id:'0001902',
+		date:'02.09.2020',
+		user: 'Фёдоров Максим',
+		status: 'completed',
+		statusTitle: 'выполнен',
+		price: '10 900'
+	},{
+		id:'0001982',
+		date:'10.08.2020',
+		user: 'Константиновский Константин',
+		status: 'completed',
+		statusTitle: 'выполнен',
+		price: '21 400'
+	}]
+-;
+.b-orders
+	.b-orders__wrapper.js-profile-orders
+		.b-orders__row.b-orders__row--header
+			.b-orders__column Номер заказа
+			.b-orders__column Дата заказа
+			.b-orders__column Получатель
+			.b-orders__column Статус
+			.b-orders__column Сумма заказа
+		each item,index in OrdersList
+			.b-orders__row.js-profile-order(class="" + (index==2?'is-open':''))
+				.b-orders__column
+					.b-orders__title Номер заказа
+					span!= item.id
+				.b-orders__column
+					.b-orders__title Дата заказа
+					span!= item.date
+				.b-orders__column
+					.b-orders__title Получатель
+					span!= item.user
+				.b-orders__column
+					.b-orders__title Статус
+					span.b-orders__status(class="b-orders__status--" + item.status)!= item.statusTitle
+				.b-orders__column
+					.b-orders__title Сумма заказа
+					span.b-orders__price!= item.price
+						span.b-price_rub o
+			.b-orders__block.is-blocked
+				include basket-list
+				.b-orders__delivery
+					.b-orders__delivery-item
+						div Способ оплаты:
+						div Онлайн предоплата по банковской
+					.b-orders__delivery-item
+						div Доставка:
+						div Резервирование в магазине
+					.b-orders__delivery-item.b-orders__delivery-adress
+						div Адрес:
+						div
+							a(href="#")  г. Москва, Проспект Вернадского 86А, минус 1 этаж, м. «Юго-Западная»

@@ -1,0 +1,25 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Новости';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'/html/main.html'},
+			{title:'новости', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Новости
+			.b-news-block
+				.b-news-block__info
+					.b-news-block__name Британская компания Kitchen Craft
+					.b-news-block__offer Скидка&nbsp;25%&nbsp;на бренды&nbsp;Zwilling&nbsp;и Staub!
+					.b-news-block__details
+						a(href="/html/news-inner.html") Подробнее
+				.b-news-block__img
+
+			include _blocks/product-list-news
+			include _blocks/pagination
+
+

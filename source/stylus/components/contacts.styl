@@ -1,0 +1,91 @@
+.b-contacts
+	background url('../img/contacts/map.jpg') no-repeat center center
+	margin-top 6px
+	@media $tablet
+		background-position 62% center
+	@media $phone
+		background-position 72% -165px
+		margin-top 0
+	&__wrapper
+		padding 0
+	&__layout
+		padding 35px 0
+		@media $phone
+			padding 332px 0 0
+	&__block
+		font-family $MuseocyrR
+		background $white
+		font-size 16px
+		line-height 1.4
+		width 402px
+		padding 60px 35px 56px 48px
+		@media $phone
+			padding 42px 35px
+			width 100%
+			border-bottom 2px solid $backFont
+		span
+			font-size 14px
+		b
+			font-size 18px
+			display block
+		strong
+			font-size 16px
+			display block
+	&__item
+		position relative
+		padding 0 0 22px 58px
+		@media $phone
+			padding 4px 0 11px
+			text-align center
+		&--phone, &--mail, &--marker
+			@media $phone
+				padding 47px 0 11px
+		&:after
+			content ''
+			position absolute
+			left 0
+			top 6px
+			width 36px
+			height 36px
+			border-radius 50%
+			@media $phone
+				top 0
+				left 50%
+				transform translateX(-50%)
+		&--mail,&--marker
+			margin-top 16px
+			@media $phone
+				margin-top 19px
+		&--phone:after
+			background url('../img/contacts/icon-phone.svg') no-repeat center center $linkFont
+		&--mail:after
+			background url('../img/contacts/icon-mail.svg') no-repeat center center $baseFont
+		&--marker:after
+			background url('../img/contacts/icon-marker.svg') no-repeat center center $status_completed
+
+.b-contact
+	&__wrapper
+		// padding 75px 0
+		padding-bottom 75px
+		@media $phone
+			//padding 40px 0 52px
+			padding-bottom 40px
+	&__title
+		font-family $MuseocyrM
+		font-size 22px
+		line-height 1.2
+		padding-bottom 10px
+		@media $phone
+			padding-bottom 22px
+	&__row
+		display flex
+		padding-top 13px
+	&__column
+		min-width 100px
+		color: $baseFont
+		font-weight 500
+		&:first-child
+			font-weight 700
+			color $baseFont
+
+

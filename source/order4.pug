@@ -1,0 +1,26 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Оформление заказа';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'oформление заказа', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title.page-container__title-order Спасибо! Ваш заказ принят.
+		.b-order
+			form(action="") 
+				.content-wrapper
+					.b-order-finish
+						.b-order-finish__row
+							| Ваш заказ успешно оформлен. Мы свяжемся с вами в ближайше время.
+						.b-order-finish__row
+							| Номер вашего заказа <b>#10041</b>
+						.b-order-finish__row.b-order-finish__row-btn
+							.b-order-finish__btn.b-order-finish__btn-b
+								button Продолжить покупки
+							.b-order-finish__btn.b-order-finish__btn-bg
+								button Оплатить

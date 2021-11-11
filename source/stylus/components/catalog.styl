@@ -1,0 +1,720 @@
+.b-catalog
+	&__mobile
+		&__title
+			font-size: 24px
+			font-weight 700
+			color $baseFont
+			background $backBackground
+			margin: 0 -15px
+			padding: 12px 15px
+	@media $phone
+		background $white
+		position fixed
+		top 0
+		bottom 0
+		left 0
+		right 0
+		z-index 15
+		//padding 0 15px 50px
+		padding: 0
+		border-bottom none
+		overflow hidden
+		overflow-y scroll
+		display none
+		&.is-open
+			display block
+	&__wrapper
+		border-top 1px solid $backBackground
+		&:last-of-type
+			border-bottom: 1px solid $backBackground
+			padding 0
+			@media $phone
+				border:  0
+		@media $phone
+			border-top 1px solid $backBackground
+			border:  0
+		&__mobile-block
+			display: none
+			@media $phone
+				display block
+				margin-top 60px
+		&--other
+			@media $phone
+				height 77px
+				border-bottom none
+		&--mobile
+			display none
+			@media $phone
+				display block
+		&--mobile-controls
+			position fixed
+			left 0
+			right 0
+			z-index 15
+			display none
+			@media $phone
+				display flex
+			&-top
+				top: 0
+				position fixed
+				left 0
+				right 0
+				padding: 0 15px
+				//background: red
+			&-bottom
+				position fixed
+				left 0
+				right 0
+				bottom: 0
+				display: flex
+				background $white
+				padding: 10px 15px
+				//margin: 0 15px
+				box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.35)
+	&__close
+		position absolute
+		right 16px
+		top 19px
+		width 19px
+		height 19px
+		align-items center
+		cursor pointer
+		display flex
+		span
+			position relative
+			display block
+			width 19px
+			height 2px
+			&:after, &:before
+				content ''
+				position absolute
+				left 0
+				right 0
+				top 0
+				height 2px
+				background $brown
+				transform rotate(45deg)
+			&:before
+				transform rotate(-45deg)
+	&__menu
+		padding 14px 0
+		min-height 208px
+		@media $phone
+			min-height 0
+			display none
+	&__menu-item
+		display block
+		font-size 16px
+		line-height 1.5
+		padding 5px 0
+		a, a:active
+			color $baseFont
+			transition color 0.1s
+			&:hover
+				color $hoverFont
+	&__button
+		//height 29px
+		// border 1px solid $orange
+		// background $orange
+		background: $hoverFont
+		border-radius 3px
+		font-size 14px
+		//line-height 27px
+		padding 7px 15px
+		//margin-right 10px
+		text-align center
+		color $white
+		cursor pointer
+		//margin: 0 15px
+		width: 100%
+
+		&--white
+			border 1px solid $blue
+			background $white
+			color $blue
+	&__button + &__button
+		margin-left 10px
+	&-sort
+		&__clear
+			@media $phone
+				display none
+		@media $phone
+			display: none
+		&__box
+			margin-bottom 10px
+			margin-right 10px
+			@media $phone
+				margin-right 0
+				width: 100%
+				background: $white
+				border-bottom: solid 1px $backBackground
+				margin-bottom 0
+				&:first-child
+					margin-top 60px
+
+		&.is-open
+			display: block
+
+.b-catalog-filter
+	border-radius: 3px
+	background: $select
+	//margin-right 10px
+	@media $phone
+		padding: 0 15px
+		background: $white
+	&__title
+		position relative
+		line-height 1.5
+		text-transform lowercase
+		cursor pointer
+		font-size: 16px
+		padding: 3px 23px 3px 9px
+		color: $baseFont
+		@media $phone
+			font-size: 18px
+			font-weight 700
+			text-transform: uppercase
+		&--count
+			font-size: 12px
+		&--close
+			position: absolute
+			background-image: url('../img/icon-cross-white.svg')
+			background-position: center center
+			background-repeat: no-repeat
+			background-size: 100%
+			width: 9px
+			height: 9px
+			//background-color: #fff
+			right: 8px
+			top: 50%
+			transform: translateY(-50%)
+			display: none
+		&.is-active
+			background-color: $hoverFont
+			color: #fff
+			border-radius: 3px
+			@media $phone
+				color: $baseFont
+				border-radius: 0
+				background: $white
+			.b-catalog-filter__title--close
+				display: block
+			&::after
+				display: none
+			&.one-choice
+				.b-catalog-filter__title--count
+					font-size: 16px
+		@media $phone
+			padding 16px 24px 15px 0
+		&:after
+			content ''
+			background-image: url('../img/icon_select.svg')
+			background-position: center center
+			background-repeat: no-repeat
+			background-size: 100%
+			width: 10px
+			height: 20px
+			position absolute
+			right 8px
+			top 50%
+			transform: translateY(-50%)
+			font-weight normal
+			@media $phone
+				display: block
+				background: transparent
+				content: '+'
+				height: 12px
+				width: 12px
+				font-size: 18px
+				line-height: 12px
+	&__search
+		padding 1px 0 20px
+		@media $phone
+			//padding-bottom 15px
+			display: none
+	&__list
+		padding 9px 0
+		&--limit
+			max-height 334px
+			overflow hidden
+			overflow-y scroll
+			border-bottom 1px solid $backFont
+			@media $phone
+				margin-bottom 19px
+	&__button
+		background $gray
+		border-radius 5px
+		color $white
+		font-size 16px
+		line-height 40px
+		letter-spacing -0.015em
+		text-align center
+		//margin-top 37px
+		margin-top 10px
+		height 39px
+		cursor pointer
+		transition background 0.1s
+		@media $phone
+			display none
+		&:hover
+			background $hoverFont
+		&-clear
+			display: none
+			@media $phone
+				display: inline-block
+				border: solid 1px $hoverFont
+				background: $white
+				font-size: 14px
+				line-height: 14px
+				height: auto
+				padding: 7px 7px
+				transition: 0.3s
+				color: $hoverFont
+				border-radius: 5px
+				margin-bottom 20px
+				margin-top 5px
+				&:hover
+					background $hoverFont
+					color: $white
+	&__box
+		position: absolute
+		padding-bottom 39px
+		display none
+		z-index: 4
+		background: #fff
+		padding: 10px 30px
+		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15))
+		border-radius: 2px
+		min-width 200px
+		@media $phone
+			padding-bottom 19px
+			position: static
+			filter: none
+			padding: 0
+	&.is-open &__title:after
+		content ''
+		background-image: url('../img/icon_select.svg')
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: 100%
+		width: 10px
+		height: 20px
+		position absolute
+		right 8px
+		top 30%
+		transform: rotate(180deg)
+		font-weight normal
+		@media $phone
+			background-image: none
+			content: '-'
+			top: 50%
+			transform: translateY(-50%)
+			line-height: 21px
+			font-size: 21px
+
+	&.is-open &__box
+		display block
+
+.b-filter-price
+	max-width 290px
+	&__range
+		flex: 0 0 100%
+		max-width: 100%
+	&__wrapper
+		display flex
+		flex-wrap: wrap
+		align-items center
+		justify-content space-around
+		padding 2px 0 27px
+		border-bottom 1px solid $backFont
+		@media $phone
+			border-bottom none
+			padding-bottom 17px
+	&__column
+		display flex
+		align-items center
+		justify-content center
+	&__text
+		font-size 13px
+		line-height 24px
+		padding-right 8px
+		letter-spacing -0.015em
+		@media $desktop
+			padding-right 4px
+	&__rub
+		font-size 18px
+		line-height 24px
+		padding-left 6px
+		@media $desktop
+			font-size 16px
+			padding-left 4px
+	&__column:nth-child(1) &__input
+		width 79px
+		@media $desktop
+			width 67px
+		@media $phone
+			width 79px
+	&__column:nth-child(2) &__input
+		width 79px
+		@media $desktop
+			width 67px
+		@media $phone
+			width 79px
+
+.b-catalog-table
+	&__wrapper
+		display flex
+		justify-content flex-start
+		flex-wrap wrap
+		margin 0 -0.6666%
+		@media $tablet
+			margin 0 -0.5%
+	&__item
+		width 32%
+		margin 0 0.6666%
+		padding-bottom 2.5%
+		@media $tablet
+			width 49%
+			margin 0 0.5%
+			padding-bottom 2%
+		@media $phone
+			min-width 166px
+		@media $phoneS
+			min-width 0
+	&__controls
+		display flex
+		justify-content space-between
+		padding 13px 0
+	&__more
+		flex-grow 1
+		text-align center
+		padding-left 100px
+		@media $phone
+			padding-left 0
+		span
+			color $hoverFont
+			cursor pointer
+			font-size 16px
+			line-height 1.5
+			&:hover
+				text-decoration underline
+				@media $phone
+					text-decoration none
+	&__paginator
+		float right
+
+.b-paginator
+	&__wrapper
+		display flex
+		padding 0
+	&__pages
+		display flex
+		font-size 16px
+		line-height 24px
+		padding 0 23px
+		cursor default
+	&__current
+		position relative
+		padding-right 14px
+		&:after
+			content '/'
+			position absolute
+			right 4px
+			top 0
+	&__prev, &__next,
+	&__prev-first, &__next-last,
+		display block
+		position relative
+		width 12px
+		height 24px
+		cursor pointer
+		padding 0 13px
+		&:after, &:before
+			content ''
+			position absolute
+			left 7px
+			top 4px
+			width 15px
+			height 15px
+			border-left 2px solid $baseFont
+			border-bottom 2px solid $baseFont
+			transform rotate(45deg)
+		&.is-disabled
+			cursor default
+			&:after, &:before
+				border-color $backFont
+	&__next, &__next-last
+		&:after, &:before
+			transform rotate(225deg)
+			left auto
+			right 3px
+	&__prev-first:before
+		left 0px
+	&__next-last:before
+		left 1px
+.b-brand-preview
+	margin-top -50px
+	@media $phone
+		margin-top 0
+	&__wrapper
+		display flex
+		padding-bottom 93px
+		@media $phone
+			flex-direction column
+			padding-bottom 50px
+	&__column
+		width 210px
+		padding-right 40px
+		@media $phone
+			padding-right 0
+			width 100%
+		p
+			margin-bottom 20px
+		&:last-child
+			width calc(100% - 210px)
+			@media $phone
+				width 100%
+	&__logo
+		border 1px solid $backFont
+		width 170px
+		height 134px
+		display flex
+		justify-content center
+		align-items center
+		@media $phone
+			margin 0 auto 30px
+		img
+			max-width 100%
+			max-height 100%
+.page-catalog
+	display flex
+	@media $phone
+		flex-wrap: wrap
+	// &-filter
+	// 	margin 0 0 35px 0
+	.b-catalog-filter__title
+		font-weight: bold
+		font-size: 18px
+		text-transform: uppercase
+		color: $baseFont
+.page-catalog__aside
+	max-width 24%
+	flex 0 0 24%
+	@media $phone
+		max-width 100%
+		flex 0 0 100%
+.b-catalog-banner
+	height: 384px
+	background: #F7F5F4
+	display: flex
+	width: 100%
+	transition: .3s
+	margin-top 30px
+	position: relative
+	&:hover
+		box-shadow: 0 0 10px rgba(black, 0.2)inset
+	@media $phone
+		display: none
+	&__text
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		font-weight: bold
+		font-size: 36px
+		line-height: 34px
+		color: #FFFFFF
+.page-catalog__content
+	max-width 76%
+	flex 0 0 76%
+	@media $phone
+		max-width 100%
+		flex 0 0 100%
+	.content-wrapper
+		padding: 0
+		margin-left: 10px
+		@media $phone
+			margin-left 0
+// .b-catalog-block--close
+// 	display none
+// 	cursor pointer
+// .b-catalog-block--open
+// 	cursor: pointer
+.catalog-block--open,
+.b-catalog-submenu__item--open
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	right: 5px
+	cursor: pointer
+	&:before
+		content: '+'
+.js-catalog-block.is-open .catalog-block--open&:before
+	content: '-'
+.b-catalog-submenu__block.is-open .catalog-submenu__item--open&:before
+	content: '-'
+.b-catalog-menu__item
+	position: relative
+	font-style: normal
+	font-weight: bold
+	font-size: 18px
+	text-transform: uppercase
+	border-top: solid 1px $backBackground
+	@media $phone
+		padding: 0 15px
+	a
+		position relative
+		color: $baseFont
+		display: block
+		padding: 16px 0
+.b-catalog-submenu__item
+	font-weight: bold
+	font-size: 16px
+	text-transform: none
+	&:last-child
+		padding-bottom 20px
+	a
+		color: $baseFont
+		padding: 6.5px 0
+.b-catalog-submenu-sub
+	visibility: hidden
+	opacity: 0
+	transition: .3s
+	height: 0
+	li
+		font-size: 14px
+		padding-left 15px
+		font-weight normal
+		a
+			color: $baseFont
+			transition: 0.3s
+			&:hover
+				color: $linkFont
+.b-catalog-submenu
+	visibility: hidden
+	height: 0
+	opacity 0
+.b-catalog-menu__item
+	.js-catalog-block.is-open
+		.b-catalog-submenu
+			visibility: visible
+			opacity 1
+			height: auto
+			transition: 0.3s
+			//padding-top 10px
+.b-catalog-submenu__item
+	.js-catalog-block.is-open
+		.b-catalog-submenu-sub
+			visibility: visible
+			opacity 1
+			height: auto
+.page__catalog__link-more
+	margin: 0 auto
+	text-align: center
+	display: none
+	@media $phoneS
+		display: block
+		margin-top 15px
+	a
+		color: $blue
+		border: 1px solid $blue
+		border-radius: 3px
+		font-size: 14px
+		padding: 12px 0
+		display: block
+		transition: 0.3s
+		&:hover
+			color: $white
+			border: 1px solid $blue
+			background: $blue
+.page-catalog__offer
+	background-image: url(../../f/img/catalog-offer.png)
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	//background-size: cover
+	text-align: center
+	color: $white
+	padding: 50px 0 40px
+	display: none
+	@media $phoneS
+		display: block
+		background-size: cover
+		margin: 50px -15px 0
+	&-text
+		font-size: 20px
+	&-btn
+		margin-top 20px
+		a
+			color: $white
+			border: solid 1px $white
+			font-size: 14px
+			padding: 11px 50px
+			border-radius: 3px
+.b-catalog__filter-sort
+	display: flex
+	align-items: center
+	margin-top 25px
+	margin-bottom 35px
+	@media $phone
+		display: none
+	&__link
+		margin-right 10px
+		a
+			color: $baseFont
+			font-size: 16px
+			font-weight 400
+			transition: 0.3s
+			&:hover, &:active
+				color: $hoverFont
+		&.is-active
+			a
+				color: $hoverFont
+
+.b-field--link
+	.b-field__label
+		display: block
+		font-size: 16px
+		font-weight 400
+		color: $baseFont
+		transition: 0.3s
+		margin-bottom 15px
+		&:hover, &:active
+			color: $hoverFont
+		&.is-active
+			color: $hoverFont
+.b-catalog__filter
+	margin-right 10px
+	&__title
+		font-size: 16px
+		color: $baseFont
+		font-weight 400
+		margin-right 10px
+.b-catalog-menu
+	position: static
+	@media $phone
+		padding-top 60px
+.ui-slider
+	height: 3px
+	margin-top 25px
+.ui-slider-handle
+	top: 50%
+	transform: translateY(-50%)
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3)
+.ui-slider .ui-slider-handle
+	width: 17px
+	height: 17px
+	border-radius: 50%
+	background-color: $white
+	cursor pointer
+.ui-widget-content
+	background-color: rgba(94, 47, 38, 0.2);
+	border: none
+	height: 3px
+.ui-slider-range
+	background-color: $baseFont
+	height: 3px
+.ui-widget.ui-widget-content
+	border: none
+.ui-slider-horizontal .ui-slider-handle
+	top: 50%
+	transform: translateY(-50%)

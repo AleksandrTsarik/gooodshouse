@@ -1,0 +1,67 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Каталог';
+
+block content
+	//- -
+	//- 	var filtrSort = ['по популярности','по возрастанию цены','по убыванию цены',]
+
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'/html/main.html'},
+			{title:'каталог', href:'/html/catalog.html'},
+			{title:'столовая', href:'#'},
+			{title:'для крепких напитков', href:'#'},
+			{title:'бокалы для вермутов', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Бокалы для вермутов
+			.page-catalog-filter 
+				form(action="") 
+					include _blocks/catalog-sort
+				.b-catalog__filter-sort
+					.b-catalog__filter Сортировать:
+					.b-catalog__filter-sort__link.is-active
+						a(href="#") по популярности
+					.b-catalog__filter-sort__link
+						a(href="#") по возрастанию цены
+					.b-catalog__filter-sort__link
+						a(href="#") по убыванию цены
+					//- each item in filtrSort
+					//- 	.b-catalog__filter-sort__link
+					//- 		a(href="#") !{item}
+			.page-catalog
+				.page-container__column.page-catalog__aside
+					.b-catalog__wrapper
+					
+						.b-catalog-sort__wrapper.b-catalog-sort__inner
+							.b-catalog-sort__button.b-catalog-sort__button-category.js-toggle-category Категории
+							.b-catalog-sort__button.js-toggle-filter.js-filter-clear Фильтр
+
+						.b-catalog.js-block-catalog-menu
+							.b-catalog__wrapper--mobile-controls
+								.b-catalog__wrapper--mobile-controls-top
+									.b-catalog__mobile__title Категории
+									.b-catalog__close.js-toggle-category
+										span
+								.b-catalog__wrapper--mobile-controls-bottom
+									.b-catalog__button.js-catalog-filter-btn Применить
+									.b-catalog__button.b-catalog__button--white.js-filter-clear Сбросить		
+							include _blocks/catalog-menu
+
+							a(href="#").b-catalog-banner
+								.b-catalog-banner__text баннер
+
+				.page-container__catalog.page-catalog__content
+					include _blocks/product-list2
+					include _blocks/pagination
+				
+			.page__catalog__link-more
+				a(href="#") Показать ещё
+			.page-catalog__offer
+				.page-catalog__offer-text Вступайте в Goood`s клуб <br> привилегий!
+				.page-catalog__offer-btn
+					a(type="submit") Вступить
+
+			

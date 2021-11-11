@@ -1,0 +1,201 @@
+.b-promo-catalog
+	padding-bottom 87px
+	@media $tablet
+		padding-bottom 60px
+	&__wrapper
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		padding-bottom 21px
+		@media $phone
+			padding-bottom 0
+	&__item
+		width 32.3333%
+		margin-bottom 2.6666%
+		&--spec-position
+			width 100%
+			display flex
+		@media $tablet
+			width 48.5%
+			margin-bottom 4%
+		@media $phone
+			width 100%
+			margin-bottom 30px
+			&:last-child
+				margin-bottom 20px
+	&__image
+		background none no-repeat center center
+		background-size cover
+		font-size 0
+		line-height 1
+		height 18.52vw
+		max-height 250px
+		border-radius 3px
+		@media $tablet
+			height 24.915vw
+		@media $phone
+			height 50vw
+		/*img
+			max-width 100%
+			max-height 100%*/
+	&__title
+		font-family $MuseoM
+		font-size 18px
+		line-height 1.35
+		color $baseFont
+		padding 20px 3px 0
+		@media $phone
+			font-size 14px
+			padding 15px 3px 0
+	&__item:hover &__title
+		color $hoverFont
+		@media $phone
+			color $baseFont
+
+	&__item--spec-position
+		background $lightGrey
+		margin-bottom 3.9%
+		border-radius 3px
+		overflow hidden
+		@media $tablet
+			width 100%
+		@media $phone
+			flex-direction column
+	&__item--spec-position &__image
+		width 49.039%
+		height 27.408vw
+		max-height 370px
+		min-height 300px
+		@media $tablet
+			min-height 31vw
+			height 100%
+			width 53%
+		@media $phone
+			width 100%
+			height 50vw
+	&__item--spec-position &__info
+		padding 20px 50px 40px
+		width 50.061%
+		display flex
+		flex-direction column
+		justify-content space-around
+		align-items flex-start
+		@media $tablet
+			padding 15px 30px 30px
+			width 47%
+		@media $phone
+			padding 20px 20px
+			width 100%
+	&__item--spec-position &__title,
+	&__item--spec-position:hover &__title
+		font-family $MuseocyrM
+		font-size 32px
+		line-height 1.1875
+		padding 20px 0
+		color $baseFont
+		@media $desktop
+			font-size 28px
+		@media $tablet
+			font-size 24px
+			padding 10px 0 20px
+		@media $phone
+			font-size 20px
+			padding 0 0 20px
+	&__item--spec-position &__desc
+		font-size 18px
+		line-height 1.34
+		padding 0 0 20px
+		@media $desktop
+			font-size 16px
+		@media $tablet
+			font-size 14px
+		@media $phone
+			padding 0 0 15px
+	&__item--spec-position &__more
+		position relative
+		font-size 14px
+		line-height 1.43
+		letter-spacing -0.015em
+		color $linkFont
+		cursor pointer
+		&:before
+			content ''
+			position absolute
+			right -33px
+			top 50%
+			width 18px
+			height 1px
+			background currentColor
+		&:after
+			content ''
+			position absolute
+			right -33px
+			top calc(50% - 2px)
+			width 5px
+			height 5px
+			border-right 1px solid currentColor
+			border-bottom 1px solid currentColor
+			transform rotate(-45deg)
+		&:hover
+			text-decoration underline
+			color $hoverFont
+
+	&--columns
+		padding-bottom 0
+	&--columns &__wrapper
+		flex-direction column
+		padding-bottom 0
+	&--columns &__item
+		width 100%
+		margin-bottom 32px
+	&--columns &__image
+		@media $tablet
+			height 21.915vw
+		@media $phone
+			height 50vw
+	&--columns &__title
+		padding 20px 0 0
+
+// .b-promo-inner
+// 	&__wrapper
+// 		padding 0 0 80px
+// 		@media $tablet
+// 			padding 0 0 60px
+// 		@media $phone
+// 			padding 0 0 0
+// 			flex-direction column
+// 	&__image
+// 		padding-bottom 39px
+// 		@media $phone
+// 			padding-bottom 25px
+// 		img
+// 			width 100%
+// 			border-radius 3px
+// 	&__title
+// 		font-family $MuseoM
+// 		font-size 22px
+// 		line-height 1.19
+// 		padding-bottom 32px
+// 		@media $phone
+// 			padding-bottom 25px
+// 	&__desc
+// 		font-size 14px
+// 		line-height 1.72
+// 		padding-bottom 12px
+// 		@media $phone
+// 			padding-bottom 0
+// 		p
+// 			margin-bottom 24px
+// 	&__back
+// 		font-size 14px
+// 		line-height 1.5
+// 		letter-spacing -0.015em
+// 		color $orange
+// 		text-decoration underline
+// 		margin-bottom: 60px
+// 		display: inline-block
+// 		@media $phone
+// 			margin-bottom: 40px
+// 		&:hover
+// 			color $hoverFont
+// 			text-decoration none

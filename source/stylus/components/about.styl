@@ -1,0 +1,153 @@
+.b-about-page
+  display flex
+  justify-content: space-between
+  @media $tablet
+    flex-wrap: wrap
+.b-about-link
+  flex 0 0 24%
+  max-width: 24%
+  @media $tablet
+    flex 0 0 100%
+    max-width: 100%
+    display: flex
+    flex-wrap: wrap
+  a
+    color $baseFontLight
+    font-weight 300
+    font-size 18px
+    line-height 34px
+    @media $tablet
+      line-height: 100%
+      white-space: nowrap
+      margin-right 50px
+      font-size: 16px
+  div.active
+    a
+      color: $linkFont
+.b-about-content
+  flex 0 0 76%
+  max-width: 76%
+  color $baseFontLight
+  @media $tablet
+    flex 0 0 100%
+    max-width: 100%
+.b-about-page
+  &__offer-title
+    font-weight: normal
+    font-size: 28px
+    padding-bottom 17px
+    color: #6D3939
+    margin-top 60px
+    @media $tablet
+      margin-top 40px
+      padding-bottom 10px
+  &__title
+    font-style normal
+    font-weight normal
+    font-size 32px
+    line-height 39px
+    @media $tablet
+      font-size: 28px
+  &__subtitle
+    font-weight normal
+    font-size 18px
+    line-height 21px
+    padding: 10px 0 30px 0
+    @media $tablet
+      font-size: 16px
+      padding: 10px 0 20px 0
+  &__img
+    background-image url('../img/image-about2.jpg')
+    background-position 50% 50%
+    background-repeat no-repeat
+    background-size cover
+    height 370px
+    margin-bottom 35px
+    @media $tablet
+      margin-bottom 0
+  &__text
+    p
+      padding-bottom 25px
+  &__contacts
+    padding-bottom 25px
+  &__adres
+    margin-bottom 60px
+    font-size: 18px
+    line-height: 26px
+    @media $tablet
+      font-size: 16px
+      margin-bottom 10px
+    &__row
+      @media $phone
+        display: flex
+        flex-direction: column
+        margin-bottom 10px
+  &__box
+    border-bottom: 1px solid rgba(94, 47, 38, 0.3)
+    &--inner
+      visibility: hidden
+      opacity 0
+      transition: .3s
+      height: 0
+    &--title
+      font-size: 20px
+      color: $baseFont
+      font-weight normal
+      position: relative
+      padding: 17px 0 
+      cursor: pointer
+      &:after
+        content: '+'
+        position: absolute
+        right: 15px
+        top: 16px
+        transition: 0s
+    &--name
+      font-weight bold
+      font-size 18px
+      line-height 21px
+      text-transform uppercase
+      color $baseFont
+      padding: 23px 0 20px 0
+      @media $tablet
+        padding: 10px 0
+    &--function
+      font-size 16px
+      color $baseFont
+      margin-bottom 10px
+    &--list
+      font-size: 16px
+      //margin-bottom 45px
+      @media $phone
+        margin-bottom 30px
+      ul
+        line-height: 36px
+        @media $phone
+          line-height: 26px
+          padding-left 18px
+        li
+          list-style-type: disc
+          list-style-position: inside
+          @media $phone
+            list-style-position: outside
+            margin-bottom 15px
+  .js-filter-block.is-open .b-about-page__box--inner
+      visibility: visible
+      opacity 1
+      transition: .9s
+      height: 100%
+      padding-bottom 45px
+  .js-filter-block.is-open .b-about-page__box--title
+    position: relative
+    &:after
+      content: '+'
+      transition: 0.3s
+      opacity 0
+    &:before
+      content: '-'
+      opacity 1
+      position: absolute
+      right: 15px
+      top: 16px
+.fw-bold
+  font-weight 700

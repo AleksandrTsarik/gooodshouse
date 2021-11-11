@@ -1,0 +1,165 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Карточка товара';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'/html/main.html'},
+			{title:'каталог', href:'/html/catalog.html'},
+			{title:'товары для дома', href:'#'},
+			{title:'столы, стулья', href:'#'},
+			{title:'ПУФ CARTER СЕРЫЙ', href:''}
+		]})
+		.content-wrapper
+			.b-product__wrapper
+				.b-product__row.b-product__row--component
+					.b-product__column
+						.b-product__gallery
+							.b-product__slider
+								.b-slider.b-slider--horizontal
+									.b-slider__wrapper.js-product-slider
+										.b-slider__item
+											img(src="/f/img/content/product-7.jpg" alt="...")
+										.b-slider__item
+											img(src="/f/img/content/product-7.jpg" alt="...")
+							.b-slider
+								.b-slider__wrapper.js-product-gallery
+									.b-slider__item.b-slider__item--upblock-open.js-product-gallery-upblock-open
+										img(src="/f/img/content/product-7.jpg" alt="...")
+									.b-slider__item.b-slider__item--upblock-open.js-product-gallery-upblock-open
+										img(src="/f/img/content/product-7.jpg" alt="...")
+									.b-slider__item.b-slider__item--upblock-open.js-product-gallery-upblock-open
+										img(src="/f/img/content/product-7.jpg" alt="...")
+								.b-product__product-card-labels
+									.b-product-card__favorite.b-product-card__favorite--click(onclick="return false")
+									.b-product-card__promo.b-product-card__promo--sale new
+
+						.b-product-details
+							.b-product-details__wrapper.js-tabs-parent
+								.b-product-tabs
+									.b-product-tabs__move
+										.b-product-tabs__item.js-tab-caption.is-active Описание
+										.b-product-tabs__item.js-tab-caption Отзывы (3)
+								.b-product-details__box
+									.b-product-details__block.js-tab-block.is-active
+										p 2&nbsp;отверстия для запекания двух тостов (длина 135&nbsp;мм)<br>Эксклюзивный металлический внешний вид<br>Решётка для разогрева и&nbsp;опекания булочек
+										p <strong>Три функции в&nbsp;одном:</strong><br>многократный нагрев/разогрев (со&nbsp;светящимся индикатором)<br>моментальное прерывание работы перед истечением установленного времени<br>разогрев/размораживание замороженной выпечки (со&nbsp;светящимся индикатором)
+										p Подходит для приготовления толстых и&nbsp;тонких тостов<br>Электронный таймер&nbsp;&mdash; 9&nbsp;степеней настройки интенсивности запекания<br>Автоматическое извлечение выпечки после завершения запекания/размораживания<br>Функций автоматического центрирования для равномерного нагрева толстых и&nbsp;тонких тостов<br>Функция High Lift удобного извлечения небольших кусочков выпечки<br>Простое удаление крошек (миска выдвигается одним нажатием)<br>Нескользящие ножки<br>Место для свернутого сетевого кабеля<br>Длина шнура питания: 100&nbsp;cm<br>Потребляемая мощность: 1&nbsp;000&nbsp;Вт
+										p Размеры (длина х&nbsp;глубина x&nbsp;высота): 278&times;170&times;190&nbsp;мм<br>Размеры с&nbsp;решёткой для опекания (длина х&nbsp;глубина x&nbsp;высота): 310&times;170&times;235&nbsp;mm<br>Масса: 1,3&nbsp;кг<br>Напряжение и&nbsp;частота тока: 220&ndash;240&nbsp;В, 50/60&nbsp;Гц
+									.b-product-details__block.js-tab-block
+										.b-reviews
+											.b-reviews__controls
+												.btn.b-reviews__button(onclick="Upblock.showId('reviews')") Оставить отзыв
+											.b-reviews__wrapper
+												each item in [1,2,3]
+													.b-reviews__item
+														.b-reviews__row
+															.b-reviews__column
+																.b-reviews__name Константиновский Константин
+																.b-reviews__date 4 апреля 2020
+															.b-reviews__column
+																.b-reviews__stars
+																	+stars({rating:4, name:'reviewsRating', blocked:1})
+														.b-reviews__desc Отличное покрытие, картошка и мясо не пригорают, готовлю без масла, сковородки легкие
+					.b-product__column
+						.b-product__specs
+							.b-product__title Пуф Carter серый
+							.b-product__row.b-product__row--specs.b-product__row--between
+								.b-product__article Артикул: CKH-UPO-CAVTEX20
+							.b-product__slider.b-product__slider--tablet
+								.b-product__product-card-labels
+									.b-product-card__favorite.b-product-card__favorite--click(onclick="return false")
+									.b-product-card__promo.b-product-card__promo--sale new
+								.b-slider
+									.b-slider__wrapper.js-product-gallery-mobile
+
+										.b-slider__item
+											img(src="/f/img/content/product-7.jpg" alt="")
+										.b-slider__item
+											img(src="/f/img/content/product-7.jpg" alt="")
+										.b-slider__item
+											img(src="/f/img/content/product-7.jpg" alt="")
+
+							.b-product__row.b-product__row--specs.b-product__row--fwrap
+								.b-product__oldprice 30 862
+								.b-product__price 24 690
+									span.b-price_rub o
+								.b-product__available Есть в&nbsp;наличии
+
+							.b-product__row.b-product__row--specs.b-product__row--fwrap
+								.btn.b-product__button КУПИТЬ
+								.b-product__bonus
+									a(href="#") Оплачивайте до&nbsp;<strong>40% бонусами</strong> 
+							.b-product__properties.is-closed.js-product-properties-list
+								.b-product__row
+									.b-product__caption Бренд: 
+									a.b-product__option.b-product__option--link(href="#") Sencor
+								.b-product__row
+									.b-product__caption Страна бренда: 
+									span.b-product__option Япония
+								.b-product__row
+									.b-product__caption Страна производства: 
+									span.b-product__option Китай
+								.b-product__row
+									.b-product__caption Цвет: 
+									span.b-product__option Серый
+								.b-product__row
+									.b-product__caption Страна бренда: 
+									span.b-product__option Япония
+								.b-product__row
+									.b-product__caption Страна производства: 
+									span.b-product__option Китай
+								.b-product__row
+									.b-product__caption Цвет: 
+									span.b-product__option Серый
+							span.b-product__more.is-shown.js-product-properties-btn-show подробнее
+							.b-product__info
+								-
+									var otherShops = [[
+										'<b>ТРЦ &laquo;Avenue Southwest&raquo; Gooodshou</b>',
+										'г. Москва, Проспект Вернадского 86А, минус 1&nbsp;этаж, м. &laquo;Юго-Западная&raquo;',
+										'<span>10:00&nbsp;&mdash; 22:00</span> +7 (495) 783-85-22&nbsp;доб.&nbsp;2138'
+									],[
+										'<b>ТЦ&nbsp;&laquo;Дирижабль&raquo; Gooodshouse</b>',
+										'г. Москва, ул. Профсоюзная, 64',
+										'<span>10:00&nbsp;&mdash; 22:00</span> +7 (495) 783-85-22&nbsp;доб.&nbsp;2137'
+									],[
+										'<b>ТРЦ &laquo;РИО Севастопольский&raquo; Gooodshouse</b>',
+										'г. Москва, Большая Черемушкинская улица, 1',
+										'<span>10:00&nbsp;&mdash; 22:00</span> +7 (495) 783-85-22&nbsp;доб.&nbsp;2134'
+									],[
+										'<b>ТРЦ &laquo;РИО&raquo; Коломна Gooodshouse</b>',
+										'г. Коломна, ул. Октябрьской Революции, 362',
+										'<span>10:00&nbsp;&mdash; 22:00</span> +7 (495) 783-85-22&nbsp;доб.&nbsp;2135'
+									]],
+									delivery = [[
+										'<span>Доставка в&nbsp;г. Москва&nbsp;</span>&mdash; 1&nbsp;день',
+										'<span>Стоимость доставки&nbsp;</span>&mdash; Бесплатно',
+										'<a href="#">подробные условия доставки</a>'
+									],[
+										'<span>Оплата&nbsp;</span>&mdash; Банковской картой онлайн',
+										'<span>Примерка&nbsp;</span>&mdash; недоступна',
+										'<span>Возврат товара&nbsp;</span>&mdash; бесплатно'
+									]]
+								-;
+							.b-other-specs.js-filter-block
+									.b-other-specs__wrapper
+										.b-other-specs__title.js-filter-caption Товар есть в магазинах <span>(4)</span>:
+										.b-other-specs__box
+											each item in otherShops
+												.b-other-specs__option
+													each el in item
+														.b-other-specs__item!= el
+													span.b-other-specs__item ЗАБРАТЬ ИЗ&nbsp;МАГАЗИНА
+							.b-other-specs.js-filter-block
+										.b-other-specs__wrapper
+											.b-other-specs__title.js-filter-caption Доставка и&nbsp;возврат:
+											.b-other-specs__box
+												each item in delivery
+													.b-other-specs__option
+														each el in item
+															.b-other-specs__item!= el
+		include _blocks/product-list
+			

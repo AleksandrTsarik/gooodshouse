@@ -1,0 +1,60 @@
+section.b-catalog-sort.js-block-filters
+	.b-catalog__wrapper--mobile-controls
+		.b-catalog__wrapper--mobile-controls-top
+			.b-catalog__mobile__title Фильтры
+			.b-catalog__close.js-toggle-filter
+				span
+		.b-catalog__wrapper--mobile-controls-bottom
+			.b-catalog__button.js-catalog-filter-btn Применить
+			.b-catalog__button.b-catalog__button--white Сбросить
+	.b-catalog-sort__block
+
+
+		.b-catalog-sort__box.b-catalog__wrapper__mobile-block
+			+filterItem({type:'list-links', title:'Сортировать', list:['по популярности','по возрастанию цены','по убыванию цены']})
+		.b-catalog-sort__box
+			+filterItem({
+				type:'list',
+				title:'Бренд',
+				search:'Найти бренд',
+				size:'limit',
+				list:[
+					'Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill','Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill'
+				],
+				button:'Применить',buttonClear:'Сбросить'
+			})
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'Цвет', list:['белый','красный','оранжевый','желтый','зеленый'], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'страна-производ', search:'Найти производителя', size:'limit', list:['Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill','Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill'], button:'Применить',buttonClear:'Сбросить'})
+		.b-catalog-sort__box
+			+filterItem({type:'price', title:'Цена', order:['0','99 999'], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'наличие в магазине', list:['BSF','Churchill','Akcam','Anna Lafarg','Badlab'], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'вид плиты', list:['Akcam','Anna Lafarg','Badlab',], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'материал', list:['Akcam','Anna Lafarg','Badlab',], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'мытье в посудомоеч. машине', list: ['да'], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'Подарочная упаковка', list: ['да'], button:'Применить',buttonClear:'Сбросить'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'использование в СВЧ', list: ['да'], button:'Применить',buttonClear:'Сбросить'})
+			
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'ручка', list:['Akcam','Anna Lafarg','Badlab','Balsford','Bernadotte','Bodum','Bohemia','Bohemia Crystal','BSF','Churchill','Akcam','Anna Lafarg','Badlab','Balsford'], button:'Применить',buttonClear:'clear'})
+
+		.b-catalog-sort__box
+			+filterItem({type:'list', title:'набор', list: ['да'], button:'Применить',buttonClear:'clear'})
+
+		.b-catalog-sort__clear.js-filter-clear
+			a(href="#") очистить фильтры

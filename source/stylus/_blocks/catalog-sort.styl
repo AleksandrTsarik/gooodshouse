@@ -1,0 +1,73 @@
+.b-catalog-sort
+	&__inner
+		display: flex
+	&__block
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+			display: flex
+			flex-wrap: wrap
+		@media $phone
+			align-items: flex-start
+			background $white
+			position fixed
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 14
+			padding: 0
+			border-bottom none
+			overflow hidden
+			overflow-y scroll
+			display: block
+	&__button
+		display none
+		width: 50%
+		background $white
+		color: $blue
+		border: solid 1px $blue
+		border-radius 3px
+		font-size 14px
+		text-align center
+		transition background .1s, color .1s
+		cursor pointer
+		padding: 6px 0
+		transition: 0.3s
+		&:hover
+			border-color: $baseFont
+			color: $baseFont
+		@media $phone
+			display block
+			margin-left auto
+	&__button + &__button
+		margin-left 20px
+
+	&__clear
+		font-weight: 300
+		font-size: 14px
+		line-height: 17px
+		text-align: right
+		text-decoration-line: underline
+		color: #4479BC
+		margin: 0 20px 10px 0px
+	&__choice-label
+		color: $baseFont
+		appearance none
+		-moz-appearance: none
+		-webkit-appearance: none		
+		input
+			appearance none
+			-moz-appearance: none
+			-webkit-appearance: none
+	&__choice-name
+			background: $select
+			border-radius: 3px
+			padding: 3px 9px
+			font-size: 16px
+			text-transform lowercase
+			cursor pointer
+			display: inline-block
+.b-catalog-sort__choice:checked .b-catalog-sort__choice-name
+	background-color: red

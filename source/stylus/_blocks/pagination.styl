@@ -1,0 +1,53 @@
+.b-pagination
+  margin-top 30px
+  margin-bottom 30px
+  display flex
+  justify-content: center
+  &__wrapper
+    display: flex
+  .b-paginator-catalog__prev
+    transform rotate(180deg)
+  .is-disabled
+    opacity 0.3
+  .b-paginator__pages
+    padding 0 25px
+    .b-paginator__number._active
+      a 
+        background rgba(68, 121, 188, 0.5)
+        color $white 
+        &:hover
+          border-color: transparent
+  .b-paginator
+    display flex
+    justify-content center
+    &__wrapper
+      display: flex
+      align-items: center
+    &-catalog__next, &-catalog__prev
+      a 
+        img
+          display: flex
+    &__pages
+      .b-paginator__number
+        display flex
+        justify-content space-around
+        margin 0 2.5px
+        a
+          color $baseFont
+          font-weight 300
+          font-size 16px
+          line-height 27px
+          text-align center
+          line-height 35px
+          display block
+          width 35px
+          height 35px
+          border-radius 50%
+          border solid 1px transparent
+          transition 0.3s
+          &:hover
+            //background: rgba(68, 121, 188, 0.5)
+            //color: $white
+            border-color: rgba(68, 121, 188, 0.5)
+.b-product-card__price
+  white-space: nowrap

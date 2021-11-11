@@ -1,0 +1,227 @@
+-
+	//- var gMenu = [
+	//- 	'КУХНЯ',
+	//- 	'СТОЛОВАЯ',
+	//- 	'СПАЛЬНЯ',
+	//- 	'ВАННАЯ',
+	//- 	'ДЕКОР',
+	//- 	'МЕБЕЛЬ',
+	//- 	'САД',
+	//- 	'НОВЫЙ гОД',
+	//- 	'РАСПРОДАЖА'
+	//- ];
+
+	var gMenu = [
+		{
+			name: 'Кухня',
+			link: '#',
+			list: [
+				{
+					name: 'Посуда для приготовления',
+					link: '#',
+					list: ['Кастрюли и ковши', 'Крышки', 'Сковороды', 'Формы для выпечки', 'Формы для запекания', 'Казаны', 'Рамекины']
+				},
+				{
+					name: 'Бар',
+					link: '#',
+					list: ['Бокалы', 'Декантеры', 'Кружки для пива', 'Кувшины и графины', 'Стаканы', 'Штопоры и пробки', 'Аксессуары']
+				},
+				{
+					name: 'Кухонная утварь',
+					link: '#',
+					list: ['Ножи', 'Разделочные доски', 'Аксессуары для выпечки', 'Венчики', 'Для яиц', 'Дуршлаги и сита', 'Кисти кулинарные']
+				},
+				{
+					name: 'Чай и кофе',
+					link: '#',
+					list: ['Гейзерные кофеварки', 'Заварочные чайники', 'Кофейники, прессы', 'Ситечки', 'Турки', 'Чайники для плиты', 'Чашки и кружки']
+				},
+				{
+					name: 'Кухонная утварь',
+					link: '#',
+					list: ['Ножи', 'Разделочные доски', 'Аксессуары для выпечки', 'Венчики', 'Для яиц', 'Дуршлаги и сита', 'Кисти кулинарные']
+				},
+				{
+					name: 'Посуда для сервировки',
+					link: '#',
+					list: ['Салатники','Сервировочные блюда','Столовые приборы','Тарелки','Аксессуары для сервировки','Столовые сервизы']
+				},
+				{
+					name: 'Текстиль для кухни',
+					link: '#',
+					list: ['Варежки и прихватки','Дорожки','Кухонные полотенца','Подушки на стул','Скатерти','Фартуки',]
+				},
+				{
+					name: 'Бытовая техника',
+					link: '#',
+					list: ['Весы','Таймеры, термометры','Тостеры','Чайники электрические ']
+				},
+			]
+		},                                                    
+		{
+			name: 'Интерьер',
+			link: '#',
+			list: [
+				{
+					name: 'Бар',
+					link: '#',
+					list: ['Бокалы', 'Декантеры', 'Кружки для пива', 'Кувшины и графины', 'Стаканы', 'Штопоры и пробки']
+				},
+				{
+					name: 'Кухонная утварь',
+					link: '#',
+					list: ['Бокалы', 'Декантеры', 'Кружки для пива', 'Кувшины и графины', 'Стаканы', 'Штопоры и пробки']
+				},
+				{
+					name: 'Текстиль для кухни',
+					link: '#',
+					list: ['Бокалы', 'Декантеры', 'Кружки для пива', 'Кувшины и графины', 'Стаканы', 'Штопоры и пробки']
+				},
+			]
+		},
+		{
+			name: 'Lifestyle',
+			link: '#',
+			list: [                                              
+				{
+					name: 'Всё для дачи ',
+					link: '#',
+					list: ['Аксессуары для барбекю', 'Грили и мангалы', 'Защита от насекомых', 'Решётки и шампуры  ']
+				},
+				{
+					name: 'Сумки и аксессуары ',
+					link: '#',
+					list: ['Дорожные сумки', 'Косметички и органайзеры', 'Рюкзаки', 'Сумки-тележки','Сумки-холодильники','Термосумки','Шопперы']
+				},
+			]
+		},
+	];
+	var brandMenu = {
+		alphabet: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','А-Я'],
+		brands: ['Akcam','Ambientair','Andrea Fontebasso','Anna Lafarg','Anna Lafarg Emily','Anna Lafarg LF Ceramics','Anna Lafarg Primavera','Anna Manelis','Annaluma','Appetite','Appolia','Arau Baby','Argenesi','Aroma Republic','Art Decor','E-Cloth','E-Towel','Easy Life','Econova','Egermann','Ejiry','Elephant','Elrington','Emile Henry','Emsa','Endever','EnjoyMe','Esteban','Eva Solo','Excellent Houseware','Fabrikators','Magia Gusto','Maison Berger','Marmiton','Mason Cash','Master House','Mastrad','Matceramica','Maxwell & Williams','MayBlummy','Melompo','Merries','Metrot','Microplane','Miolla','Moeve','Molecola','TalleR','Tassen by fiftyeight products','Tatay','TeakHaus','Termico','Termoloft','Terracotta','ThermoCafe by Thermos','Thermos','Thun','TimA','Tkano','Tognana',"Tomorrow's Kitchen",'Thun']
+	};
+header.header.js-header
+	.header__wrapper
+		.header__top
+			.header__top-wrapper.content-wrapper
+				.b-header-menu
+					.b-header-menu__desktop
+						.b-header-tabs
+							.b-header-tabs__item.b-header-tabs__item--goodshouse.is-active
+							a.b-header-tabs__item.b-header-tabs__item--hamleys(href="#hamleys")
+							a.b-header-tabs__item.b-header-tabs__item--cookhouse(href="#cookhouse")
+						a.b-header-menu__item.b-header-menu__phone(href="tel:+74957838521") + 7 (495) 783-85-21
+						.b-header-menu__links
+							a.b-header-menu__item(href="#") Адреса магазинов
+							a.b-header-menu__item(href="#") Контакты
+							a.b-header-menu__item(href="#") Доставки и&nbsp;оплата
+						.b-user-action
+							span.b-user-action__item.b-user-action__item--search.js-header-search-open
+							a.b-user-action__item.b-user-action__item--favorite(href="#favorite")
+								.b-user-action__item-counter 1
+							a.b-user-action__item.b-user-action__item--profile(href="#profile")
+							a.b-user-action__item.b-user-action__item--basket(href="#basket")
+								.b-user-action__item-counter 10
+
+					.b-header-menu__mobile
+						.b-header-menu__mobile-btn.js-mobile-menu
+							span
+						span.b-user-action__item.b-user-action__item--search.js-header-search-open
+						.logo.header__logo
+						a.b-user-action__item.b-user-action__item--profile(href="#profile")
+						a.b-user-action__item.b-user-action__item--basket(href="#basket")
+							.b-user-action__item-counter 10
+
+		.header__bottom
+			.content-wrapper
+				.header__row
+					.logo.header__logo
+					.header__menu
+						.header__menu-shadow.js-mobile-menu
+						a.header__menu-phone(href="tel:+74957838521") + 7 (495) 783-85-21
+						.header__menu-wrapper
+							ul.header__menu-list
+								each item,index in gMenu
+									li.header-menu__item.js-catalog-block
+										a.header-menu__item-link(href=""+item.link target="_blank")!=item.name
+										span.catalog-block--open.js-catalog-caption
+										if item.list.length > 0
+											.header-menu__drop
+												ul.header-menu__sub
+													li.header-menu__overlay
+													each item2,index2 in item.list
+														li.header-menu__sub-item.js-filter-block
+															//-- .js-filter-caption ↓
+															a.header-menu__sub-link(href=""+item.link target="_blank" )!=item2.name
+															if item2.list.length > 0
+																span.header-menu__sub-link--open.js-filter-caption
+															if item2.list.length > 0
+																ul.header-menu__subsub
+																	each item3,index3 in item2.list
+																		li.header-menu__subsub-item
+																			a.header-menu__subsub-link(href="#" target="_blank")!=item3
+																	a.header-menu__link-next(href="#" target="_blank") Все бренды >
+								li.header-menu__item.js-catalog-block
+									a.header-menu__item-link(href="#" target="_blank") Бренды
+									.header-menu__drop
+										.header-menu__overlay
+										.header-menu__sub
+											each item in brandMenu.alphabet
+												a(href="#" target="_blank").header-menu__sub-alphabet!=item
+										.header-menu__sub.header-menu__brends-box
+											each item in brandMenu.brands
+												a(href="#" target="_blank").header-menu__sub-brands!=item
+											a(href="#" target="_blank")  Все бренды >
+								li.header-menu__item.js-catalog-block
+									a.header-menu__item-link.header__menu-item--blue(href="#") Новинки
+								li.header-menu__item.js-catalog-block
+									a.header-menu__item-link.header__menu-item--blue(href="#") РАСПРОДАЖА
+						.header__menu-links
+							a.header__menu-links-item(href="#" target="_blank") Адреса магазинов
+							//-a.header__menu-links-item(href="#" target="_blank") Контакты
+
+							a.header__menu-links-item(href="#" target="_blank") Доставки и&nbsp;оплата
+					.header__search.search
+						.search__wrapper
+							.search__top
+								+field({type:'input',mode:'search',placeholder:'Поиск', button:'Найти'})
+								.search__close
+									.btn.js-header-search-close Закрыть
+							.search__results
+								-
+									var resultList = ['','для пасты','для супа','обеденная','суповая','керимическая','десертная','новогодняя','подстановочная']
+								.search__results-list
+									each item in resultList
+										a.search__results-item(href="#") <span class="search__results-coincidence">тарелка</span> !{item}
+								.search__results-products
+									-
+										var products = [{
+											title:'Текстурированная форма для хлеба',
+											price:'3 000 690 ₽',
+											image:'/f/img/content/pic-1.png',
+											small: true
+										},{
+											title:'Текстурированная форма для хлеба',
+											price:'15 000 390 ₽',
+											image:'/f/img/content/pic-2.png',
+											small: true,
+										},
+										{
+											title:'Текстурированная форма для хлеба',
+											price:'30 590 ₽',
+											image:'/f/img/content/pic-3.png',
+											small: true
+										},{
+											title:'Текстурированная форма для хлеба',
+											price:'7 990 ₽',
+											image:'/f/img/content/pic-4.png',
+											small: true
+										}
+										]
+									.search__results-products-list
+										each item in products
+											.search__results-products-item
+												+productCard(item)
+
+
+

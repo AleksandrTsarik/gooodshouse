@@ -1,0 +1,224 @@
+.b-basket-item
+	padding 15px 0
+	border-bottom 1px solid $backFont
+	&.is-hidden
+		display none
+	&__row
+		display flex
+		@media $desktop
+			flex-wrap wrap
+	&__column
+		display flex
+		flex-direction column
+		justify-content center
+		align-items flex-start
+		&:nth-child(1)
+			width 17.5%
+			padding-right 2%
+			@media $desktop
+				width 144px
+				order 1
+			@media $tablet
+				width 17.5%
+			@media $phone
+				width 130px
+		&:nth-child(2)
+			width 49.4%
+			padding-right 4.4%
+			@media $desktop
+				width calc(100% - 160px)
+				order 2
+			@media $tablet
+				width 49.4%
+			@media $phone
+				justify-content flex-start
+				width calc(100% - 146px)
+				padding 3px 0 0
+				margin-bottom 15px
+		&:nth-child(3)
+			width 17.7%
+			@media $desktop
+				padding 0 0 0 144px
+				width auto
+				order 4
+			@media $tablet
+				padding 0
+				width 17.7%
+				order 3
+			@media $phone
+				width 130px
+				order 4
+		&:nth-child(4)
+			width calc(15.4% - 16px)
+			@media $desktop
+				padding 0 0 0 30px
+				flex-direction row-reverse
+				align-items center
+				width auto
+				order 5
+			@media $tablet
+				padding 0
+				flex-direction column
+				align-items flex-start
+				width calc(15.4% - 16px)
+				order 4
+			@media $phone
+				width calc(100% - 130px)
+				flex-direction row-reverse
+				justify-content flex-end
+				align-items center
+				flex-wrap wrap
+				order 5
+		&:nth-child(5)
+			position relative
+			width 16px
+			@media $desktop
+				order 3
+			@media $tablet
+				order 5
+			@media $phone
+				justify-content flex-start
+				order 3
+	&__image
+		position relative
+		width 113px
+		font-size 0
+		line-height 1
+		img
+			max-width 100%
+			max-height 100%
+	&__promo
+		position absolute
+		left 5px
+		top 9px
+		height 30px
+		display flex
+		align-items center
+		justify-content flex-start
+		font-size 10px
+		line-height 1
+		&--sale
+			width 30px
+			border-radius 50%
+			background $orange
+			justify-content center
+			color $backBackground
+	&__favorite
+		background url('../img/icon-favorite.svg') no-repeat left top
+		background-size cover
+		position absolute
+		right 6px
+		top 9px
+		width 16px
+		height 16px
+		&.is-active
+			background-image url('../img/icon-favorite-active.svg')
+	&__subtitle
+		font-size 12px
+		line-height 1
+		color $backFont
+		padding-bottom 11px
+	&__title
+		font-family $MuseoM
+		font-size 14px
+		line-height 1.29
+		letter-spacing -0.015em
+		padding-bottom 11px
+	&__article
+		font-size 12px
+		line-height 1
+		letter-spacing -0.015em
+	&__oldprice
+		font-size 16px
+		line-height 1.31
+		letter-spacing -0.015em
+		text-decoration-line line-through
+		color $backFont
+		padding-bottom 2px
+		white-space nowrap
+		@media $desktop
+			padding-bottom 0
+	&__price
+		font-family $MuseoM
+		font-size 16px
+		line-height 1.31
+		letter-spacing -0.015em
+		color $baseFont
+		white-space nowrap
+		@media $desktop
+			padding-right 15px
+	&__counter
+		display flex
+		justify-content space-between
+		border 1px solid $backFont
+		border-radius 3px
+		max-width 112px
+		font-size 0
+		line-height 1
+	&__counter-input
+		font-family $MuseoM
+		font-size 16px
+		line-height 36px
+		letter-spacing -0.015em
+		text-align center
+		width 38px
+		input
+			width 100%
+	&__counter-plus, &__counter-minus
+		position relative
+		width 36px
+		height 36px
+		cursor pointer
+	&__counter-minus
+		&:after
+			content ''
+			position absolute
+			left 12px
+			top 17px
+			width 11px
+			height 1px
+			background $baseFont
+		&.is-disabled
+			cursor default
+			&:after
+				background $backFont
+	&__counter-plus
+		&:after
+			content ''
+			position absolute
+			left 12px
+			top 17px
+			width 11px
+			height 1px
+			background $baseFont
+		&:before
+			content ''
+			position absolute
+			left 17px
+			top 12px
+			width 1px
+			height 11px
+			background $baseFont
+		&.is-disabled
+			cursor default
+			&:after, &:before
+				background $backFont
+	&__clear
+		position relative
+		width 18px
+		height 18px
+		cursor pointer
+		&:after, &:before
+			content ''
+			position absolute
+			left 0
+			top 9px
+			width 18px
+			height 1px
+			background $baseFont
+			transform rotate(45deg)
+		&:before
+			transform rotate(-45deg)
+
+
+

@@ -1,0 +1,94 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Контакты';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'/html/main.html'},
+			{title:'Контакты', href:''}
+      ]})
+		.content-wrapper
+			h1.page-container__title Контакты
+			.b-shops.js-shops
+				.b-shops__wrapper.js-tabs-parent.js-shops-parent
+					.b-shops__row
+						.b-shops__column
+							.b-shops__list.js-shops-list
+						.b-shops__column
+							.b-shops__map#shop-map
+			-
+				var gArray = [
+					['Юр. адрес:','123022, г. Москва, ул.&nbsp;1905&nbsp;года, д.7, стр.1'],
+					['ОГРН:','1107746567686'],
+					['ИНН/КПП:','7716667870/770301001'],
+					['ОКАТО:','45280577000'],
+					['ОКВЭД:','47.5'],
+					['Р/с:','40702810302200001913'],
+					['К/с:','30101810200000000593'],
+					['БИК:','044525593'],
+					['Банк:','АО&nbsp;&laquo;Альфа-банк&raquo;'],
+				]
+			-;
+			.b-contact
+				
+				.b-contact__wrapper
+					.b-contact__title Банковские реквизиты:
+					.b-contact__table
+						each item in gArray
+							.b-contact__row
+								.b-contact__column!= item[0]
+								.b-contact__column!= item[1]
+			
+
+	script(type="text/javascript" src="https://api-maps.yandex.ru/2.1.34/?load=package.full&lang=ru-RU")
+	script(type="text/javascript").
+		var shopsList = 
+		{'0000073738':[
+		{'place': 'Офис',
+			'name':'г. Москва, ул. Б. Черемушкинская, д. 1',
+			'address':'',
+			'metro':'',
+			'phone':'тел/ факс: 8 (495) 980-28-97',
+			'email': 'email: info@gooodshouse.ru',
+			'workTime':'',
+			'gps':
+			{'longitude':'55.689420',
+				'latitude':'37.602130'
+			},
+			'icon':'',
+			'icon-active':false
+		},
+			{'place': 'Склад',
+				'name':'г. Москва, ТЦ "Гагаринский", ул. Вавилова, д. 3, стр. 1',
+				'address':'',
+				'metro':'',
+				'phone':'тел/ факс: 8 (495) 980-28-97',
+				'email': 'email: info@gooodshouse.ru',
+				'workTime':'',
+				'gps':
+				{'longitude':'55.708950',
+					'latitude':'37.592880'
+				},
+				'icon':'',
+				'icon-active':false
+			},			
+		]};
+
+	script(id="shop-info-template" type="text/x-handlebars-template").
+		{{#each shops}}
+		<div class="b-shops__item"  data-long="{{{ gps.longitude }}}" data-lat="{{{ gps.latitude }}}">
+		<div class="b-shops__place">{{{ place }}}</div>
+		<div class="b-shops__title">{{{ name }}}</div>
+		<div class="b-shops__desc b-shops__desc--address">{{{ address }}}</div>
+		<div class="b-shops__desc b-shops__desc--time">{{{ workTime }}}</div>
+		<div class="b-shops__desc b-shops__desc--styl">
+			<div class="b-shops__desc b-shops__desc--phone">{{{ phone }}}</div>
+			<div class="b-shops__desc b-shops__desc--email">{{{ email }}}</div>
+		</div>
+		<div class="b-shops__info">
+		<img src="https://static-maps.yandex.ru/1.x/?ll={{{ gps.latitude }}},{{{ gps.longitude }}}&z=15&l=map&size=230,200&pt={{{ gps.latitude }}},{{{ gps.longitude }}},pm2rdl" alt="" />
+		</div>
+		</div>
+		{{/each}}

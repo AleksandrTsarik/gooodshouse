@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <title>Оформление заказа</title>
+    <link href="/f/css/slick.css" rel="stylesheet" type="text/css">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <link href="/f/css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="upblock js-upblock" id="login">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Авторизация</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--password">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Пароль" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper"><span class="upblock__body-link" onclick="Upblock.showId('recovery')">Забыли пароль?</span></div>
+          <div class="upblock__body-button js-btn-submit">Войти</div>
+          <div class="upblock__body-wrapper">
+            <div class="b-social-auth">
+              <div class="b-social-auth__title">Вход через социальную сеть</div>
+              <div class="b-social-auth__row">
+                <div class="b-social-auth__item b-social-auth__item--vk"></div>
+                <div class="b-social-auth__item b-social-auth__item--fb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-wrapper"><span class="upblock__body-link upblock__body-link--reg" onclick="Upblock.showId('registration')">Зарегистрироваться</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="registration">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Регистрация</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--name required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="Имя*" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--email required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail*" value="">
+                  </div>
+                  <div class="b-form-field__error">Неверный формат</div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--password required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Пароль*" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--password-repeat required">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="password" placeholder="Подтвердите пароль*" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-label">Нажимая на&nbsp;кнопку &laquo;Регистрация&raquo;, Вы&nbsp;принимаете условия <a href="#">Соглашения об&nbsp;использовании сайта</a></div>
+          </div>
+          <div class="upblock__body-button js-btn-submit">Регистрация</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="recovery">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Восстановление пароля</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-label upblock__body-label--comment">На&nbsp;ваш E-Mail придёт ссылка для сброса пароля</div>
+          </div>
+          <div class="upblock__body-button">Получить ссылку</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="reserve">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Отложить</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-desc">Этот товар отложат специально для вас в&nbsp;магазине. Вам останется только прийти, оплатить и&nbsp;забрать.</div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field js-select-field b-form-field--select js-nav-select">
+                  <input class="js-select-value" type="hidden" value="60">
+                  <div class="b-form-field__caption js-select-caption">ТРЦ &laquo;РИО Севастопольский&raquo; goodshouse</div>
+                  <div class="b-form-field__options js-select-options">
+                    <div class="b-form-field__item js-select-option" data-val="60">ТРЦ &laquo;РИО Севастопольский&raquo; goodshouse</div>
+                    <div class="b-form-field__item js-select-option" data-val="16">ТРЦ «Райкин Плаза»</div>
+                  </div>
+                </div>
+            <div class="upblock__body-container">
+              <div class="upblock__block js-nav-item is-active" data-id="60">
+                <div class="upblock__body-row">
+                  <div class="upblock__body-column">Количество:</div>
+                  <div class="upblock__body-column">
+                        <div class="b-form-field js-select-field b-form-field--select b-form-field--small">
+                          <input class="js-select-value" type="hidden" value="1">
+                          <div class="b-form-field__caption js-select-caption">1</div>
+                          <div class="b-form-field__options js-select-options">
+                            <div class="b-form-field__item js-select-option" data-val="1">1</div>
+                            <div class="b-form-field__item js-select-option" data-val="2">2</div>
+                            <div class="b-form-field__item js-select-option" data-val="3">3</div>
+                            <div class="b-form-field__item js-select-option" data-val="4">4</div>
+                            <div class="b-form-field__item js-select-option" data-val="5">5</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="upblock__list">
+                  <div class="upblock__list-item upblock__list-item--address">г. Москва, Большая Черемушкинская улица, 1</div>
+                  <div class="upblock__list-item upblock__list-item--time">10:00&nbsp;&mdash; 22:00</div>
+                  <div class="upblock__list-item upblock__list-item--phone">+7 (495) 783-85-22&nbsp;доб.&nbsp;2063</div>
+                </div>
+              </div>
+              <div class="upblock__block js-nav-item" data-id="16">
+                <div class="upblock__body-row">
+                  <div class="upblock__body-column">Количество:</div>
+                  <div class="upblock__body-column">
+                        <div class="b-form-field js-select-field b-form-field--select b-form-field--small">
+                          <input class="js-select-value" type="hidden" value="1">
+                          <div class="b-form-field__caption js-select-caption">1</div>
+                          <div class="b-form-field__options js-select-options">
+                            <div class="b-form-field__item js-select-option" data-val="1">1</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="upblock__list">
+                  <div class="upblock__list-item upblock__list-item--address">г. Москва, Шереметьевская ул., д. 6, стр.1, 0 этаж.</div>
+                  <div class="upblock__list-item upblock__list-item--time">10:00&nbsp;&mdash; 22:00</div>
+                  <div class="upblock__list-item upblock__list-item--phone">+7 (495) 783-85-22&nbsp;доб.&nbsp;2063</div>
+                </div>
+              </div>
+            </div>
+            <div class="upblock__row upblock__row--short">
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--name">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Имя" value="">
+                      </div>
+                    </div>
+              </div>
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--name">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Фамилия" value="">
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div class="upblock__row upblock__row--short">
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--email">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                      </div>
+                    </div>
+              </div>
+              <div class="upblock__column">
+                    <div class="b-form-field b-form-field--phone js-phone-mask">
+                      <div class="b-form-field__wrapper">
+                        <input class="b-form-field__input" type="text" placeholder="Телефон" value="">
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-button">Забрать из&nbsp;магазина</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="reviews">
+      <div class="upblock__wrapper">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="upblock__title">Написать отзыв</div>
+        <div class="upblock__body js-val-container">
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--name">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="Имя" value="">
+                  </div>
+                </div>
+                <div class="b-form-field b-form-field--email">
+                  <div class="b-form-field__wrapper">
+                    <input class="b-form-field__input" type="text" placeholder="E-mail" value="">
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-wrapper">
+            <div class="upblock__body-row">
+              <div class="upblock__body-column">Ваша оценка</div>
+              <div class="upblock__body-column">
+                    <div class="b-stars js-stars">
+                      <div class="b-stars__wrapper">
+                        <label class="b-stars__item js-star" data-star="5">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="4">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="3">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star" data-star="2">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                        <label class="b-stars__item js-star is-active" data-star="1">
+                              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9477 7.67117C19.816 7.2662 19.4568 6.97948 19.0335 6.94118L13.2601 6.41703L10.9784 1.07515C10.81 0.682682 10.4267 0.429382 10 0.429382C9.57338 0.429382 9.18992 0.682682 9.02253 1.07515L6.74085 6.41703L0.96652 6.94118C0.543234 6.98024 0.184799 7.26696 0.0523506 7.67117C-0.0793349 8.07615 0.0422796 8.52034 0.362414 8.8011L4.72665 12.6279L3.43986 18.2954C3.34571 18.7122 3.50746 19.1431 3.85323 19.393C4.03908 19.5281 4.25744 19.5955 4.47656 19.5955C4.66485 19.5955 4.8533 19.5455 5.02161 19.4447L10 16.468L14.9775 19.4447C15.3427 19.6629 15.8018 19.643 16.1468 19.393C16.4926 19.1431 16.6543 18.7122 16.5602 18.2954L15.2734 12.6279L19.6376 8.8011C19.9576 8.52034 20.0794 8.07706 19.9477 7.67117Z"></path>
+                              </svg>
+                        </label>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="upblock__body-wrapper">
+                <div class="b-form-field b-form-field--review">
+                  <div class="b-form-field__wrapper">
+                    <textarea class="b-form-field__textarea" placeholder="Отзыв"></textarea>
+                  </div>
+                </div>
+          </div>
+          <div class="upblock__body-button">Оставить отзыв</div>
+        </div>
+      </div>
+    </div>
+    <div class="upblock js-upblock" id="gallery">
+      <div class="upblock__wrapper upblock__wrapper--fullscreen">
+        <div class="upblock__close js-upblock-close"></div>
+        <div class="b-slider__wrapper b-slider__wrapper--upblock js-product-gallery"></div>
+      </div>
+    </div>
+    <header class="header js-header">
+      <div class="header__wrapper">
+        <div class="header__top">
+          <div class="header__top-wrapper content-wrapper">
+            <div class="b-header-menu">
+              <div class="b-header-menu__desktop">
+                <div class="b-header-tabs">
+                  <div class="b-header-tabs__item b-header-tabs__item--goodshouse is-active"></div><a class="b-header-tabs__item b-header-tabs__item--hamleys" href="#hamleys"></a><a class="b-header-tabs__item b-header-tabs__item--cookhouse" href="#cookhouse"></a>
+                </div><a class="b-header-menu__item b-header-menu__phone" href="tel:+74957838521">+ 7 (495) 783-85-21</a>
+                <div class="b-header-menu__links"><a class="b-header-menu__item" href="#">Адреса магазинов</a><a class="b-header-menu__item" href="#">Контакты</a><a class="b-header-menu__item" href="#">Доставки и&nbsp;оплата</a></div>
+                <div class="b-user-action"><span class="b-user-action__item b-user-action__item--search js-header-search-open"></span><a class="b-user-action__item b-user-action__item--favorite" href="#favorite">
+                    <div class="b-user-action__item-counter">1</div></a><a class="b-user-action__item b-user-action__item--profile" href="#profile"></a><a class="b-user-action__item b-user-action__item--basket" href="#basket">
+                    <div class="b-user-action__item-counter">10</div></a></div>
+              </div>
+              <div class="b-header-menu__mobile">
+                <div class="b-header-menu__mobile-btn js-mobile-menu"><span></span></div><span class="b-user-action__item b-user-action__item--search js-header-search-open"></span>
+                <div class="logo header__logo"></div><a class="b-user-action__item b-user-action__item--profile" href="#profile"></a><a class="b-user-action__item b-user-action__item--basket" href="#basket">
+                  <div class="b-user-action__item-counter">10</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="content-wrapper">
+            <div class="header__row">
+              <div class="logo header__logo"></div>
+              <div class="header__menu">
+                <div class="header__menu-shadow js-mobile-menu"></div><a class="header__menu-phone" href="tel:+74957838521">+ 7 (495) 783-85-21</a>
+                <div class="header__menu-wrapper">
+                  <ul class="header__menu-list">
+                    <li class="header-menu__item js-catalog-block"><a class="header-menu__item-link" href="#" target="_blank">Кухня</a><span class="catalog-block--open js-catalog-caption"></span>
+                      <div class="header-menu__drop">
+                        <ul class="header-menu__sub">
+                          <li class="header-menu__overlay"></li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Посуда для приготовления</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кастрюли и ковши</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Крышки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Сковороды</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Формы для выпечки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Формы для запекания</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Казаны</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Рамекины</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Бар</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Бокалы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Декантеры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кружки для пива</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кувшины и графины</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Стаканы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Штопоры и пробки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Аксессуары</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Кухонная утварь</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Ножи</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Разделочные доски</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Аксессуары для выпечки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Венчики</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Для яиц</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Дуршлаги и сита</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кисти кулинарные</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Чай и кофе</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Гейзерные кофеварки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Заварочные чайники</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кофейники, прессы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Ситечки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Турки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Чайники для плиты</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Чашки и кружки</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Кухонная утварь</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Ножи</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Разделочные доски</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Аксессуары для выпечки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Венчики</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Для яиц</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Дуршлаги и сита</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кисти кулинарные</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Посуда для сервировки</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Салатники</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Сервировочные блюда</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Столовые приборы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Тарелки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Аксессуары для сервировки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Столовые сервизы</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Текстиль для кухни</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Варежки и прихватки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Дорожки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кухонные полотенца</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Подушки на стул</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Скатерти</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Фартуки</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Бытовая техника</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Весы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Таймеры, термометры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Тостеры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Чайники электрические </a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="header-menu__item js-catalog-block"><a class="header-menu__item-link" href="#" target="_blank">Интерьер</a><span class="catalog-block--open js-catalog-caption"></span>
+                      <div class="header-menu__drop">
+                        <ul class="header-menu__sub">
+                          <li class="header-menu__overlay"></li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Бар</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Бокалы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Декантеры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кружки для пива</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кувшины и графины</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Стаканы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Штопоры и пробки</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Кухонная утварь</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Бокалы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Декантеры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кружки для пива</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кувшины и графины</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Стаканы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Штопоры и пробки</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Текстиль для кухни</a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Бокалы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Декантеры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кружки для пива</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Кувшины и графины</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Стаканы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Штопоры и пробки</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="header-menu__item js-catalog-block"><a class="header-menu__item-link" href="#" target="_blank">Lifestyle</a><span class="catalog-block--open js-catalog-caption"></span>
+                      <div class="header-menu__drop">
+                        <ul class="header-menu__sub">
+                          <li class="header-menu__overlay"></li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Всё для дачи </a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Аксессуары для барбекю</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Грили и мангалы</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Защита от насекомых</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Решётки и шампуры  </a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                          <li class="header-menu__sub-item js-filter-block"><a class="header-menu__sub-link" href="#" target="_blank">Сумки и аксессуары </a><span class="header-menu__sub-link--open js-filter-caption"></span>
+                            <ul class="header-menu__subsub">
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Дорожные сумки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Косметички и органайзеры</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Рюкзаки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Сумки-тележки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Сумки-холодильники</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Термосумки</a></li>
+                              <li class="header-menu__subsub-item"><a class="header-menu__subsub-link" href="#" target="_blank">Шопперы</a></li><a class="header-menu__link-next" href="#" target="_blank">Все бренды ></a>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="header-menu__item js-catalog-block"><a class="header-menu__item-link" href="#" target="_blank">Бренды</a>
+                      <div class="header-menu__drop">
+                        <div class="header-menu__overlay"></div>
+                        <div class="header-menu__sub"><a class="header-menu__sub-alphabet" href="#" target="_blank">A</a><a class="header-menu__sub-alphabet" href="#" target="_blank">B</a><a class="header-menu__sub-alphabet" href="#" target="_blank">C</a><a class="header-menu__sub-alphabet" href="#" target="_blank">D</a><a class="header-menu__sub-alphabet" href="#" target="_blank">E</a><a class="header-menu__sub-alphabet" href="#" target="_blank">F</a><a class="header-menu__sub-alphabet" href="#" target="_blank">G</a><a class="header-menu__sub-alphabet" href="#" target="_blank">H</a><a class="header-menu__sub-alphabet" href="#" target="_blank">I</a><a class="header-menu__sub-alphabet" href="#" target="_blank">J</a><a class="header-menu__sub-alphabet" href="#" target="_blank">K</a><a class="header-menu__sub-alphabet" href="#" target="_blank">L</a><a class="header-menu__sub-alphabet" href="#" target="_blank">M</a><a class="header-menu__sub-alphabet" href="#" target="_blank">N</a><a class="header-menu__sub-alphabet" href="#" target="_blank">O</a><a class="header-menu__sub-alphabet" href="#" target="_blank">P</a><a class="header-menu__sub-alphabet" href="#" target="_blank">Q</a><a class="header-menu__sub-alphabet" href="#" target="_blank">R</a><a class="header-menu__sub-alphabet" href="#" target="_blank">S</a><a class="header-menu__sub-alphabet" href="#" target="_blank">T</a><a class="header-menu__sub-alphabet" href="#" target="_blank">U</a><a class="header-menu__sub-alphabet" href="#" target="_blank">V</a><a class="header-menu__sub-alphabet" href="#" target="_blank">W</a><a class="header-menu__sub-alphabet" href="#" target="_blank">X</a><a class="header-menu__sub-alphabet" href="#" target="_blank">Y</a><a class="header-menu__sub-alphabet" href="#" target="_blank">Z</a><a class="header-menu__sub-alphabet" href="#" target="_blank">А-Я</a>
+                        </div>
+                        <div class="header-menu__sub header-menu__brends-box"><a class="header-menu__sub-brands" href="#" target="_blank">Akcam</a><a class="header-menu__sub-brands" href="#" target="_blank">Ambientair</a><a class="header-menu__sub-brands" href="#" target="_blank">Andrea Fontebasso</a><a class="header-menu__sub-brands" href="#" target="_blank">Anna Lafarg</a><a class="header-menu__sub-brands" href="#" target="_blank">Anna Lafarg Emily</a><a class="header-menu__sub-brands" href="#" target="_blank">Anna Lafarg LF Ceramics</a><a class="header-menu__sub-brands" href="#" target="_blank">Anna Lafarg Primavera</a><a class="header-menu__sub-brands" href="#" target="_blank">Anna Manelis</a><a class="header-menu__sub-brands" href="#" target="_blank">Annaluma</a><a class="header-menu__sub-brands" href="#" target="_blank">Appetite</a><a class="header-menu__sub-brands" href="#" target="_blank">Appolia</a><a class="header-menu__sub-brands" href="#" target="_blank">Arau Baby</a><a class="header-menu__sub-brands" href="#" target="_blank">Argenesi</a><a class="header-menu__sub-brands" href="#" target="_blank">Aroma Republic</a><a class="header-menu__sub-brands" href="#" target="_blank">Art Decor</a><a class="header-menu__sub-brands" href="#" target="_blank">E-Cloth</a><a class="header-menu__sub-brands" href="#" target="_blank">E-Towel</a><a class="header-menu__sub-brands" href="#" target="_blank">Easy Life</a><a class="header-menu__sub-brands" href="#" target="_blank">Econova</a><a class="header-menu__sub-brands" href="#" target="_blank">Egermann</a><a class="header-menu__sub-brands" href="#" target="_blank">Ejiry</a><a class="header-menu__sub-brands" href="#" target="_blank">Elephant</a><a class="header-menu__sub-brands" href="#" target="_blank">Elrington</a><a class="header-menu__sub-brands" href="#" target="_blank">Emile Henry</a><a class="header-menu__sub-brands" href="#" target="_blank">Emsa</a><a class="header-menu__sub-brands" href="#" target="_blank">Endever</a><a class="header-menu__sub-brands" href="#" target="_blank">EnjoyMe</a><a class="header-menu__sub-brands" href="#" target="_blank">Esteban</a><a class="header-menu__sub-brands" href="#" target="_blank">Eva Solo</a><a class="header-menu__sub-brands" href="#" target="_blank">Excellent Houseware</a><a class="header-menu__sub-brands" href="#" target="_blank">Fabrikators</a><a class="header-menu__sub-brands" href="#" target="_blank">Magia Gusto</a><a class="header-menu__sub-brands" href="#" target="_blank">Maison Berger</a><a class="header-menu__sub-brands" href="#" target="_blank">Marmiton</a><a class="header-menu__sub-brands" href="#" target="_blank">Mason Cash</a><a class="header-menu__sub-brands" href="#" target="_blank">Master House</a><a class="header-menu__sub-brands" href="#" target="_blank">Mastrad</a><a class="header-menu__sub-brands" href="#" target="_blank">Matceramica</a><a class="header-menu__sub-brands" href="#" target="_blank">Maxwell & Williams</a><a class="header-menu__sub-brands" href="#" target="_blank">MayBlummy</a><a class="header-menu__sub-brands" href="#" target="_blank">Melompo</a><a class="header-menu__sub-brands" href="#" target="_blank">Merries</a><a class="header-menu__sub-brands" href="#" target="_blank">Metrot</a><a class="header-menu__sub-brands" href="#" target="_blank">Microplane</a><a class="header-menu__sub-brands" href="#" target="_blank">Miolla</a><a class="header-menu__sub-brands" href="#" target="_blank">Moeve</a><a class="header-menu__sub-brands" href="#" target="_blank">Molecola</a><a class="header-menu__sub-brands" href="#" target="_blank">TalleR</a><a class="header-menu__sub-brands" href="#" target="_blank">Tassen by fiftyeight products</a><a class="header-menu__sub-brands" href="#" target="_blank">Tatay</a><a class="header-menu__sub-brands" href="#" target="_blank">TeakHaus</a><a class="header-menu__sub-brands" href="#" target="_blank">Termico</a><a class="header-menu__sub-brands" href="#" target="_blank">Termoloft</a><a class="header-menu__sub-brands" href="#" target="_blank">Terracotta</a><a class="header-menu__sub-brands" href="#" target="_blank">ThermoCafe by Thermos</a><a class="header-menu__sub-brands" href="#" target="_blank">Thermos</a><a class="header-menu__sub-brands" href="#" target="_blank">Thun</a><a class="header-menu__sub-brands" href="#" target="_blank">TimA</a><a class="header-menu__sub-brands" href="#" target="_blank">Tkano</a><a class="header-menu__sub-brands" href="#" target="_blank">Tognana</a><a class="header-menu__sub-brands" href="#" target="_blank">Tomorrow's Kitchen</a><a class="header-menu__sub-brands" href="#" target="_blank">Thun</a><a href="#" target="_blank"> Все бренды ></a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="header-menu__item js-catalog-block"><a class="header-menu__item-link header__menu-item--blue" href="#">Новинки</a></li>
+                    <li class="header-menu__item js-catalog-block"><a class="header-menu__item-link header__menu-item--blue" href="#">РАСПРОДАЖА</a></li>
+                  </ul>
+                </div>
+                <div class="header__menu-links"><a class="header__menu-links-item" href="#" target="_blank">Адреса магазинов</a><a class="header__menu-links-item" href="#" target="_blank">Доставки и&nbsp;оплата</a></div>
+              </div>
+              <div class="header__search search">
+                <div class="search__wrapper">
+                  <div class="search__top">
+                        <div class="b-field b-field--search">
+                          <div class="b-field__wrapper">
+                            <input class="b-field__input" type="text" placeholder="Поиск">
+                          </div>
+                          <div class="b-field__column">
+                            <div class="b-field__button">Найти</div>
+                          </div>
+                        </div>
+                    <div class="search__close">
+                      <div class="btn js-header-search-close">Закрыть</div>
+                    </div>
+                  </div>
+                  <div class="search__results">
+                    <div class="search__results-list"><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> </a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> для пасты</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> для супа</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> обеденная</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> суповая</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> керимическая</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> десертная</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> новогодняя</a><a class="search__results-item" href="#"><span class="search__results-coincidence">тарелка</span> подстановочная</a>
+                    </div>
+                    <div class="search__results-products">
+                      <div class="search__results-products-list">
+                        <div class="search__results-products-item"><a class="b-product-card b-product-card--small" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-1.png" alt="">
+                                    </div>
+                                    <div class="b-product-card__subtitle"></div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price">3 000 690 ₽<span class="b-price_rub">o</span></div>
+                                    </div>
+                                    <div class="b-product-card__basket" onclick="return false">Самовывоз</div>
+                                  </div>
+                                </div></a>
+                        </div>
+                        <div class="search__results-products-item"><a class="b-product-card b-product-card--small" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-2.png" alt="">
+                                    </div>
+                                    <div class="b-product-card__subtitle"></div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price">15 000 390 ₽<span class="b-price_rub">o</span></div>
+                                    </div>
+                                    <div class="b-product-card__basket" onclick="return false">Самовывоз</div>
+                                  </div>
+                                </div></a>
+                        </div>
+                        <div class="search__results-products-item"><a class="b-product-card b-product-card--small" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-3.png" alt="">
+                                    </div>
+                                    <div class="b-product-card__subtitle"></div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price">30 590 ₽<span class="b-price_rub">o</span></div>
+                                    </div>
+                                    <div class="b-product-card__basket" onclick="return false">Самовывоз</div>
+                                  </div>
+                                </div></a>
+                        </div>
+                        <div class="search__results-products-item"><a class="b-product-card b-product-card--small" href="#">
+                                <div class="b-product-card__wrapper">
+                                  <div class="b-product-card__info">
+                                    <div class="b-product-card__image"><img src="/f/img/content/pic-4.png" alt="">
+                                    </div>
+                                    <div class="b-product-card__subtitle"></div>
+                                    <div class="b-product-card__title">Текстурированная форма для хлеба</div>
+                                  </div>
+                                  <div class="b-product-card__row b-product-card__row--">
+                                    <div class="b-product-card__cost">
+                                      <div class="b-product-card__price">7 990 ₽<span class="b-price_rub">o</span></div>
+                                    </div>
+                                    <div class="b-product-card__basket" onclick="return false">Самовывоз</div>
+                                  </div>
+                                </div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-container">
+          <section class="b-breadcrumbs">
+            <div class="content-wrapper">
+              <div class="b-breadcrumbs__wrapper"><span class="b-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">главная</span>
+                    <meta itemprop="position" content="0"></a></span><span class="b-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">oформление заказа</span>
+                  <meta itemprop="position" content="1"></span>
+              </div>
+            </div>
+          </section>
+      <div class="content-wrapper">
+        <h1 class="page-container__title page-container__title-order">Спасибо! Ваш заказ принят.</h1>
+      </div>
+      <div class="b-order">
+        <form action=""> 
+          <div class="content-wrapper">
+            <div class="b-order-finish">
+              <div class="b-order-finish__row">Ваш заказ успешно оформлен. Мы свяжемся с вами в ближайше время.</div>
+              <div class="b-order-finish__row">Номер вашего заказа <b>#10041</b></div>
+              <div class="b-order-finish__row b-order-finish__row-btn">
+                <div class="b-order-finish__btn b-order-finish__btn-b">
+                  <button>Продолжить покупки</button>
+                </div>
+                <div class="b-order-finish__btn b-order-finish__btn-bg">
+                  <button>Оплатить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="content-wrapper">
+        <div class="footer__wrapper">
+          <div class="footer__links">
+            <div class="footer__links-column">
+              <div class="footer__links-item"><a href="#">O бренде</a></div>
+              <div class="footer__links-item"><a href="#">Новости</a></div>
+              <div class="footer__links-item"><a href="#">Блог</a></div>
+              <div class="footer__links-item"><a href="#">Рецепты</a></div>
+              <div class="footer__links-item"><a href="#">Адреса магазинов</a></div>
+              <div class="footer__links-item"><a href="#">Программа лояльности</a></div>
+            </div>
+            <div class="footer__links-column">
+              <div class="footer__links-item"><a href="#">Кухня</a></div>
+              <div class="footer__links-item"><a href="#">Столовая</a></div>
+              <div class="footer__links-item"><a href="#">Ванная</a></div>
+              <div class="footer__links-item"><a href="#">Спальня</a></div>
+              <div class="footer__links-item"><a href="#">Декор</a></div>
+              <div class="footer__links-item"><a href="#">Мебель</a></div>
+            </div>
+            <div class="footer__links-column">
+              <div class="footer__links-item"><a href="#">Условия доставки</a></div>
+              <div class="footer__links-item"><a href="#">Возврат товара</a></div>
+              <div class="footer__links-item"><a href="#">Оферта</a></div>
+              <div class="footer__links-item"><a href="#">Контакты</a></div>
+            </div>
+          </div>
+          <div class="footer__subscribe">
+            <div class="footer__caption">Будь в&nbsp;курсе наших новостей</div>
+            <div class="subscribe">
+                  <div class="b-field b-field--subscribe">
+                    <div class="b-field__wrapper">
+                      <input class="b-field__input" type="text" placeholder="Email">
+                    </div>
+                    <div class="b-field__column">
+                      <div class="b-field__button">Подписаться</div>
+                    </div>
+                  </div>
+                  <div class="b-field b-field--checkbox">
+                    <label class="b-field__label">
+                      <input type="checkbox" checked="checked">
+                      <div class="b-field__caption">Согласен с&nbsp;<a href="#">обработкой персональных данных</a></div>
+                    </label>
+                  </div>
+            </div>
+            <div class="footer__links-item footer__links-item--agreement footer__links-item--agreement-desktop"><a href="#">Пользовательское соглашение</a></div>
+          </div>
+          <div class="footer__direction">
+            <div class="footer__phone b-icon__phone">+ 7 (495) 783-85-21</div>
+            <div class="footer__phone b-icon__telegram">+ 7 (903) 159-70-99</div>
+            <div class="footer__phone b-icon__whatsapp">+ 7 (903) 159-70-99</div>
+            <div class="footer__social"><a class="footer__social-item footer__social-item--vk" href="#"></a><a class="footer__social-item footer__social-item--ig" href="#"></a><a class="footer__social-item footer__social-item--fb" href="#"></a><a class="footer__social-item footer__social-item--dz" href="#"></a></div>
+          </div>
+          <div class="footer__links-item footer__links-item--agreement footer__links-item--agreement-mobile"><a href="#">Пользовательское соглашение</a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="/f/js/vendor/jquery.min.js"></script>
+    <script src="/f/js/vendor/slick.min.js"></script>
+    <script src="/f/js/vendor/jquery.mask.min.js"></script>
+    <script src="/f/js/vendor/handlebars.min.js"></script>
+    <script src="/f/js/vendor/jquery-ui.min.js"></script>
+    <script src="/f/js/main.js"></script>
+    <script src="/f/js/datePicker-order.js"></script>
+  </body>
+</html>

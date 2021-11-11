@@ -1,0 +1,172 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Оформление заказа';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'oформление заказа', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title.page-container__title-order Оформление заказа
+		.b-order
+			form(action="") 
+				.content-wrapper
+					.b-order__wrapper
+						.b-order__row
+							.b-order__column
+								.b-order-step
+									.b-order-step__wrapper.b-order-step-strip
+										.b-order-step__error
+											.b-order-step__error-img
+												img(src="/f/img/ico-error.svg ", alt="")
+											.b-order-step__error-text
+												| Ошибка: не выбран магазин
+								.b-order-step
+									.b-order-step__wrapper
+										.b-order-step__title 1. Товары в заказе
+										.b-order-step__choice-input
+											label.b-order-item__label
+												input.b-order-item__input.js-order-input(type="checkbox", name="checkbox")
+												| Выбрать все
+												span.b-order-item__check.b-order-item__check--position
+											a(href="#") Удалить выбранные 
+										.b-order-step__goods
+											include _blocks/order-list
+
+								.b-order-step
+									.b-order-step__wrapper
+										.b-order-step__title 2. Регион доставки
+										label.b-order-address__label
+											input.b-order-address__input(type="text", required name="" placeholder="Введите город")
+											span.b-order__cross
+
+								.b-order-step
+										.b-order-step__wrapper.b-order-step__wrapper-bb
+											.b-order-step__title 3. Способ доставки
+											.b-order-delivery
+												.b-order-delivery__item.is-active
+													.b-order-delivery__img
+													.b-order-delivery__info
+														.b-order-delivery__text Самовывоз
+														.b-order-delivery__text Стоимость: 0
+															span.b-price_rub o
+														.b-order-delivery__text Выдача заказа через 2 часа
+												.b-order-delivery__item
+													.b-order-delivery__img
+													.b-order-delivery__info
+														.b-order-delivery__text Курьерская доставка
+														.b-order-delivery__text Стоимость: 300
+															span.b-price_rub o
+														.b-order-delivery__text от 4 000
+															span.b-price_rub o 
+															| бесплатно
+											.b-order-step__column.b-order-step--style
+												.b-catalog-sort__box
+													+field({type:'select', mode:'sort', name: '', options:[
+														{value:'', option:'г. Москва, ул. Б. Черемушкинская, д. 1 '},
+														{value:'', option:'г. Москва, ТЦ "Гагаринский", ул. Вавилова, д. 3, стр. 1'},
+														{value:'', option: 'г. Москва, ТЦ "Вегас", МКАД 24-й км'},
+														{value:'', option: 'г. Москва, ТРЦ"Водный", Головинское ш., вл.5'},
+														{value:'', option: 'г. Москва, ТЦ "Черкизовский Пассаж", Окружной проезд, д. 2А, стр. 1'},
+													],default:{value:'', option:'выбрать другой магазин 5'}})
+												.b-catalog-sort__contacts
+													.b-catalog-sort__contacts-item
+														| ТРЦ “РИО Севастопольский” <br> г. Москва, Большая Черемушкинская улица, 1
+													.b-catalog-sort__contacts-item
+														| +7 (495) 783-85-22 доб. 2134
+													.b-catalog-sort__contacts-item
+														| 10:00 – 19:00 Пн-Пт
+
+								.b-order-step
+										.b-order-step__wrapper.b-order-step__wrapper-bb
+											.b-order-step__title 4. Способ оплаты
+											label.b-order-price__label
+												input.b-order-price__input(type="checkbox", name="")
+												| Онлайн предоплата по банковской карте
+												span.b-order-price__check
+								.b-order-step.b-order-step__input-form
+									.b-order-step__wrapper
+										.b-order-step__title 5. Данные покупателя
+										.b-order-step__row.b-order-step__row--aside
+											.b-order-step__column.b-order-step__column--aside
+												+formField({type:'input', mode:'name required', placeholder:'Имя*'})
+											.b-order-step__column.b-order-step__column--aside
+												+formField({type:'input', mode:'name required', placeholder:'Фамилия*'})
+										.b-order-step__row.b-order-step__row--aside
+											.b-order-step__column.b-order-step__column--aside
+												+formField({type:'input', mode:'email required', placeholder:'E-mail*', error:'Неверный формат'})
+											.b-order-step__column.b-order-step__column--aside
+												+formField({type:'input', mode:'phone js-phone-mask', placeholder:'Телефон'})
+										
+										.b-order-step__column.b-order-step__column-textarea
+											+formField({type:'textarea', mode:'', placeholder:'коментарии к заказу'})
+										.b-order-step__row.b-order-step__row--aside
+											.b-order-step__btn.b-order-step__column--aside
+												button(type="submit") Оформить заказ
+
+
+
+
+							.b-order__column
+								.b-order-result
+									.b-order-result__wrapper
+										.b-order-result__table
+											.b-order-result__row
+												.b-order-result__column
+													.b-order-result__subtitle Стоимость товаров
+												.b-order-result__column
+													.b-order-result__subtitle-desc.js-basket-sum
+														span.b-price_rub o
+														| 10 680
+											.b-order-result__row
+												.b-order-result__column
+													.b-order-result__subtitle Скидка:
+												.b-order-result__column
+													.b-order-result__subtitle-desc.js-basket-discount
+														span.b-price_rub o
+														| 500
+											.b-order-result__row
+												.b-order-result__column
+													.b-order-result__subtitle Доставка:
+												.b-order-result__column
+													.b-order-result__subtitle-desc.js-basket-discount
+														span.b-price_rub o
+														| 500
+											.b-order-result__row
+												.b-order-result__column
+													.b-order-result__title Итого:
+												.b-order-result__column
+													.b-order-result__title.js-basket-sum
+														span.b-price_rub o
+														| 11 180
+											.b-order-result__row
+												.b-order-result__column
+													.b-order-result__choice
+														label.b-order-price__label
+															input.b-order-price__input(type="radio", name="choice-order")
+															| Промокод
+															span.b-order-price__check
+														label.b-order-price__label
+															input.b-order-price__input(type="radio", name="choice-order")
+															| Бонусы
+															span.b-order-price__check
+											.b-order-result__row
+												.b-order-result__bonus
+													lable.b-order-result__bonus-label
+														input.b-order-result__bonus-input(type="text", name="" placeholder="Использовать бонусы")
+														span.b-order-result__bonus-ico
+											.b-order-result__row
+												.b-order-result__bonus-row 
+													| У вас есть <b> 900 </b> бонусов
+													a(href="#")
+														img(src="/f/img/ico-question.svg ", alt="")
+											.b-order-result__row
+												.b-order-step__btn
+													button Оформить заказ
+											.b-order-result__row
+												.b-order-result__sale
+													a(href="#") Скидка 3%
+													| при оплате онлайн

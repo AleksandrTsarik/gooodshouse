@@ -1,0 +1,44 @@
+.b-error-page
+	background url('../img/404/bg.jpg') no-repeat center top
+	background-size 100% auto
+	padding-top 7.5vw
+	@media $phone
+		background-size 150% auto
+	&__wrapper
+		max-width 1036px
+		width 76.7vw
+		margin 0 auto
+		padding 54px 8%
+		background $white
+		min-height: 43vh
+		@media $tablet
+			max-width 90%
+			width 86.7vw
+		@media $phone
+			width 90%
+			padding 25px 5% 0
+	&__title
+		font-family $MuseocyrM
+		font-size: 100px;
+		line-height 1.2
+		padding 0
+		text-align center
+		text-transform uppercase
+		color $backFont
+		@media $phone
+			font-size 70px
+	&__desc
+		text-align center
+		line-height 1.4
+		padding-bottom 15px
+	&__search
+		margin-top: 13px
+		display: flex
+		justify-content: center
+		.b-field--search
+			@media $phone
+				width: 100%
+		.b-field__wrapper
+			width: 505px
+			@media $phone
+				width: 100%

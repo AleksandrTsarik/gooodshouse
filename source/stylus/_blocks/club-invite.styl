@@ -1,0 +1,30 @@
+.b-club-invite
+	background url('../img/main_bottom_bg.jpg')
+	&__content
+		height: 205px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin: 0 auto
+		max-width: 850px
+		@media $tablet
+			max-width: 600px
+			height: 150px
+		@media $phone
+			flex-direction: column
+			justify-content: flex-start
+			height: auto
+			padding: 20px 0
+	&__text
+		color $white
+		font-weight: 600
+		font-size: 32px
+		padding-right: 20px
+		text-align: center
+		@media $tablet
+			font-size: 24px
+		@media $phone
+			padding-right: 0
+			padding-bottom: 20px
+	&__btn
+		min-width: 160px

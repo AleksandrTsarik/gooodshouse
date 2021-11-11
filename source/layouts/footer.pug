@@ -1,0 +1,33 @@
+footer.footer
+	.content-wrapper
+		.footer__wrapper
+			.footer__links
+				-
+					var links = [
+						['O бренде','Новости','Блог','Рецепты','Адреса магазинов','Программа лояльности'],
+						['Кухня','Столовая','Ванная','Спальня','Декор','Мебель'],
+						['Условия доставки','Возврат товара','Оферта','Контакты']
+					]
+				each list in links
+					.footer__links-column
+						each item in list
+							.footer__links-item
+								a(href="#")!= item
+			.footer__subscribe
+				.footer__caption Будь в&nbsp;курсе наших новостей
+				.subscribe
+					+field({type:'input',mode:'subscribe',placeholder:'Email', button:'Подписаться'})
+					+field({type:'checkbox',mode:'checkbox',label:'Согласен с&nbsp;<a href="#">обработкой персональных данных</a>',checked:1})
+				.footer__links-item.footer__links-item--agreement.footer__links-item--agreement-desktop
+					a(href="#") Пользовательское соглашение
+			.footer__direction
+				.footer__phone.b-icon__phone + 7 (495) 783-85-21
+				.footer__phone.b-icon__telegram + 7 (903) 159-70-99
+				.footer__phone.b-icon__whatsapp + 7 (903) 159-70-99
+				.footer__social
+					a.footer__social-item.footer__social-item--vk(href="#")
+					a.footer__social-item.footer__social-item--ig(href="#")
+					a.footer__social-item.footer__social-item--fb(href="#")
+					a.footer__social-item.footer__social-item--dz(href="#")
+			.footer__links-item.footer__links-item--agreement.footer__links-item--agreement-mobile
+				a(href="#") Пользовательское соглашение

@@ -1,0 +1,231 @@
+.upblock
+	background rgba(0, 0, 0, 0.2);
+	position fixed
+	left 0
+	right 0
+	top 0
+	bottom 0
+	z-index 99
+	display flex
+	align-items center
+	justify-content center
+	display none
+	@media $phone
+		align-items flex-start
+	&.is-open
+		display flex
+	&__row
+		display flex
+		justify-content space-between
+		@media $phone
+			flex-wrap wrap
+		&--short
+			margin-bottom 20px
+			@media $phone
+				margin-bottom 0
+		&--short .b-form-field__wrapper
+			margin 0
+	&__column
+		width 48%
+		@media $phone
+			margin-bottom 15px
+			width 100%
+	&__wrapper
+		position relative
+		z-index 100
+		width 526px
+		padding 44px 68px 52px
+		background $white
+		@media $phone
+			padding 40px 25px 30px
+			position absolute
+			left 0
+			right 0
+			top 0
+			bottom 0
+			width auto
+			overflow hidden
+			overflow-y scroll
+	&__wrapper--fullscreen
+		width auto
+	&__close
+		position absolute
+		right 15px
+		top 13px
+		width 20px
+		height 20px
+		cursor pointer
+		@media $phone
+			right 15px
+			top 15px
+		&:after,&:before
+			content ''
+			position absolute
+			left 0
+			top 9px
+			width 20px
+			height 1px
+			background currentColor
+			transform rotate(45deg)
+		&:before
+			transform rotate(-45deg)
+	&__title
+		font-family $MuseocyrM //$ClarendonR
+		font-size 32px
+		line-height 1.19
+		padding-bottom 27px
+		@media $phone
+			font-size 28px
+			padding-bottom 7px
+	&__body
+		font-family $MontserratR
+	&__body-wrapper
+		padding-bottom 9px
+	&__body-title
+		font-family $MuseocyrM
+		font-size 20px
+		line-height 1.2
+		padding 20px 0 10px
+	&__body-desc
+		font-size 14px
+	&__body-controls
+		display flex
+		justify-content space-between
+		padding 25px 0 10px
+		margin-top 40px
+		@media $phone
+			flex-direction column
+			margin-top 25px
+	&__body-label
+		font-size 12px
+		line-height 1.67
+		letter-spacing -0.015em
+		padding 4px 0 23px
+		&--simple
+			padding 0 0 10px
+		&--comment
+			margin-top -2px
+			padding 0 0 16px
+		a
+			color $linkFont
+			text-decoration underline
+			&:hover
+				color $hoverFont
+				text-decoration none
+	&__body-button
+		font-family $MontserratSB
+		background none
+		border 1px solid $linkFont
+		color $linkFont
+		border-radius 3px
+		padding 0 15px
+		line-height 52px
+		font-size 16px
+		letter-spacing -0.015em
+		text-align center
+		height 50px
+		cursor pointer
+		display block
+		width 100%
+		&--gray
+			background $grey
+		&--group
+			display flex
+			align-items center
+			justify-content center
+			flex-wrap wrap
+			width 48%
+			font-family $MontserratR
+			font-size 14px
+			padding 2px 20px 0
+			line-height 1
+			@media $phone
+				width 100%
+				margin 5px 0
+				max-width 320px
+		&:hover
+			background $linkFont
+			color $white
+	&__body-link
+		font-size 12px
+		line-height 1.2
+		letter-spacing -0.015em
+		text-decoration underline
+		color $linkFont
+		cursor pointer
+		margin 0 0 16px 4px
+		display inline-block
+		vertical-align top
+		&--reg
+			font-size 16px
+			margin 33px 0 0 0
+			@media $phone
+				margin 20px 0 0 0
+		&:hover
+			color $hoverFont
+			text-decoration none
+	&__body-row
+		display flex
+		align-items center
+	&__body-column
+		padding-right 15px
+		min-width 25%
+		@media $phone
+			min-width 110px
+
+	&__block
+		display none
+		padding 0 0 30px
+		&.is-active
+			display block
+	&__list-item
+		background none no-repeat left center
+		padding 5px 0 5px 30px
+		line-height 20px
+		&--address
+			background url('../img/icon-address.png') no-repeat 2px center
+		&--time
+			background url('../img/icon-time.png') no-repeat left center
+		&--phone
+			background url('../img/icon-phone.png') no-repeat 4px center
+
+
+
+.b-social-auth
+	border-top 1px solid $backFont
+	margin-top 37px
+	padding-bottom 29px
+	border-bottom 1px solid $backFont
+	@media $phone
+		margin-top 25px
+		padding-bottom 15px
+	&__title
+		padding 23px 0 17px
+		@media $phone
+			padding 20px 0 15px
+	&__row
+		display flex
+		justify-content space-between
+		@media $phone
+			flex-wrap wrap
+			justify-content flex-start
+	&__item
+		background pink
+		width 48%
+		height 40px
+		border-radius 3px
+		cursor pointer
+		@media $phone
+			width 66px
+			margin-right 10px
+			margin-bottom 10px
+		&--vk
+			background url('../img/icon-block-vk.png') no-repeat center center
+			@media $phone
+				background-position left center
+		&--fb
+			background url('../img/icon-block-fb.png') no-repeat center center
+			@media $phone
+				background-position left center
+
+

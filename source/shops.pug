@@ -1,0 +1,135 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Магазины';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'/html/main.html'},
+			{title:'магазины', href:''}
+      ]})
+		.content-wrapper
+			h1.page-container__title Магазины Goood’s House
+			.b-shops.js-shops
+				.b-shops__wrapper.js-tabs-parent.js-shops-parent
+					.b-shops__row
+						.b-shops__column
+							.b-shops__list.js-shops-list
+						.b-shops__column
+							.b-shops__map#shop-map
+			include _blocks/shops-location
+			.b-shop__form
+				form(action="")
+					h2.b-shop__form__title ФОРМА ОБРАТНОЙ СВЯЗИ
+					.b-shop__input-box
+						.b-shop__input 
+							label(for="")
+								input(type="text" autocomplete="off" name="first_name" placeholder="Ваше имя*")
+						.b-shop__input 
+							label(for="")
+								input(type="text" autocomplete="off" name="email" placeholder="Ваш E-mail*")
+					.b-shop__texterea 
+						textarea(placeholder="Сообщение*" name="", cols="30", rows="10")
+					.b-shop__form__conditions
+						| Нажимая на кнопку «Регистрация», Вы принимаете условия
+						.b-shop__form__link
+							a(href="#")  Соглашения об использовании сайта
+					.b-shop__form__btn
+						button Отправить
+			
+
+
+
+	script(type="text/javascript" src="https://api-maps.yandex.ru/2.1.34/?load=package.full&lang=ru-RU")
+	script(type="text/javascript").
+		var shopsList = 
+		{'0000073738':[
+			{'name':'г. Москва, ул. Б. Черемушкинская, д. 1',
+				'address':'',
+				'metro':'',
+				'phone':'тел/ факс: 8 (495) 980-28-97',
+				'email': 'email: info@gooodshouse.ru',
+				'workTime':'',
+				'dataAddress': 'address1',
+				'gps':
+				{'longitude':'55.689420',
+					'latitude':'37.602130'
+				},
+				'icon':'',
+				'icon-active':false
+			},
+			{'name':'г. Москва, ТЦ "Гагаринский", ул. Вавилова, д. 3, стр. 1',
+				'address':'',
+				'metro':'',
+				'phone':'тел/ факс: 8 (495) 980-28-97',
+				'email': 'email: info@gooodshouse.ru',
+				'workTime':'',
+				'dataAddress': 'address2',
+				'gps':
+				{'longitude':'55.708950',
+					'latitude':'37.592880'
+				},
+				'icon':'',
+				'icon-active':false
+			},
+			{'name':'г. Москва, ТЦ "Вегас", МКАД 24-й км.',
+				'address':'',
+				'metro':'',
+				'phone':'тел/ факс: 8 (495) 980-28-97',
+				'email': 'email: info@gooodshouse.ru',
+				'workTime':'',
+				'dataAddress': 'address3',
+				'gps':
+				{'longitude':'55.587210',
+					'latitude':'37.724723'
+				},
+				'icon':'',
+				'icon-active':false
+			},
+			{'name':'г. Москва, ТРЦ"Водный", Головинское ш., вл.5',
+				'address':'',
+				'metro':'',
+				'phone':'тел/ факс: 8 (495) 980-28-97',
+				'email': 'email: info@gooodshouse.ru',
+				'workTime':'',
+				'dataAddress': 'address4',
+				'gps':
+				{'longitude':'55.840050',
+					'latitude':'37.491090'
+				},
+				'icon':'',
+				'icon-active':false
+			},
+			{'name':'г. Москва, ТЦ "Черкизовский Пассаж", Окружной проезд, д. 2А, стр. 1',
+				'address':'',
+				'metro':'',
+				'phone':'тел/ факс: 8 (495) 980-28-97',
+				'email': 'email: info@gooodshouse.ru',
+				'workTime':'',
+				'dataAddress': 'address5',
+				'gps':
+				{'longitude':'55.803820',
+					'latitude':'37.744660'
+				},
+				'icon':'',
+				'icon-active':false
+			},
+			
+		]};
+
+	script(id="shop-info-template" type="text/x-handlebars-template").
+		{{#each shops}}
+		<div class="b-shops__item" data-address={{{dataAddress}}} data-long="{{{ gps.longitude }}}" data-lat="{{{ gps.latitude }}}">
+			<div class="b-shops__title">{{{ name }}}</div>
+			<div class="b-shops__desc b-shops__desc--address">{{{ address }}}</div>
+			<div class="b-shops__desc b-shops__desc--time">{{{ workTime }}}</div>
+			<div class="b-shops__desc b-shops__desc--styl">
+				<div class="b-shops__desc b-shops__desc--phone">{{{ phone }}}</div>
+				<div class="b-shops__desc b-shops__desc--email">{{{ email }}}</div>
+			</div>
+			<div class="b-shops__info">
+				<img src="https://static-maps.yandex.ru/1.x/?ll={{{ gps.latitude }}},{{{ gps.longitude }}}&z=15&l=map&size=230,200&pt={{{ gps.latitude }}},{{{ gps.longitude }}},pm2rdl" alt="" />
+			</div>
+		</div>
+		{{/each}}

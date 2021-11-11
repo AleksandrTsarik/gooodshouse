@@ -1,0 +1,125 @@
+-
+	var gProducts = [
+		{
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			price:'151 390', //test for responsive
+			oldprice: '15 200',
+			image:'/f/img/content/pic-8.png',
+			//- promoTitle:'-20%',
+			//- promoTitle:'-25%',
+
+		},
+		{			
+			subtitle:'Egermann',
+			title:'Набор для фондю с медным эффектом ручной обработки',
+			price:'30 590',
+			image:'/f/img/content/pic-9.png'
+		},
+		{
+			subtitle:'Ghidini',
+			title:'Текстурированная стальная форма для торта ',
+			price:'7 990',
+			image:'/f/img/content/pic-10.png'
+		},
+		{
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			price:'15 390',
+			image:'/f/img/content/pic-8.png'
+		},
+		{			
+			subtitle:'Egermann',
+			title:'Набор для фондю с медным эффектом ручной обработки',
+			price:'30 590',
+			image:'/f/img/content/pic-9.png'
+		},
+		{
+			subtitle:'Ghidini',
+			title:'Текстурированная стальная форма для торта ',
+			price:'7 990',
+			image:'/f/img/content/pic-10.png'
+		},
+		{
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			price:'15 390',
+			image:'/f/img/content/pic-8.png'
+		},
+		{			
+			subtitle:'Egermann',
+			title:'Набор для фондю с медным эффектом ручной обработки',
+			price:'30 590',
+			image:'/f/img/content/pic-9.png'
+		},
+		{
+			subtitle:'Ghidini',
+			title:'Текстурированная стальная форма для торта ',
+			price:'7 990',
+			image:'/f/img/content/pic-10.png'
+		},
+
+		{
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			price:'15 390',
+			image:'/f/img/content/pic-8.png'
+		},
+		{			
+			subtitle:'Egermann',
+			title:'Набор для фондю с медным эффектом ручной обработки',
+			price:'30 590',
+			image:'/f/img/content/pic-9.png'
+		},
+		{
+			subtitle:'Ghidini',
+			title:'Текстурированная стальная форма для торта ',
+			price:'7 990',
+			image:'/f/img/content/pic-10.png'
+		},
+		{
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			price:'15 390',
+			image:'/f/img/content/pic-8.png'
+		},
+		{			
+			subtitle:'Egermann',
+			title:'Набор для фондю с медным эффектом ручной обработки',
+			price:'30 590',
+			image:'/f/img/content/pic-9.png'
+		},
+		{
+			subtitle:'Ghidini',
+			title:'Текстурированная стальная форма для торта ',
+			price:'7 990',
+			image:'/f/img/content/pic-10.png'
+		},
+		{
+			subtitle:'Crystalex Bohemia',
+			title:'Винтажный синий магнитный кухонный таймер',
+			price:'15 390',
+			image:'/f/img/content/pic-8.png'
+		},
+		{			
+			subtitle:'Egermann',
+			title:'Набор для фондю с медным эффектом ручной обработки',
+			price:'30 590',
+			image:'/f/img/content/pic-9.png'
+		},
+		{
+			subtitle:'Ghidini',
+			title:'Текстурированная стальная форма для торта ',
+			price:'7 990',
+			image:'/f/img/content/pic-10.png'
+		}
+		
+	]
+-;
+section.b-products-box
+	.content-wrapper
+		.b-products-box__wrapper
+			a(href="#")
+				each item in gProducts
+					.b-products-box__item
+						+productCard(item)

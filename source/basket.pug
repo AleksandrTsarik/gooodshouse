@@ -1,0 +1,66 @@
+extends layouts/default
+
+block pageVar
+	-pageTitle = 'Корзина';
+
+block content
+	.page-container
+		+breadcrumbs({path:[
+			{title:'главная', href:'#'},
+			{title:'корзина', href:''}
+		]})
+		.content-wrapper
+			h1.page-container__title Моя корзина 
+				//- span.color-grey.js-basket-count (3 шт)
+		.b-basket
+			.content-wrapper
+				.b-basket__wrapper
+					.b-basket__row
+						.b-basket__column
+							include _blocks/basket-list
+							.b-basket__controls
+								.btn.btn--large.b-basket__button Оформить заказ
+								a.b-basket__back(href="#") Продолжить покупки
+						.b-basket__column
+							.b-basket-result
+								.b-basket-result__wrapper
+									.b-basket-result__table
+										.b-basket-result__row
+											.b-basket-result__column
+												.b-basket-result__title Стоимость товара 
+													//- span (без доставки):
+											.b-basket-result__column
+												.b-basket-result__title-desc.js-basket-sum 10 680
+													span.b-price_rub o
+										.b-basket-result__row
+											.b-basket-result__column
+												.b-basket-result__subtitle Скидка
+											.b-basket-result__column
+												.b-basket-result__subtitle-desc.js-basket-discount 0
+													span.b-price_rub o
+									//- .b-basket-result__promo-zone
+									//- 	.b-promo-field
+									//- 		.b-promo-field__wrapper
+									//- 			input.b-promo-field__input(type="text" value="" placeholder="Использовать промо-код")
+									//- 			button.b-promo-field__button
+									//- 	.b-promo-field
+									//- 		.b-promo-field__wrapper
+									//- 			input.b-promo-field__input(type="text" value="" placeholder="Использовать бонусные баллы")
+									//- 			button.b-promo-field__button
+									//- 		.b-promo-field__label
+									//- 		| Вы можете потратить: 1000 баллов
+									//- 		a(href="#")  Отменить
+									//- 	.b-promo-field
+									//- 		| Скидка по купону применена PROMKOD10
+									//- 		a(href="#")  Отменить		 									
+									.btn.btn--large.b-basket-result__button Оформить заказ
+									.b-basket-result__discount
+										a(href="#") Скидка 3%
+										| при оплате онлайн
+						.page-catalog__offer
+							.page-catalog__offer-text Вступайте в Goood`s клуб <br> привилегий!
+							.page-catalog__offer-btn
+								a(type="submit") Вступить
+
+
+

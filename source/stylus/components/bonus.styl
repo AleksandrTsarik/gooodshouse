@@ -1,0 +1,236 @@
+
+
+.bonus__tile
+   font-size: 32px
+   //color: $baseFontDark
+   font-family $MuseoM
+   text-transform: uppercase
+   @media $tablet
+      font-size: 26px
+   @media $phone
+      text-align: center
+      font-size: 24px
+   @media $phoneS
+      font-size: 22px
+.b-bonus
+   &__info-text
+      font-size: 18px
+      color: $baseFontDark
+      font-weight 250
+      font-family $MuseoR
+      @media $phoneS
+         font-size: 14px
+      a
+         margin-left: 0.3em
+         text-decoration underline
+         transition: 0.3s
+         &:nth-child(3)
+            margin-right 0.3em
+         &:hover
+            text-shadow 0 0 3px rgba($hoverFont, 0.3)
+   &__logo
+      margin-bottom 50px
+      @media $phoneS
+         margin-bottom 20px
+      img
+         width: 100%
+   &__list-company
+      display: flex
+      align-items: center
+   &-list
+      width: 100%
+      margin: 50px 0
+      @media $phone
+         flex-wrap: wrap
+         margin: 25px 0
+      &__item
+         flex: 0 0 25%
+         max-width: 25%
+         position: relative
+         display: block
+         margin 0 auto
+         text-align: center
+         height: 90px
+         border-right: solid 1px $specsGray
+         @media $phone
+            border-right: none
+         @media $phone
+            flex: 0 0 50%
+            max-width: 50%
+            margin: 20px 0
+         @media $phoneS
+            margin: 5px 0
+         &:last-child
+            border-right: none
+         img
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            margin: auto
+            // @media $phoneS
+            //    position: relative
+         
+.b-bonus-economy
+   @media $tablet
+      margin-top 50px
+   @media $phoneS
+      margin-top 25px
+   &__list
+      display: flex
+      align-items: center
+      //width: 50%
+      margin-top 50px
+      margin-bottom 85px
+      @media $tablet
+         width: 100%
+         margin-bottom 40px
+      @media $phoneS
+         margin-top 25px
+         
+      @media screen and (max-width: 575px)
+         flex-wrap: wrap
+   &__item
+      flex: 0 0 33.33%
+      max-width: 33.33%
+      text-align: center
+      @media screen and (max-width: 575px)
+         flex: 0 0 100%
+         max-width: 100%
+         margin: 25px 0
+      @media $phoneS
+         margin: 7px 0
+      &-img
+         height: 52px
+         margin-bottom 10px
+      &-text
+         font-size: 18px
+         color: $baseFontDark
+         height: 50px
+         font-family $MuseoM
+         @media $phoneS
+            font-size: 14px
+         span
+            font-weight 300
+            font-size: 14px
+            font-family $MuseoR
+.b-bonus-programm
+   &__list
+      margin-top 25px
+   &__text
+      line-height: 36px
+      font-size: 17px
+      color: $baseFontDark
+      font-family $MuseoM
+      padding-bottom 5px
+      letter-spacing: 0.2px
+      @media $phoneS
+         font-size: 13px
+         line-height: 28px
+      &--bold
+         padding-right 0.3em
+         font-weight 700
+         font-size: 18px
+         font-family $MuseoM 
+         @media $phoneS
+            font-size: 14px
+   &__link
+      text-decoration: underline
+      font-size: 18px
+      color $orange
+      margin-top 17px
+      margin-bottom 105px
+      transition 0.3s
+      //text-align: center
+      @media $phone
+         margin-bottom 50px
+
+      img
+         margin-right 15px
+      a
+         transition: 0.3s
+         &:hover
+            text-shadow: 0 0 5px rgba($hoverFont, 0.4)
+.b-bonus-app
+   margin-bottom 100px
+   @media $phone
+      margin-bottom 50px
+   &__text
+      font-family $MuseoR
+      font-size: 18px
+      color: $baseFontDark
+      margin-top 22px
+      margin-bottom 33px
+      @media $phoneS
+         font-size: 14px
+   &__link
+      font-size: 18px
+      letter-spacing: -0.015em
+      color: $orange
+      text-decoration: underline
+      transition 0.3s
+      a
+         transition: 0.3s
+         &:hover
+            text-shadow: 0 0 5px rgba($hoverFont, 0.4)
+      img
+         margin-right 15px
+         margin-bottom 3px
+.b-bonus-participants
+   .b-bonus-list__item
+      img
+         position: relative
+         height: 68px
+         width: 60px
+   &__list
+      display: flex
+   &__item-text
+      font-size: 14px
+      text-decoration: underline
+      color: $black
+      margin-top 20px
+      transition 0.3s
+   &__item
+      height: auto
+      border-right: solid 1px $specsGray
+      @media $phone
+         border-right: none
+      a
+         display: block
+         padding 10px 0
+         transition 0.3s
+         &:hover
+            box-shadow: 0 0 10px rgba(black, 0.1)
+         &:hover .b-bonus-participants__item-text
+            color $hoverFont
+.b-bonus-add
+   background: $sub
+   padding: 40px 55px
+   display: inline-block
+   margin-top 50px
+   @media $phone
+      margin-top 25px
+      padding: 20px 25px
+   &__title
+      font-size: 22px
+      margin-bottom 20px
+      @media $phoneS
+         text-align: center
+         font-size: 18px
+   &__button
+      button
+         color: $white
+         background: $hoverFont
+         font-size: 18px
+         text-transform: uppercase
+         padding: 15px 45px
+         border-radius: 3px
+         transition: 0.3s
+         @media $phoneS
+            width: 100%
+            font-size: 14px
+         &:hover
+            background: lighten($hoverFont, 15%)
+   
+

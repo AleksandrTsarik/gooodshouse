@@ -1,0 +1,31 @@
+.b-brands
+	&__wrapper
+		padding 0
+		border-bottom 1px solid $backFont
+		@media $phone
+			margin 0 -15px
+	&__slide
+		background none no-repeat center center
+		background-size 150px auto
+		width 150px
+		height 156px
+		@media $phone
+			height 129px
+	& .slick-arrow
+		position absolute
+		left -3px
+		top 50%
+		z-index 2
+		transform translateY(-50%) rotate(45deg)
+		font-size 0
+		line-height 1
+		width 15px
+		height 15px
+		border-left 2px solid $baseFont
+		border-bottom 2px solid $baseFont
+	& .slick-next
+		left auto
+		right -3px
+		transform translateY(-50%) rotate(225deg)
+
+

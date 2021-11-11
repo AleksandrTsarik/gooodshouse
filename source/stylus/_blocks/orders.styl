@@ -1,0 +1,154 @@
+.b-orders
+	&__wrapper
+		padding 0
+		max-width 815px
+		@media $tablet
+			max-width none
+	&__row
+		position relative
+		display flex
+		align-items center
+		cursor pointer
+		background: $lightGrey
+		border-bottom 1px solid $backBackground
+		&:nth-child(2)
+			@media $phone
+				border-top 1px solid $backBackground
+		@media $phone
+			flex-wrap wrap
+			align-items flex-start
+			margin 0 -15px
+			padding 10px 15px
+		&:hover,&.is-open
+			background $white
+		&:hover
+			@media $phone
+				background none
+		&.is-open:hover
+			@media $phone
+				background $backBackground
+
+		&:after
+			content ''
+			position absolute
+			right 18px
+			top calc(50% - 7px)
+			width 8px
+			height 8px
+			border-left 1px solid $baseFont
+			border-bottom 1px solid $baseFont
+			transform rotate(-45deg)
+			pointer-events none
+		&.is-open:after
+			top calc(50% - 3px)
+			transform rotate(135deg)
+		&--header
+			@media $phone
+				display none
+		&--header, &--header:hover
+			background $lightGrey
+			cursor default
+			&:after
+				display none
+	&__column
+		width 10%
+		font-size 14px
+		line-height 16px
+		padding 16px 16px 15px
+		min-height 38px
+		@media $phone
+			padding 5px 15px 5px 0
+			min-height 0
+			width 100%
+		&:nth-child(1)
+			width 18.4%
+			@media $phone
+				max-width 150px
+				width 50%
+				order 2
+		&:nth-child(2)
+			width 18.5%
+			@media $phone
+				max-width 150px
+				width 50%
+				order 3
+		&:nth-child(3)
+			width 28.7%
+			@media $phone
+				//max-width 300px
+				width 100%
+				order 1
+		&:nth-child(4)
+			width 17.6%
+			@media $phone
+				max-width 150px
+				width 50%
+				order 4
+		&:nth-child(5)
+			width 16.8%
+			@media $phone
+				max-width 150px
+				width 50%
+				order 5
+	&__row--header &__column
+		font-size 12px
+		line-height 14px
+		letter-spacing -0.015em
+		padding 12px 16px
+		color $specsGrey
+		@media $phone
+			display none
+	&__status
+		position relative
+		padding-left 15px
+		&:after
+			content ''
+			position absolute
+			left 0
+			top 5px
+			width 7px
+			height 7px
+			border-radius 50%
+			background $backFont
+		&--processed:after
+			background $status_processed
+		&--canceled:after
+			background $status_canceled
+		&--completed:after
+			background $status_completed
+	&__price
+		font-weight bold
+	&__title
+		display none
+		font-size 12px
+		line-height 14px
+		letter-spacing -0.015em
+		padding 0 0 4px
+		color $specsGrey
+		@media $phone
+			display block
+	&__block
+		display none
+	&__row.is-open + &__block
+		display block
+
+.b-orders__delivery
+	margin: 20px 0 28px
+	&-item
+		display: flex
+		div
+			font-size: 14px
+			letter-spacing: -1.5%
+			margin-bottom 0.5em
+			&:first-child
+				flex: 0 0 100px
+				max-width: 100px
+				white-space: nowrap
+				margin-right 37px
+				@media $afterPhoneS
+					flex: 0 0 80px
+					max-width: 80px
+			a
+				transition: 0.3s
+				&:hover
+					text-decoration: underline
